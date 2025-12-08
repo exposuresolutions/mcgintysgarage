@@ -43,8 +43,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form Submission Simulation
-    const forms = ['booking-form', 'parts-form', 'payment-form'];
-    forms.forEach(formId => {
+    const bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = bookingForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const formData = new FormData(bookingForm);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/submit-booking', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                submitBtn.textContent = 'Booking Sent!';
+                bookingForm.reset();
+
+            } catch (error) {
+                console.error('Form submission error:', error);
+                submitBtn.textContent = 'Submission Failed';
+                alert('There was an error submitting your booking. Please try again.');
+            } finally {
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }, 3000);
+            }
+        });
+    }
+
+    // The rest of the forms can keep their simulation for now
+    const otherForms = ['parts-form', 'payment-form'];
+    otherForms.forEach(formId => {
         const form = document.getElementById(formId);
         if (form) {
             form.addEventListener('submit', function(e) {
