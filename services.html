@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Services | Lavelle's Auto Diagnostics & Repair</title>
-    <meta name="description" content="Complete automotive services on Achill Island. From diagnostics to full repairs, NCT prep to emergency breakdown. Expert service you can trust.">
+    <meta name="description"
+        content="Complete automotive services on Achill Island. From diagnostics to full repairs, NCT prep to emergency breakdown. Expert service you can trust.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         /* Same CSS as index-v2.html */
         :root {
@@ -21,35 +24,60 @@
             --gray: #666;
             --font-display: 'Roboto Condensed', sans-serif;
             --font-body: 'Roboto', sans-serif;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
             --transition: all 0.3s ease-in-out;
             --radius: 8px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             font-size: 16px;
             line-height: 1.7;
             color: var(--dark);
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') fixed center/cover;
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png')
+                fixed center/cover;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-display);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
 
-        .text-center { text-align: center; }
-        .lead { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; }
-        img { max-width: 100%; height: auto; display: block; }
-        
+        .text-center {
+            text-align: center;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
@@ -78,6 +106,7 @@
             color: var(--white);
             border-color: var(--primary);
         }
+
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
@@ -90,6 +119,7 @@
             border-color: var(--accent);
             font-weight: 900;
         }
+
         .btn-accent:hover {
             background: #e6a500;
             transform: scale(1.05);
@@ -130,7 +160,7 @@
             gap: 2rem;
             list-style: none;
         }
-        
+
         .nav-link {
             font-family: var(--font-display);
             font-size: 0.95rem;
@@ -138,7 +168,10 @@
             text-decoration: none;
             transition: var(--transition);
         }
-        .nav-link:hover { color: var(--accent); }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
 
         /* Mobile Menu */
         .nav-menu.mobile-active {
@@ -154,6 +187,7 @@
             cursor: pointer;
             padding: 10px;
         }
+
         .hamburger {
             display: block;
             width: 28px;
@@ -162,7 +196,9 @@
             position: relative;
             transition: var(--transition);
         }
-        .hamburger::before, .hamburger::after {
+
+        .hamburger::before,
+        .hamburger::after {
             content: '';
             position: absolute;
             width: 100%;
@@ -170,21 +206,29 @@
             background: var(--white);
             transition: var(--transition);
         }
-        .hamburger::before { top: -8px; }
-        .hamburger::after { top: 8px; }
+
+        .hamburger::before {
+            top: -8px;
+        }
+
+        .hamburger::after {
+            top: 8px;
+        }
 
         /* Page Hero */
         .page-hero {
-            padding: 160px 20px 60px; /* Reduced padding */
-            background: 
-                linear-gradient(135deg, rgba(0,90,156,0.75) 0%, rgba(0,61,107,0.78) 100%),
+            padding: 160px 20px 60px;
+            /* Reduced padding */
+            background:
+                linear-gradient(135deg, rgba(0, 90, 156, 0.75) 0%, rgba(0, 61, 107, 0.78) 100%),
                 url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
             color: var(--white);
             text-align: center;
         }
 
         .page-hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3rem); /* Slightly smaller max size */
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            /* Slightly smaller max size */
             margin-bottom: 0.5rem;
         }
 
@@ -276,11 +320,12 @@
 
         /* Footer */
         .footer {
-            padding: 40px 20px 20px; /* Reduced padding */
+            padding: 40px 20px 20px;
+            /* Reduced padding */
             background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
             background-size: cover;
             background-position: center;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .footer-grid {
@@ -300,6 +345,7 @@
             gap: 10px;
             margin-top: 10px;
         }
+
         .footer-social a {
             display: inline-block;
             width: 36px;
@@ -307,10 +353,11 @@
             text-align: center;
             line-height: 36px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             color: var(--white);
             transition: all 0.3s;
         }
+
         .footer-social a:hover {
             background: var(--accent);
         }
@@ -318,9 +365,9 @@
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .footer a {
@@ -336,12 +383,13 @@
             left: 0;
             width: 100%;
             background: var(--white);
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             padding: 10px;
             justify-content: space-around;
             gap: 10px;
         }
+
         .mobile-action-btn {
             flex: 1;
             padding: 12px;
@@ -355,8 +403,16 @@
             justify-content: center;
             gap: 8px;
         }
-        .btn-call { background: var(--primary); color: var(--white); }
-        .btn-whatsapp { background: #25D366; color: var(--white); }
+
+        .btn-call {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
 
         /* Social Icons (Right Side) */
         .social-icons {
@@ -364,11 +420,13 @@
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 1100; /* Increased to sit above header */
+            z-index: 1100;
+            /* Increased to sit above header */
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
+
         .social-icon {
             width: 50px;
             height: 50px;
@@ -382,17 +440,28 @@
             text-decoration: none;
             font-size: 1.5rem;
         }
+
         .social-icon:hover {
             transform: scale(1.15);
             box-shadow: var(--shadow-lg);
         }
 
         @media (max-width: 768px) {
-            .mobile-action-bar { display: flex; }
-            .footer { padding-bottom: 80px; } /* Space for bar */
-            
+            .mobile-action-bar {
+                display: flex;
+            }
+
+            .footer {
+                padding-bottom: 80px;
+            }
+            /* Space for bar */
+
             /* Mobile Navigation Fix */
-            .nav-toggle { display: block; z-index: 1001; }
+            .nav-toggle {
+                display: block;
+                z-index: 1001;
+            }
+
             .nav-menu {
                 display: flex;
                 position: fixed;
@@ -400,19 +469,32 @@
                 left: -100%;
                 width: 100%;
                 height: 100vh;
-                background: rgba(0,0,0,0.98);
+                background: rgba(0, 0, 0, 0.98);
                 flex-direction: column;
                 justify-content: center;
                 transition: var(--transition);
                 padding: 20px;
                 z-index: 1000;
             }
-            .nav-menu.active { left: 0; }
-            .nav-link { font-size: 1.5rem; margin: 15px 0; }
-            
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-link {
+                font-size: 1.5rem;
+                margin: 15px 0;
+            }
+
             /* Resize logo for mobile */
-            .logo-img { width: 140px; height: 140px; }
-            .header { padding: 0.5rem 0; }
+            .logo-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .header {
+                padding: 0.5rem 0;
+            }
         }
 
         /* Emergency Banner */
@@ -426,6 +508,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Sticky Mobile Action Bar -->
     <div class="mobile-action-bar">
@@ -437,20 +520,22 @@
     <header class="header">
         <!-- Emergency Call-Out Banner -->
         <div class="emergency-banner">
-            <strong>🚨 EMERGENCY BREAKDOWN?</strong> Call Eddie now: <a href="tel:+353892057388">089-205-7388</a> - We come to you!
+            <strong>🚨 EMERGENCY BREAKDOWN?</strong> Call Eddie now: <a href="tel:+353892057388">089-205-7388</a> - We come
+            to you!
         </div>
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="nav-logo">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png"
+                        alt="Lavelle's Auto Logo">
                 </a>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="/index.html" class="nav-link">Home</a></li>
-                    <li><a href="/services.html" class="nav-link">Services</a></li>
-                    <li><a href="/booking.html" class="nav-link">Book Now</a></li>
-                    <li><a href="/loyalty.html" class="nav-link">Loyalty</a></li>
-                    <li><a href="/parts.html" class="nav-link">Parts & Shop</a></li>
-                    <li><a href="/partners.html" class="nav-link">Partners</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                    <li><a href="loyalty.html" class="nav-link">Loyalty</a></li>
+                    <li><a href="parts.html" class="nav-link">Parts & Shop</a></li>
+                    <li><a href="partners.html" class="nav-link">Partners</a></li>
                     <li><a href="tel:0871234567" class="btn btn-accent">📞 Call Now</a></li>
                 </ul>
                 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
@@ -462,11 +547,15 @@
 
     <!-- Social Media Icons (Right Side) -->
     <div class="social-icons">
-        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook" style="color: #1877F2;">📘</a>
-        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram" style="color: #E4405F;">📷</a>
-        <a href="https://wa.me/353871234567" target="_blank" class="social-icon" title="WhatsApp" style="color: #25D366;">💬</a>
+        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook"
+            style="color: #1877F2;">📘</a>
+        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram"
+            style="color: #E4405F;">📷</a>
+        <a href="https://wa.me/353871234567" target="_blank" class="social-icon" title="WhatsApp"
+            style="color: #25D366;">💬</a>
         <a href="tel:0871234567" class="social-icon" title="Call Us" style="color: #005A9C;">📞</a>
-        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google" style="color: #4285F4;">🗺️</a>
+        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google"
+            style="color: #4285F4;">🗺️</a>
     </div>
 
     <!-- Page Hero -->
@@ -487,7 +576,8 @@
                     <h3>Advanced Diagnostics</h3>
                     <div class="service-price">€50 - €80</div>
                     <div class="service-duration">⏱️ 30-60 minutes</div>
-                    <p>Dealer-level diagnostic equipment to pinpoint exact problems. Engine lights, electrical faults, performance issues.</p>
+                    <p>Dealer-level diagnostic equipment to pinpoint exact problems. Engine lights, electrical faults, performance
+                    issues.</p>
                     <div class="service-includes">
                         <h4>INCLUDES:</h4>
                         <ul>
@@ -498,7 +588,8 @@
                             <li>Repair quote</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=diagnostics" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Diagnostic Scan</a>
+                    <a href="/booking?service=diagnostics" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Diagnostic Scan</a>
                 </div>
 
                 <!-- Oil Change -->
@@ -518,7 +609,8 @@
                             <li>Tyre pressure check</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=oil-change" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Oil Change</a>
+                    <a href="/booking?service=oil-change" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Oil Change</a>
                 </div>
 
                 <!-- Brakes -->
@@ -538,7 +630,8 @@
                             <li>Safety inspection</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=brakes" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Brake Service</a>
+                    <a href="/booking?service=brakes" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Brake Service</a>
                 </div>
 
                 <!-- NCT Concierge -->
@@ -558,17 +651,20 @@
                             <li>Re-test booking</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=nct" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book NCT Service</a>
+                    <a href="/booking?service=nct" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book NCT Service</a>
                 </div>
 
                 <!-- Tyres (Updated with Duffy Tyres Partnership) -->
                 <div class="service-card" onclick="window.location.href='/partners#duffy'">
                     <div class="service-icon">🔘</div>
                     <h3>Tyres & Tracking</h3>
-                    <p style="font-style: italic; color: var(--primary); margin-bottom: 10px;">In Partnership with Duffy Tyres</p>
+                    <p style="font-style: italic; color: var(--primary); margin-bottom: 10px;">In Partnership with Duffy Tyres
+                    </p>
                     <div class="service-price">€15 - €200</div>
                     <div class="service-duration">⏱️ Fitting & Balancing</div>
-                    <p>We've partnered with Mayo's leading tyre specialists, Duffy Tyres, to bring you the best rubber at the best prices. Order through us for seamless fitting.</p>
+                    <p>We've partnered with Mayo's leading tyre specialists, Duffy Tyres, to bring you the best rubber at the best
+                    prices. Order through us for seamless fitting.</p>
                     <div class="service-includes">
                         <h4>WE DO:</h4>
                         <ul>
@@ -579,7 +675,8 @@
                             <li>Mobile Fitting Available</li>
                         </ul>
                     </div>
-                    <a href="/partners#duffy" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Order Tyres</a>
+                    <a href="/partners#duffy" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Order Tyres</a>
                 </div>
 
                 <!-- Emergency -->
@@ -599,7 +696,8 @@
                             <li>Live GPS tracking</li>
                         </ul>
                     </div>
-                    <a href="tel:0871234567" class="btn btn-accent" style="width: 100%; margin-top: 20px;">📞 Call Now</a>
+                    <a href="tel:0871234567" class="btn btn-accent"
+                        style="width: 100%; margin-top: 20px;">📞 Call Now</a>
                 </div>
 
                 <!-- Full Service -->
@@ -620,7 +718,8 @@
                             <li>NCT pre-check</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=full-service" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Full Service</a>
+                    <a href="/booking?service=full-service" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Full Service</a>
                 </div>
 
                 <!-- Timing Belt -->
@@ -640,7 +739,8 @@
                             <li>12-month warranty</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=timing-belt" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Timing Belt</a>
+                    <a href="/booking?service=timing-belt" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Timing Belt</a>
                 </div>
 
                 <!-- Clutch -->
@@ -660,7 +760,8 @@
                             <li>12-month warranty</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=clutch" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Clutch Service</a>
+                    <a href="/booking?service=clutch" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Clutch Service</a>
                 </div>
 
                 <!-- Suspension -->
@@ -680,7 +781,8 @@
                             <li>Wheel alignment after</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=suspension" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Suspension Work</a>
+                    <a href="/booking?service=suspension" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Suspension Work</a>
                 </div>
 
                 <!-- Exhaust -->
@@ -700,7 +802,8 @@
                             <li>Hangers & brackets</li>
                         </ul>
                     </div>
-                    <a href="/partners#eddie" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Request Welding</a>
+                    <a href="/partners#eddie" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Request Welding</a>
                 </div>
 
                 <!-- Battery -->
@@ -720,7 +823,8 @@
                             <li>3-year warranty</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=battery" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Battery Service</a>
+                    <a href="/booking?service=battery" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Battery Service</a>
                 </div>
 
                 <!-- Customisation & Shop (Updated) -->
@@ -729,7 +833,8 @@
                     <h3>Customisation & Shop</h3>
                     <div class="service-price">POA</div>
                     <div class="service-duration">⏱️ Supply & Fit</div>
-                    <p>Modernise your vehicle with the latest tech and style. Visit our new Accessories Shop for cameras, racks, and more.</p>
+                    <p>Modernise your vehicle with the latest tech and style. Visit our new Accessories Shop for cameras, racks,
+                    and more.</p>
                     <div class="service-includes">
                         <h4>WE INSTALL:</h4>
                         <ul>
@@ -740,7 +845,8 @@
                             <li>Wind Deflectors</li>
                         </ul>
                     </div>
-                    <a href="/parts#shop" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Visit Shop</a>
+                    <a href="/parts#shop" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Visit Shop</a>
                 </div>
 
                 <!-- Rust Prevention (Restored from Old Site) -->
@@ -760,7 +866,8 @@
                             <li>Chassis inspection</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=rust" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Rust Protection</a>
+                    <a href="/booking?service=rust" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Rust Protection</a>
                 </div>
 
                 <!-- Windows & Locks (Placeholder) -->
@@ -769,7 +876,8 @@
                     <h3>Windows & Keys</h3>
                     <div class="service-price">POA</div>
                     <div class="service-duration">⏱️ Specialist Service</div>
-                    <p>Locked out? Chipped windscreen? We work with specialist partners to sort your glass and key programming needs.</p>
+                    <p>Locked out? Chipped windscreen? We work with specialist partners to sort your glass and key programming
+                    needs.</p>
                     <div class="service-includes">
                         <h4>SERVICES:</h4>
                         <ul>
@@ -780,7 +888,8 @@
                             <li>Spare Key Cutting</li>
                         </ul>
                     </div>
-                    <a href="tel:0871234567" class="btn btn-outline" style="width: 100%; margin-top: 20px;">Enquire Now</a>
+                    <a href="tel:0871234567" class="btn btn-outline"
+                        style="width: 100%; margin-top: 20px;">Enquire Now</a>
                 </div>
 
                 <!-- Weekend Valeting (New) -->
@@ -800,13 +909,16 @@
                             <li style="color: var(--secondary); font-weight: bold;">⚠️ +€20 if car not emptied</li>
                         </ul>
                     </div>
-                    <a href="/booking?service=valet" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Book Valet</a>
+                    <a href="booking.html?service=valet" class="btn btn-primary"
+                        style="width: 100%; margin-top: 20px;">Book Valet</a>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--light); border-radius: var(--radius);">
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--light); border-radius:
+                var(--radius);">
                 <h2 style="color: var(--primary); margin-bottom: 20px;">CAN'T FIND WHAT YOU NEED?</h2>
-                <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 30px;">Call Ethan directly for custom work, specialist repairs, or advice</p>
+                <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 30px;">Call Ethan directly for custom
+                work, specialist repairs, or advice</p>
                 <a href="tel:0871234567" class="btn btn-accent" style="margin-right: 15px;">📞 Call Now</a>
                 <a href="https://wa.me/353871234567" class="btn btn-primary">💬 WhatsApp</a>
             </div>
@@ -818,7 +930,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png"
+                        alt="Lavelle's Auto Logo">
                     <h4>LAVELLE'S AUTO</h4>
                     <p>The future of car repairs on Achill Island. Honest, reliable, and skilled service for over 50 years.</p>
                     <div class="footer-social">
@@ -831,13 +944,14 @@
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/services.html">All Services</a></li>
-                        <li><a href="/booking.html">Book Appointment</a></li>
-                        <li><a href="/loyalty.html">Loyalty Program</a></li>
-                        <li><a href="/parts.html">Order Parts</a></li>
-                        <li><a href="/partners.html">Partner Services</a></li>
-                        <li><a href="/payments.html" style="color: var(--accent);">Make a Payment</a></li>
-                        <li><a href="/strategy.html" style="color: #ff9900; font-weight: bold;">Strategy Hub (Client)</a></li>
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="booking.html">Book Appointment</a></li>
+                        <li><a href="loyalty.html">Loyalty Program</a></li>
+                        <li><a href="parts.html">Order Parts</a></li>
+                        <li><a href="partners.html">Partner Services</a></li>
+                        <li><a href="payments.html" style="color: var(--accent);">Make a Payment</a></li>
+                        <li><a href="strategy.html" style="color: #ff9900; font-weight: bold;">Strategy Hub (Client)</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -872,9 +986,12 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
-                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank" style="color: var(--accent);">Exposure Solutions</a></p>
+                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank"
+                        style="color: var(--accent);">Exposure Solutions</a></p>
                 <div style="margin-top: 20px;">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Powered by Exposure Solutions AI" style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg"
+                        alt="Powered by Exposure Solutions AI"
+                        style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
                 </div>
             </div>
         </div>
@@ -883,7 +1000,7 @@
     <!-- JavaScript -->
     <script>
         // Mobile menu toggle
-        document.getElementById('nav-toggle').addEventListener('click', function() {
+        document.getElementById('nav-toggle').addEventListener('click', function () {
             document.getElementById('nav-menu').classList.toggle('active');
         });
 
@@ -895,4 +1012,5 @@
         });
     </script>
 </body>
+
 </html>
