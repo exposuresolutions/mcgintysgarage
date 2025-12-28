@@ -9,10 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* =============================================
-           LAVELLE'S AUTO - MAIN STYLESHEET (INLINE)
-           ============================================= */
-
         :root {
             --primary: #005A9C;
             --primary-dark: #003D6B;
@@ -39,7 +35,7 @@
             font-size: 16px;
             line-height: 1.7;
             color: var(--dark);
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') fixed center/cover;
+            background: var(--white);
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -60,7 +56,6 @@
             padding: 0 20px;
         }
 
-        /* Buttons */
         .btn {
             display: inline-block;
             padding: 14px 32px;
@@ -92,10 +87,6 @@
             color: var(--white);
             border-color: var(--secondary);
         }
-        .btn-secondary:hover {
-            background: #a80000;
-            transform: translateY(-2px);
-        }
 
         .btn-outline {
             background: transparent;
@@ -104,7 +95,7 @@
         }
         .btn-outline:hover {
             background: var(--primary);
-            color: var,--white;
+            color: var(--white);
         }
 
         .btn-accent {
@@ -125,31 +116,25 @@
             left: 0;
             width: 100%;
             z-index: 9999;
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, rgba(0,90,156,0.95) 0%, rgba(0,61,107,0.95) 100%);
             box-shadow: var(--shadow-md);
-            transition: var(--transition);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 0;
-            position: relative;
-            z-index: 10000;
+            padding: 1rem 0;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 15px;
             text-decoration: none;
         }
         .logo-img {
-            width: 220px;
-            height: 220px;
+            width: 80px;
+            height: 80px;
             object-fit: contain;
         }
 
@@ -165,8 +150,6 @@
             font-size: 0.95rem;
             color: var(--white);
             text-decoration: none;
-            padding-bottom: 5px;
-            position: relative;
             transition: var(--transition);
         }
         .nav-link:hover { color: var(--accent); }
@@ -184,7 +167,6 @@
             height: 3px;
             background: var(--white);
             position: relative;
-            transition: var(--transition);
         }
         .hamburger::before, .hamburger::after {
             content: '';
@@ -192,42 +174,39 @@
             width: 100%;
             height: 100%;
             background: var(--white);
-            transition: var(--transition);
         }
         .hamburger::before { top: -8px; }
         .hamburger::after { top: 8px; }
 
         /* Page Hero */
         .page-hero {
-            padding: 180px 20px 80px;
-            background: 
-                linear-gradient(135deg, rgba(0,90,156,0.75) 0%, rgba(0,61,107,0.78) 100%),
-                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
+            padding: 140px 20px 60px;
+            background: linear-gradient(135deg, rgba(0,90,156,0.85) 0%, rgba(0,61,107,0.9) 100%);
             color: var(--white);
             text-align: center;
         }
 
         .page-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             margin-bottom: 1rem;
         }
 
         /* Marketplace Sections */
         .marketplace-section {
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
 
         .marketplace-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
 
         .market-card {
             background: var(--white);
             border-radius: var(--radius);
-            padding: 30px;
+            padding: 25px;
             box-shadow: var(--shadow-md);
             border: 1px solid #eee;
             transition: var(--transition);
@@ -240,24 +219,24 @@
         }
 
         .market-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .market-card h3 {
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             font-weight: 500;
-            font-family: var(--font-display);
         }
 
         .form-control {
@@ -265,48 +244,17 @@
             padding: 12px;
             border: 1px solid #ddd;
             border-radius: var(--radius);
-            font-family: var(--font-body);
-        }
-
-        /* Emergency Banner */
-        .emergency-banner {
-            background: 
-                linear-gradient(135deg, rgba(212,0,0,0.85) 0%, rgba(168,0,0,0.88) 100%),
-                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
-            color: var(--white);
-            text-align: center;
-            padding: 12px 20px;
-            position: relative;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        .emergency-banner a {
-            color: var(--white);
-            text-decoration: underline;
-            font-weight: 700;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
         }
 
         /* Footer */
         .footer {
-            padding: 60px 20px 30px;
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
-            background-size: cover;
-            background-position: center;
+            padding: 40px 20px;
+            background: var(--dark);
             color: rgba(255,255,255,0.8);
-        }
-
-        .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
         }
 
-        /* Sticky Mobile Action Bar */
+        /* Mobile Action Bar */
         .mobile-action-bar {
             display: none;
             position: fixed;
@@ -317,7 +265,6 @@
             box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
             padding: 10px;
-            justify-content: space-around;
             gap: 10px;
         }
         .mobile-action-btn {
@@ -328,90 +275,15 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
         }
         .btn-call { background: var(--primary); color: var(--white); }
         .btn-whatsapp { background: #25D366; color: var(--white); }
 
-        /* =========================================
-           GOOGLE TRANSLATE CUSTOM STYLING (FIX)
-           ========================================= */
-        
-        /* Hide the Google Top Bar */
-        .goog-te-banner-frame.skiptranslate {
-            display: none !important;
-        } 
-        body {
-            top: 0px !important; 
-        }
-
-        /* Style the Container */
-        .goog-te-gadget {
-            font-family: 'Roboto Condensed', sans-serif !important;
-            color: transparent !important; /* Hides 'Powered by Google' text */
-            margin-top: 5px;
-        }
-
-        /* Style the Dropdown Box */
-        .goog-te-gadget-simple {
-            background-color: rgba(255, 255, 255, 0.1) !important; /* Glassy effect */
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            padding: 8px 12px !important;
-            border-radius: 4px !important;
-            font-size: 0.9rem !important;
-            line-height: 1 !important;
-            display: inline-block;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .goog-te-gadget-simple:hover {
-            background-color: rgba(255, 255, 255, 0.2) !important;
-            border-color: var(--accent) !important;
-        }
-
-        /* Style the Text inside Dropdown */
-        .goog-te-gadget-simple .goog-te-menu-value span {
-            color: var(--white) !important;
-            font-weight: 500 !important;
-            padding-right: 5px;
-        }
-        
-        /* Hide the Google Icon */
-        .goog-te-gadget-icon {
-            display: none !important;
-        }
-
-        /* Hide the vertical separator pipe */
-        .goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
-            display: none !important;
-        }
-
-        /* Mobile Adjustments for Translate */
-        @media (max-width: 768px) {
-            .goog-te-gadget-simple {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
-                background-color: #f4f4f4 !important; /* Dark text on mobile menu white bg */
-                border: 1px solid #ddd !important;
-            }
-            .goog-te-gadget-simple .goog-te-menu-value span {
-                color: var(--dark) !important; /* Dark text for mobile menu */
-            }
-        }
-
         @media (max-width: 768px) {
             .mobile-action-bar { display: flex; }
-            .footer { padding-bottom: 80px; } /* Space for bar */
-            
-            /* Mobile Navigation Fix */
-            .nav-toggle { display: block; z-index: 1001; }
+            .footer { padding-bottom: 80px; }
+            .nav-toggle { display: block; }
             .nav-menu {
-                display: flex; /* Override display: none if set elsewhere */
                 position: fixed;
                 top: 0;
                 left: -100%;
@@ -421,45 +293,37 @@
                 flex-direction: column;
                 justify-content: center;
                 transition: var(--transition);
-                padding: 20px;
                 z-index: 1000;
             }
             .nav-menu.active { left: 0; }
-            .nav-link { font-size: 1.5rem; margin: 15px 0; }
-            
-            /* Resize logo for mobile */
-            .logo-img { width: 140px; height: 140px; }
-            .header { padding: 0.5rem 0; }
+            .nav-link { font-size: 1.3rem; margin: 10px 0; }
+            .logo-img { width: 60px; height: 60px; }
+            .marketplace-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Sticky Mobile Action Bar -->
+    <!-- Mobile Action Bar -->
     <div class="mobile-action-bar">
-        <a href="tel:0871234567" class="mobile-action-btn btn-call">=ÉÙP Call</a>
-        <a href="https://wa.me/353871234567" class="mobile-action-btn btn-whatsapp">=É∆º WhatsApp</a>
+        <a href="tel:0871234567" class="mobile-action-btn btn-call">üìû Call</a>
+        <a href="https://wa.me/353871234567" class="mobile-action-btn btn-whatsapp">üí¨ WhatsApp</a>
     </div>
 
-    <!-- Emergency Call-Out Banner -->
-    <div class="emergency-banner">
-        <strong>=É‹ø NEED PARTS URGENTLY?</strong> Call us now: <a href="tel:0871234567">087-123-4567</a> - We can source & fit!
-    </div>
-
-    <!-- Header & Navigation -->
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="index-v2.html" class="nav-logo">
+                <a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-logo">
                     <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo" class="logo-img">
                 </a>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="index-v2.html#services" class="nav-link">Services</a></li>
+                    <li><a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-link">Home</a></li>
+                    <li><a href="https://lavelles.exposuresolutions.me/services" class="nav-link">Services</a></li>
                     <li><a href="https://lavelles.exposuresolutions.me/booking" class="nav-link">Book Now</a></li>
                     <li><a href="https://lavelles.exposuresolutions.me/loyalty" class="nav-link">Loyalty</a></li>
                     <li><a href="https://lavelles.exposuresolutions.me/parts" class="nav-link">Parts & Shop</a></li>
                     <li><a href="https://lavelles.exposuresolutions.me/partners" class="nav-link">Partners</a></li>
-                    <li><div id="google_translate_element"></div></li>
-                    <li><a href="tel:0871234567" class="btn btn-accent">=ÉÙP Call Now</a></li>
+                    <li><a href="tel:0871234567" class="btn btn-accent">üìû Call Now</a></li>
                 </ul>
                 <button class="nav-toggle" id="nav-toggle">
                     <span class="hamburger"></span>
@@ -468,33 +332,21 @@
         </div>
     </header>
 
-    <!-- Social Media Icons (Right Side) -->
-    <div class="social-icons">
-        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook" style="color: #1877F2;">=ÉÙˇ</a>
-        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram" style="color: #E4405F;">=ÉÙ+</a>
-        <a href="https://wa.me/353871234567" target="_blank" class="social-icon" title="WhatsApp" style="color: #25D366;">=É∆º</a>
-        <a href="sms:0871234567" class="social-icon" title="Text Us" style="color: #34B7F1;">=ÉÙ¶</a>
-        <a href="tel:0871234567" class="social-icon" title="Call Us" style="color: #005A9C;">=ÉÙP</a>
-        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google" style="color: #4285F4;">=É˘¶n+≈</a>
-        <a href="https://www.youtube.com/@lavellesauto" target="_blank" class="social-icon" title="YouTube" style="color: #FF0000;">=ÉÙ¶</a>
-    </div>
-
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
             <h1>Parts, Shop & Marketplace</h1>
-            <p class="lead">New & used parts, accessories, and vehicle sales</p>
+            <p class="lead" style="color: rgba(255,255,255,0.9);">New & used parts, accessories, and vehicle sales</p>
         </div>
     </section>
 
-    <!-- AI Part Finder Section (New) -->
-    <section class="marketplace-section" style="background: #f0f7ff; border-bottom: 1px solid #e1e1e1;">
+    <!-- AI Part Finder -->
+    <section class="marketplace-section" style="background: #f0f7ff;">
         <div class="container">
             <div class="text-center" style="max-width: 800px; margin: 0 auto;">
-                <div style="font-size: 3rem; margin-bottom: 10px;">=ÉÒ˚</div>
-                <h2 class="section-title" style="margin-bottom: 10px;">AI Used Part Finder</h2>
+                <div style="font-size: 3rem; margin-bottom: 10px;">ü§ñ</div>
+                <h2 style="color: var(--primary); margin-bottom: 10px;">AI Used Part Finder</h2>
                 <p class="lead">Can't find a part? Let our AI Agent scan national scrap yards for you.</p>
-                <p style="color: var(--gray); margin-bottom: 30px;">We connect with hundreds of breakers yards to find quality second-hand parts (engines, gearboxes, body panels) at the best price. We handle the negotiation, shipping, and quality check.</p>
                 
                 <div style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow-md);">
                     <h3 style="color: var(--primary); margin-bottom: 20px;">Start Your Search</h3>
@@ -508,194 +360,100 @@
                             <input type="text" class="form-control" id="part-name" placeholder="e.g., Driver Side Headlight">
                         </div>
                     </div>
-                    <button onclick="searchParts()" class="btn btn-accent" style="width: 100%; font-size: 1.1rem;">=ÉˆÏ Launch AI Search via WhatsApp</button>
-                    <p style="font-size: 0.8rem; color: var(--gray); margin-top: 10px;">*We charge a small sourcing fee only if we find your part.</p>
+                    <button onclick="searchParts()" class="btn btn-accent" style="width: 100%;">üîç Launch AI Search via WhatsApp</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ethan's Accessories Shop (New) -->
+    <!-- Accessories Shop -->
     <section class="marketplace-section" id="shop">
         <div class="container">
-            <h2 class="section-title text-center">Ethan's Accessories Shop</h2>
-            <p class="lead text-center">Essential gear, tech upgrades, and safety equipment. Ordered & fitted.</p>
+            <h2 class="text-center" style="color: var(--primary);">Ethan's Accessories Shop</h2>
+            <p class="lead text-center">Essential gear, tech upgrades, and safety equipment</p>
 
             <div class="marketplace-grid">
-                <!-- Tech Upgrades -->
                 <div class="market-card">
-                    <div class="market-icon">=ÉÙ¶</div>
+                    <div class="market-icon">üì±</div>
                     <h3>Tech Upgrades</h3>
-                    <p>Modernise your dashboard.</p>
-                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">
-                        <li>G«Û Apple CarPlay / Android Auto Units</li>
-                        <li>G«Û Bluetooth FM Transmitters</li>
-                        <li>G«Û Reversing Cameras & Sensors</li>
-                        <li>G«Û Dash Cams (Hardwired)</li>
-                    </ul>
-                    <a href="https://wa.me/353871234567?text=Hi Ethan, I'm interested in tech upgrades for my car" class="btn btn-primary" style="width: 100%;">Enquire</a>
+                    <p>Apple CarPlay, Android Auto, Dash Cams, Reversing Cameras & Sensors</p>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I'm interested in tech upgrades for my car" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Enquire</a>
                 </div>
 
-                <!-- Touring & Towing -->
                 <div class="market-card">
-                    <div class="market-icon">=É‹÷</div>
+                    <div class="market-icon">üöó</div>
                     <h3>Touring & Towing</h3>
-                    <p>Get ready for the adventure.</p>
-                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">
-                        <li>G«Û Towbars & Hitches (Supplied & Fitted)</li>
-                        <li>G«Û Roof Racks & Boxes</li>
-                        <li>G«Û Trailers (Ordered to spec)</li>
-                        <li>G«Û Power Inverters (12V to 220V)</li>
-                    </ul>
-                    <a href="https://wa.me/353871234567?text=Hi Ethan, I need a quote for a towbar/roof rack" class="btn btn-primary" style="width: 100%;">Get Quote</a>
+                    <p>Towbars, Roof Racks, Trailers, Power Inverters - Supplied & Fitted</p>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I need a quote for a towbar/roof rack" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Get Quote</a>
                 </div>
 
-                <!-- Comfort & Protection -->
                 <div class="market-card">
-                    <div class="market-icon">=É¢Ìn+≈</div>
-                    <h3>Comfort & Protection</h3>
-                    <p>Keep your car clean and comfortable.</p>
-                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">
-                        <li>G«Û Wind Deflectors (Air Protectors)</li>
-                        <li>G«Û Heavy Duty Seat Covers</li>
-                        <li>G«Û Boot Liners & Organisers</li>
-                        <li>G«Û Custom Floor Mats</li>
-                    </ul>
-                    <a href="https://wa.me/353871234567?text=Hi Ethan, looking for seat covers/wind deflectors" class="btn btn-primary" style="width: 100%;">Order Now</a>
-                </div>
-
-                <!-- Safety Essentials -->
-                <div class="market-card">
-                    <div class="market-icon">G¢Ên+≈</div>
+                    <div class="market-icon">üõ°Ô∏è</div>
                     <h3>Safety Essentials</h3>
-                    <p>Don't get stuck on the Atlantic Drive.</p>
-                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">
-                        <li>G«Û NOCO Battery Jump Starters</li>
-                        <li>G«Û Portable Air Compressors</li>
-                        <li>G«Û Emergency Breakdown Kits</li>
-                        <li>G«Û First Aid Kits</li>
-                    </ul>
-                    <a href="https://wa.me/353871234567?text=Hi Ethan, I want to buy a breakdown safety kit" class="btn btn-primary" style="width: 100%;">Buy Kit</a>
+                    <p>Jump Starters, Air Compressors, Breakdown Kits, First Aid Kits</p>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I want to buy a breakdown safety kit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Buy Kit</a>
+                </div>
+
+                <div class="market-card">
+                    <div class="market-icon">üõû</div>
+                    <h3>Order Tyres</h3>
+                    <p>Quality tyres via Duffy Tyres - Professional fitting & balancing included</p>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I need a quote for tyres" class="btn btn-primary" style="width: 100%; margin-top: 15px;">Get Quote</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tyres Section -->
-    <section class="marketplace-section" id="tyres" style="background: var(--light);">
-        <div class="container">
-            <h2 class="section-title text-center">Order Tyres</h2>
-            <p class="lead text-center">Quality tyres at discounted agency prices</p>
-            
-            <div class="market-card" style="max-width: 800px; margin: 0 auto;">
-                <div class="text-center">
-                    <div class="market-icon">=Éˆˇ</div>
-                    <h3>Tyre Ordering (Partner: Duffy Tyres)</h3>
-                    <p>We've partnered with <strong>Duffy Tyres</strong> to bring you the best selection and prices in Mayo. Order through us for seamless tracking, balancing, and fitting.</p>
-                </div>
-                
-                <div style="margin-top: 30px; text-align: left;">
-                    <p><strong>Why order through Lavelle's?</strong></p>
-                    <ul style="margin-bottom: 20px; color: var(--gray);">
-                        <li>G£‡ Access to Duffy Tyres' massive stock</li>
-                        <li>G£‡ Professional fitting & balancing included</li>
-                        <li>G£‡ 3D Wheel Alignment available</li>
-                        <li>G£‡ One bill, no hassle</li>
-                    </ul>
-                    
-                    <a href="https://wa.me/353871234567?text=Hi Ethan, I need a quote for tyres from Duffy's. Size: " class="btn btn-primary" style="width: 100%;">Get Quote via WhatsApp</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marketplace Section -->
+    <!-- Marketplace -->
     <section class="marketplace-section" style="background: var(--light);">
         <div class="container">
-            <h2 class="section-title text-center">Community Marketplace</h2>
-            <p class="lead text-center">We help you buy and sell vehicles and parts</p>
+            <h2 class="text-center" style="color: var(--primary);">Community Marketplace</h2>
+            <p class="lead text-center">Buy, sell vehicles and parts</p>
 
             <div class="marketplace-grid">
-                <!-- Sell Your Car -->
                 <div class="market-card">
-                    <div class="market-icon">=É‹˘</div>
+                    <div class="market-icon">üöô</div>
                     <h3>Sell Your Car</h3>
-                    <p>Let our AI agent post your car to DoneDeal, Gumtree, and Facebook Marketplace for you.</p>
-                    <ul style="text-align: left; margin-bottom: 20px; color: var,--dark;">
-                        <li>G£‡ Professional listing creation</li>
-                        <li>G£‡ Multi-platform posting</li>
-                        <li>G£‡ We handle initial inquiries</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline" style="width: 100%;">List My Car</a>
+                    <p>Let us list your car on DoneDeal, Gumtree, and Facebook Marketplace</p>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I want to sell my car" class="btn btn-outline" style="width: 100%; margin-top: 15px;">List My Car</a>
                 </div>
 
-                <!-- Parts Wanted -->
                 <div class="market-card">
-                    <div class="market-icon">=ÉˆÏ</div>
+                    <div class="market-icon">üîß</div>
                     <h3>Parts Wanted</h3>
-                    <p>Looking for a specific part? We'll blast your request to our network and social channels.</p>
-                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray);">
-                        <li>G£‡ Reach local breakers</li>
-                        <li>G£‡ Community sourcing</li>
-                        <li>G£‡ Find cheaper used parts</li>
-                    </ul>
-                    <a href="#" class="btn btn-outline" style="width: 100%;">Request Part</a>
+                    <p>Looking for a specific part? We'll search our network for you</p>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I'm looking for a part" class="btn btn-outline" style="width: 100%; margin-top: 15px;">Request Part</a>
                 </div>
 
-                <!-- Scrappage -->
                 <div class="market-card">
-                    <div class="market-icon">G÷+n+≈</div>
+                    <div class="market-icon">‚ôªÔ∏è</div>
                     <h3>Scrappage Service</h3>
-                    <p>End-of-life vehicle removal via our partner <strong>Eddie English</strong>.</p>
-                    <ul style="text-align: left; margin-bottom: 20px; color: var,--dark;">
-                        <li>G£‡ Vehicle collection</li>
-                        <li>G£‡ Revnocal cert processing</li>
-                        <li>G£‡ GÈº150-300 value (approx)</li>
-                    </ul>
-                    <a href="partners.html#eddie" class="btn btn-secondary" style="width: 100%;">Scrap My Car</a>
+                    <p>End-of-life vehicle removal via our partner Eddie English</p>
+                    <a href="https://lavelles.exposuresolutions.me/partners" class="btn btn-secondary" style="width: 100%; margin-top: 15px;">Scrap My Car</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Emergency Banner (New) -->
-    <div class="emergency-banner">
-        =É‹ø Emergency? Need urgent assistance? <a href="tel:0871234567">Call us now!</a>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
-                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank">Exposure Solutions</a></p>
-                <div style="margin-top: 20px;">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Powered by Exposure Solutions AI" style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
-                </div>
-            </div>
+            <p>&copy; 2025 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
+            <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank" style="color: var(--accent);">Exposure Solutions</a></p>
         </div>
     </footer>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,ga', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
-        // Mobile menu toggle
         document.getElementById('nav-toggle').addEventListener('click', function() {
             document.getElementById('nav-menu').classList.toggle('active');
         });
 
-        // Close menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('nav-menu').classList.remove('active');
             });
         });
 
-        // AI Part Finder Logic
         function searchParts() {
             const reg = document.getElementById('part-reg').value;
             const part = document.getElementById('part-name').value;
@@ -705,7 +463,7 @@
                 return;
             }
 
-            const message = `Hi Ethan, I need your AI to find a used part for me.%0A%0AVehicle: ${reg}%0APart: ${part}%0A%0APlease check scrap yard availability and price.`;
+            const message = `Hi Ethan, I need your AI to find a used part for me.%0A%0AVehicle: ${reg}%0APart: ${part}`;
             window.location.href = `https://wa.me/353871234567?text=${message}`;
         }
     </script>
