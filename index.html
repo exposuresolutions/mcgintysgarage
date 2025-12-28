@@ -487,7 +487,7 @@
 
         /* Footer */
         .footer {
-            padding: 60px 20px 30px;
+            padding: 40px 20px 20px; /* Reduced padding */
             background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
             background-size: cover;
             background-position: center;
@@ -578,6 +578,21 @@
         }
         .btn-call { background: var(--primary); color: var(--white); }
         .btn-whatsapp { background: #25D366; color: var(--white); }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 160px 20px 60px; /* Reduced padding */
+            background: 
+                linear-gradient(135deg, rgba(0,90,156,0.75) 0%, rgba(0,61,107,0.78) 100%),
+                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem); /* Slightly smaller max size */
+            margin-bottom: 0.5rem;
+        }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
@@ -1007,6 +1022,18 @@
 
         // GHL Integration (Add your webhook URL)
         const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID';
+
+        // Exposure AI Concierge Widget
+        // Replace 'YOUR_WIDGET_ID' with the actual ID provided by Exposure Solutions
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://widgets.leadconnectorhq.com/loader.js"; 
+            js.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+            js.setAttribute('data-widget-id', 'YOUR_WIDGET_ID');
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'ghl-chat-widget'));
 
         // Track page view
         if (typeof gtag !== 'undefined') {
