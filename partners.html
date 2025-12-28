@@ -303,6 +303,7 @@
         .btn-call { background: var(--primary); color: var(--white); }
         .btn-whatsapp { background: #25D366; color: var(--white); }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .mobile-action-bar { display: flex; }
             .footer { padding-bottom: 80px; } /* Space for bar */
@@ -310,6 +311,7 @@
             /* Mobile Navigation Fix */
             .nav-toggle { display: block; z-index: 1001; }
             .nav-menu {
+                display: flex;
                 position: fixed;
                 top: 0;
                 left: -100%;
@@ -320,6 +322,7 @@
                 justify-content: center;
                 transition: var(--transition);
                 padding: 20px;
+                z-index: 1000;
             }
             .nav-menu.active { left: 0; }
             .nav-link { font-size: 1.5rem; margin: 15px 0; }
@@ -327,6 +330,9 @@
             /* Resize logo for mobile */
             .logo-img { width: 140px; height: 140px; }
             .header { padding: 0.5rem 0; }
+            
+            .partner-card { grid-template-columns: 1fr; }
+            .partner-image { min-height: 250px; }
         }
     </style>
 </head>
@@ -543,6 +549,7 @@
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- JavaScript -->
     <script>
         // Mobile menu toggle
         document.getElementById('nav-toggle').addEventListener('click', function() {

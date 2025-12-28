@@ -408,6 +408,7 @@
         .btn-call { background: var(--primary); color: var(--white); }
         .btn-whatsapp { background: #25D366; color: var(--white); }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .mobile-action-bar { display: flex; }
             .footer { padding-bottom: 80px; } /* Space for bar */
@@ -415,7 +416,7 @@
             /* Mobile Navigation Fix */
             .nav-toggle { display: block; z-index: 1001; }
             .nav-menu {
-                display: flex; /* Override display: none */
+                display: flex;
                 position: fixed;
                 top: 0;
                 left: -100%;
@@ -719,6 +720,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
         // Mobile menu toggle
         document.getElementById('nav-toggle').addEventListener('click', function() {
@@ -731,9 +733,7 @@
                 document.getElementById('nav-menu').classList.remove('active');
             });
         });
-    </script>
-    <!-- JavaScript -->
-    <script>
+
         // Service selection
         function selectService(service) {
             // Remove active class from all buttons

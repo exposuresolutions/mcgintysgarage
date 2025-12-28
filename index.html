@@ -488,7 +488,7 @@
         /* Footer */
         .footer {
             padding: 40px 20px 20px; /* Reduced padding */
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1/png');
             background-size: cover;
             background-position: center;
             color: rgba(255,255,255,0.8);
@@ -602,6 +602,7 @@
             /* Mobile Navigation Fix */
             .nav-toggle { display: block; z-index: 1001; }
             .nav-menu {
+                display: flex;
                 position: fixed;
                 top: 0;
                 left: -100%;
@@ -612,6 +613,7 @@
                 justify-content: center;
                 transition: var(--transition);
                 padding: 20px;
+                z-index: 1000;
             }
             .nav-menu.active { left: 0; }
             .nav-link { font-size: 1.5rem; margin: 15px 0; }
@@ -619,6 +621,19 @@
             /* Resize logo for mobile */
             .logo-img { width: 140px; height: 140px; }
             .header { padding: 0.5rem 0; }
+            
+            /* Hero Buttons Fix */
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+                padding: 0 20px;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                display: block;
+            }
         }
     </style>
 </head>
@@ -1020,29 +1035,6 @@
             
             lastScroll = currentScroll;
         });
-
-        // GHL Integration (Add your webhook URL)
-        const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID';
-
-        // Exposure AI Concierge Widget
-        // Replace 'YOUR_WIDGET_ID' with the actual ID provided by Exposure Solutions
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "https://widgets.leadconnectorhq.com/loader.js"; 
-            js.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
-            js.setAttribute('data-widget-id', 'YOUR_WIDGET_ID');
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'ghl-chat-widget'));
-
-        // Track page view
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'page_view', {
-                'page_title': 'Homepage',
-                'page_location': window.location.href
-            });
-        }
     </script>
 </body>
 </html>
