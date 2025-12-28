@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners | Lavelle's Auto Diagnostics & Repair</title>
+    <meta name="description" content="Our trusted partners on Achill Island. Welding, towing, and specialist services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Same CSS as index-v2.html */
+        :root {
+            --primary: #005A9C;
+            --primary-dark: #003D6B;
+            --secondary: #D40000;
+            --accent: #FDB813;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --gray: #666;
+            --font-display: 'Roboto Condensed', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease-in-out;
+            --radius: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--dark);
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') fixed center/cover;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .text-center { text-align: center; }
+        .lead { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 2px solid transparent;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+            border-color: var(--accent);
+            font-weight: 900;
+        }
+        .btn-accent:hover {
+            background: #e6a500;
+            transform: scale(1.05);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 10000;
+        }
+
+        .nav-logo img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .nav-link:hover { color: var(--accent); }
+
+        .nav-toggle { display: none; }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 20px 80px;
+            background: 
+                linear-gradient(135deg, rgba(0,90,156,0.75) 0%, rgba(0,61,107,0.78) 100%),
+                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        /* Partner Section */
+        .partner-section {
+            padding: 80px 20px;
+        }
+
+        .partner-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            margin-bottom: 40px;
+        }
+
+        .partner-image {
+            background: var(--gray);
+            min-height: 300px;
+            position: relative;
+        }
+        
+        .partner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .partner-content {
+            padding: 40px;
+        }
+
+        .partner-content h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .partner-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .service-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .service-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .service-list li::before {
+            content: '🔧';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 20px 30px;
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
+            background-size: cover;
+            background-position: center;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Sticky Mobile Action Bar */
+        .mobile-action-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px;
+            justify-content: space-around;
+            gap: 10px;
+        }
+        .mobile-action-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: var(--radius);
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-call { background: var(--primary); color: var(--white); }
+        .btn-whatsapp { background: #25D366; color: var(--white); }
+
+        @media (max-width: 768px) {
+            .mobile-action-bar { display: flex; }
+            .footer { padding-bottom: 80px; } /* Space for bar */
+            
+            /* Mobile Navigation Fix */
+            .nav-toggle { display: block; z-index: 1001; }
+            .nav-menu {
+                display: flex; /* Override display: none if set elsewhere */
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0,0,0,0.98);
+                flex-direction: column;
+                justify-content: center;
+                transition: var(--transition);
+                padding: 20px;
+                z-index: 1000;
+            }
+            .nav-menu.active { left: 0; }
+            .nav-link { font-size: 1.5rem; margin: 15px 0; }
+            
+            /* Resize logo for mobile */
+            .logo-img { width: 140px; height: 140px; }
+            .header { padding: 0.5rem 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Mobile Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:0871234567" class="mobile-action-btn btn-call">📞 Call</a>
+        <a href="https://wa.me/353871234567" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index-v2.html" class="nav-logo">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo">
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index-v2.html#services" class="nav-link">Services</a></li>
+                    <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                    <li><a href="loyalty.html" class="nav-link">Loyalty</a></li>
+                    <li><a href="parts.html" class="nav-link">Parts & Shop</a></li>
+                    <li><a href="partners.html" class="nav-link">Partners</a></li>
+                    <li><div id="google_translate_element"></div></li>
+                    <li><a href="tel:0871234567" class="btn btn-accent">📞 Call Now</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Social Media Icons (Right Side) -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook" style="color: #1877F2;">📘</a>
+        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram" style="color: #E4405F;">📷</a>
+        <a href="https://wa.me/353871234567" target="_blank" class="social-icon" title="WhatsApp" style="color: #25D366;">💬</a>
+        <a href="sms:0871234567" class="social-icon" title="Text Us" style="color: #34B7F1;">📱</a>
+        <a href="tel:0871234567" class="social-icon" title="Call Us" style="color: #005A9C;">📞</a>
+        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google" style="color: #4285F4;">🗺️</a>
+        <a href="https://www.youtube.com/@lavellesauto" target="_blank" class="social-icon" title="YouTube" style="color: #FF0000;">📺</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Friends of the Family</h1>
+            <p class="lead">Trusted local partners we recommend for specialist services</p>
+        </div>
+    </section>
+
+    <!-- Partners List -->
+    <section class="partner-section">
+        <div class="container">
+            
+            <!-- Eddie English -->
+            <div class="partner-card" id="eddie">
+                <div class="partner-image">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Welding">
+                </div>
+                <div class="partner-content">
+                    <div class="partner-badge">MASTER WELDER & SCRAPPAGE</div>
+                    <h3>Eddie English Welding</h3>
+                    <p>A trusted family friend and expert welder with over 20 years of experience on Achill. Eddie handles all our heavy fabrication and end-of-life vehicle processing.</p>
+                    
+                    <ul class="service-list">
+                        <li>Exhaust welding & repairs</li>
+                        <li>Chassis rust repair</li>
+                        <li>Custom fabrication</li>
+                        <li>Vehicle Scrappage (Revnocal Certs)</li>
+                        <li>Heavy towing services</li>
+                    </ul>
+
+                    <div style="margin-top: 30px; padding: 15px; background: var(--light); border-left: 4px solid var(--primary); font-size: 0.9rem;">
+                        <strong>Note:</strong> Ethan arranges the booking, but the service is provided directly by Eddie English.
+                    </div>
+
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I need to book Eddie English for welding/towing" class="btn btn-primary" style="margin-top: 20px;">Request Booking via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Duffy Tyres -->
+            <div class="partner-card" id="duffy">
+                <div class="partner-image">
+                    <img src="https://images.unsplash.com/photo-1578844251758-2f71da645217?w=800&h=600&fit=crop" alt="Tyre Fitting">
+                </div>
+                <div class="partner-content">
+                    <div class="partner-badge">TYRE SPECIALISTS</div>
+                    <h3>Duffy Tyres (Mayo)</h3>
+                    <p>We are proud to partner with S.A.M. Duffy Tyres Ltd, Mayo's premier tyre experts. With bases in Swinford and Castlebar, plus mobile units, they provide top-quality rubber for all vehicle types.</p>
+                    
+                    <ul class="service-list">
+                        <li>All major brands (Michelin, Bridgestone, etc.)</li>
+                        <li>Computerised 4-Wheel Alignment</li>
+                        <li>High-speed wheel balancing</li>
+                        <li>Mobile tyre fitting service</li>
+                        <li>Agricultural & Commercial tyres</li>
+                    </ul>
+
+                    <div style="margin-top: 30px; padding: 15px; background: var(--light); border-left: 4px solid var(--primary); font-size: 0.9rem;">
+                        <strong>Booking Process:</strong> Book your tyres through Ethan. We handle the ordering, tracking, and payment. You just show up for the fitting (or we arrange mobile fitting).
+                    </div>
+
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I need a quote for tyres (Size: ___)" class="btn btn-primary" style="margin-top: 20px;">Get Tyre Quote</a>
+                </div>
+            </div>
+
+            <!-- Windows & Keys Placeholder -->
+            <div class="partner-card" id="keys">
+                <div class="partner-image">
+                    <img src="https://images.unsplash.com/photo-1562519819-016930b66555?w=800&h=600&fit=crop" alt="Car Keys">
+                </div>
+                <div class="partner-content">
+                    <div class="partner-badge">COMING SOON</div>
+                    <h3>Auto Locksmith & Glass</h3>
+                    <p>We are currently finalizing partnerships with top-rated auto locksmiths and windscreen repair specialists to bring these services directly to Achill.</p>
+                    
+                    <ul class="service-list">
+                        <li>Lost key replacement</li>
+                        <li>Key programming & coding</li>
+                        <li>Windscreen replacement</li>
+                        <li>Chip repairs</li>
+                    </ul>
+
+                    <div style="margin-top: 30px; padding: 15px; background: var(--light); border-left: 4px solid var(--gray); font-size: 0.9rem;">
+                        <strong>Need this now?</strong> Call Ethan, and he can recommend a trusted provider in Castlebar or Westport.
+                    </div>
+
+                    <a href="tel:0871234567" class="btn btn-outline" style="margin-top: 20px;">Call for Recommendation</a>
+                </div>
+            </div>
+
+            <!-- More partners placeholder -->
+            <div class="text-center" style="margin-top: 60px;">
+                <h3>Are you a local automotive specialist?</h3>
+                <p>We're always looking to expand our trusted network on Achill.</p>
+                <a href="mailto:info@lavellesauto.ie" class="btn btn-outline">Partner With Us</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
+                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank">Exposure Solutions</a></p>
+                <div style="margin-top: 20px;">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Powered by Exposure Solutions AI" style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,ga', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

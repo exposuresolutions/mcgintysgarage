@@ -1,0 +1,1056 @@
+
+<!-- GHL EXPORT: Lavelles Auto -->
+
+<!-- CSS - Paste into Page Settings > Custom CSS -->
+<style>
+/* =============================================
+   LAVELLE'S AUTO - MAIN STYLESHEET
+   ============================================= */
+
+/* CSS Variables */
+:root {
+    --primary: #005A9C; /* A strong, trustworthy blue */
+    --primary-dark: #003D6B;
+    --secondary: #D40000; /* A bold red for accents */
+    --accent: #FDB813; /* A gold/yellow for highlights */
+    --dark: #1a1a1a;
+    --light: #f4f4f4;
+    --white: #ffffff;
+    --gray: #666;
+
+    --font-display: 'Roboto Condensed', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+    
+    --transition: all 0.3s ease-in-out;
+    --radius: 8px;
+}
+
+/* Base & Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--dark);
+    background: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+h2.section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.text-center { text-align: center; }
+.lead { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; }
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+a:hover { color: var(--primary-dark); }
+
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: var(--white);
+}
+.btn-secondary:hover {
+    background: #a80000;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-full { width: 100%; }
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+.logo-main {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--primary);
+    letter-spacing: 0.05em;
+}
+.logo-sub {
+    font-size: 0.7rem;
+    color: var(--gray);
+    letter-spacing: 0.1em;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.nav-link {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--dark);
+    padding-bottom: 5px;
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link.btn { padding: 10px 20px; }
+.nav-link.btn:hover::after { display: none; }
+
+.nav-toggle { display: none; }
+
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 12rem 0 6rem;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.7);
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-title {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+.hero-subtitle {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: rgba(255,255,255,0.9);
+}
+
+/* Features Section */
+.features { padding: 4rem 0; background: var(--light); }
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.feature-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+.feature-item p { color: var(--gray); }
+
+/* About Section */
+.about { padding: 6rem 0; }
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.about-image img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+}
+.about-content p { margin-bottom: 1rem; }
+
+/* Services Section */
+.services { padding: 6rem 0; background: var(--light); }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.service-card {
+    padding: 2rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary);
+}
+.service-card h3 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.service-card p { color: var(--gray); }
+
+/* Booking Section */
+.booking { padding: 6rem 0; background: var(--dark); color: var(--white); }
+.booking-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+.booking-info .section-title { color: var(--white); }
+.booking-info p { color: rgba(255,255,255,0.8); }
+
+/* AI Voice Agent Section */
+.ai-agent { padding: 6rem 0; }
+.ai-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.ai-feature {
+    padding: 2rem;
+    background: var(--light);
+    border-radius: var(--radius);
+}
+.ai-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+.ai-feature h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.ai-promo {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Customer Showcase Section */
+.showcase { padding: 6rem 0; background: var(--light); }
+.showcase-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    cursor: pointer;
+    height: 300px;
+}
+.gallery-item img, .gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.gallery-item:hover img, .gallery-item:hover video {
+    transform: scale(1.1);
+}
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 2rem 1rem 1rem;
+    color: var(--white);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+.gallery-item-video .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: var(--white);
+    background: rgba(0,0,0,0.5);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+.gallery-item-video:hover .play-button {
+    opacity: 0;
+}
+
+/* Classifieds Section */
+.classifieds { padding: 6rem 0; }
+.classifieds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.car-listing {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition);
+}
+.car-listing:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+.car-listing img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.car-listing-body {
+    padding: 1.5rem;
+}
+.car-listing h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+.car-listing .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+.car-listing .details {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+/* Forms */
+.form-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--gray);
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+}
+.form-group input[type="file"] {
+    padding: 0.8rem;
+    background: #e9e9e9;
+}
+.form-group textarea { resize: vertical; }
+.form-group input:focus, .form-group select, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Parts & Payment Sections */
+.parts { padding: 6rem 0; background: var(--light); }
+.parts-form, .payment-form {
+    max-width: 700px;
+    margin: 2rem auto 0;
+}
+#parts-results {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: var(--radius);
+}
+.payment { padding: 6rem 0; }
+.stripe-info { font-size: 0.8rem; color: var(--gray); margin-top: 1rem; }
+
+/* Footer */
+.footer { padding: 4rem 0 2rem; background: var(--dark); color: var(--white); }
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+.footer-title {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.footer-col p, .footer-col a {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .about-grid, .booking-wrapper { grid-template-columns: 1fr; }
+    .about-image { order: -1; }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+    }
+    .nav-menu.active { right: 0; }
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .hamburger {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: var(--dark);
+        position: relative;
+        transition: var(--transition);
+    }
+    .hamburger::before, .hamburger::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--dark);
+        transition: var(--transition);
+    }
+    .hamburger::before { top: -8px; }
+    .hamburger::after { top: 8px; }
+    .nav-toggle.active .hamburger { background: transparent; }
+    .nav-toggle.active .hamburger::before { top: 0; transform: rotate(45deg); }
+    .nav-toggle.active .hamburger::after { top: 0; transform: rotate(-45deg); }
+
+    .form-group { flex-direction: column; }
+}
+
+</style>
+
+<!-- HTML - Paste into Custom HTML element -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavelle's Auto Diagnostics & Repair | Achill Island</title>
+    <meta name="description" content="Ethan Lavelle - The future of car repairs on Achill Island. Expert diagnostics, honest service, and quality repairs. Book your appointment today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="nav-logo">
+                    <span class="logo-main">LAVELLE'S</span>
+                    <span class="logo-sub">AUTO DIAGNOSTICS & REPAIR</span>
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#booking" class="nav-link">Book Now</a></li>
+                    <li><a href="#parts" class="nav-link">Order Parts</a></li>
+                    <li><a href="#payment" class="nav-link btn btn-outline">Pay Invoice</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">The Future of Car Repairs on Achill Island</h1>
+                    <p class="hero-subtitle">Expert diagnostics, honest advice, and a tradition of quality service. Ethan Lavelle gets you back on the road, the right way.</p>
+                    <a href="#booking" class="btn btn-primary">Book an Appointment</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">??</div>
+                        <h3>Honest Repairs, Not Just Replacements</h3>
+                        <p>We fix what's broken. Ethan takes the time to diagnose the root cause, saving you money by repairing parts when possible.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">??</div>
+                        <h3>Expert Diagnostics</h3>
+                        <p>Using the latest diagnostic tools, we find problems quickly and accurately. No guesswork, just data-driven solutions.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">??</div>
+                        <h3>You're in Control</h3>
+                        <p>We show you the damaged parts and explain the options. You decide on the work, with no pressure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="images/ethan-lavelle-mechanic.jpg" alt="Ethan Lavelle working on a car engine">
+                    </div>
+                    <div class="about-content">
+                        <h2 class="section-title">A Legacy of Trust. A Future of Innovation.</h2>
+                        <p class="lead">Ethan Lavelle isn't just another mechanic. He's the third generation of his family to work on Achill's cars, combining his grandad's time-honoured techniques with today's cutting-edge diagnostic technology.</p>
+                        <p>After qualifying at 27, Ethan returned to the garage where he spent his childhood, not just to continue a legacy, but to redefine it. He believes in transparency and skillfixing a component instead of just replacing it, showing you the problem firsthand, and giving you the power to choose.</p>
+                        <p>At Lavelle's, you're not just a customer; you're a neighbour. We're building the future of auto repair on Achill, one honest job at a time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title text-center">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Advanced Diagnostics</h3>
+                        <p>Engine warning lights, electrical faults, performance issues. We use dealer-level tools to find the exact problem.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>General Repairs</h3>
+                        <p>Brakes, suspension, exhaust, steering, and more. We repair and replace with quality parts to get you back on the road safely.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Routine Servicing</h3>
+                        <p>Oil changes, filter replacements, and full vehicle check-overs to keep your car running smoothly and prevent future issues.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Pre-NCT Checks</h3>
+                        <p>A comprehensive inspection to identify and fix any issues before your official NCT, saving you time and money.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>NCT Drop-off & Collection</h3>
+                        <p>Too busy for the NCT? We'll take your car to the test centre, handle everything, and bring it back to you. Simple and hassle-free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section class="booking" id="booking">
+            <div class="container">
+                <div class="booking-wrapper">
+                    <div class="booking-info">
+                        <h2 class="section-title">Book Your Service</h2>
+                        <p>Ready to get your car looked at? Fill out the form and our AI assistant will help confirm a time that works.</p>
+                    </div>
+                    <form class="booking-form" id="booking-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="car" placeholder="Car Make & Model (e.g., Ford Focus)" required>
+                            <input type="text" name="reg" placeholder="Car Registration" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="service_type" id="service_type" required>
+                                <option value="">Select Service Type...</option>
+                                <option value="evaluation">Diagnostics & Evaluation</option>
+                                <option value="repair">General Repair</option>
+                                <option value="pre-nct">Pre-NCT Check</option>
+                                <option value="post-nct">Post-NCT Repair</option>
+                                <option value="service">Routine Servicing</option>
+                                <option value="nct-concierge">NCT Drop-off & Collection</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="nct-upload-section" style="display: none;">
+                            <label for="nct_document">Upload NCT Failure Sheet (optional)</label>
+                            <input type="file" name="nct_document" id="nct_document" accept=".pdf,.jpg,.png">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="issue" placeholder="Briefly describe the issue or service needed" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Request Booking</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Voice Agent Section -->
+        <section class="ai-agent" id="ai-agent">
+            <div class="container text-center">
+                <h2 class="section-title">Meet Your AI Assistant</h2>
+                <p class="lead">Can't get to the phone? Our AI-powered voice assistant is here to help 24/7.</p>
+                <div class="ai-features">
+                    <div class="ai-feature">
+                        <span class="ai-icon">??</span>
+                        <h4>Answers Calls</h4>
+                        <p>Never miss a customer. Our AI handles calls when Ethan is busy.</p>
+                    </div>
+                    <div class="ai-feature">
+                        <span class="ai-icon">??</span>
+                        <h4>Takes Bookings</h4>
+                        <p>Schedules appointments directly into the garage calendar.</p>
+                    </div>
+                    <div class="ai-feature">
+                        <span class="ai-icon">??</span>
+                        <h4>Repair Updates</h4>
+                        <p>Provides real-time status updates on your vehicle's repair.</p>
+                    </div>
+                </div>
+                <p class="ai-promo">Call us now at <a href="tel:0871234567">087-123-4567</a> to try it out!</p>
+            </div>
+        </section>
+
+        <!-- Customer Showcase Section -->
+        <section class="showcase" id="showcase">
+            <div class="container">
+                <h2 class="section-title text-center">Our Work & Customer Showcase</h2>
+                <p class="lead text-center">See the quality of our repairs and the cars we service. Want to be featured? Upload your photo or video!</p>
+                <div class="showcase-gallery">
+                    <!-- Example Item 1 -->
+                    <div class="gallery-item">
+                        <img src="images/showcase/repair-1.jpg" alt="Classic car engine repair">
+                        <div class="gallery-overlay">
+                            <p>Classic Mini Engine Rebuild</p>
+                        </div>
+                    </div>
+                    <!-- Example Item 2 (Video) -->
+                    <div class="gallery-item gallery-item-video">
+                        <video muted loop playsinline src="images/showcase/repair-video.mp4"></video>
+                        <div class="gallery-overlay">
+                            <p>Diagnostics on a BMW M4</p>
+                        </div>
+                        <div class="play-button">?</div>
+                    </div>
+                    <!-- Example Item 3 -->
+                    <div class="gallery-item">
+                        <img src="images/showcase/repair-2.jpg" alt="Suspension work">
+                        <div class="gallery-overlay">
+                            <p>Land Rover Suspension Upgrade</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 2rem;">
+                    <button class="btn btn-secondary" id="upload-showcase-btn">Upload Your Car Story</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cars for Sale Section -->
+        <section class="classifieds" id="classifieds">
+            <div class="container">
+                <h2 class="section-title text-center">Community Cars for Sale</h2>
+                <p class="lead text-center">Looking to buy or sell a car on Achill? Browse listings from the community or submit your own.</p>
+                <div class="classifieds-grid">
+                    <!-- Example Listing -->
+                    <div class="car-listing">
+                        <img src="images/forsale/car-1.jpg" alt="Ford Focus for sale">
+                        <div class="car-listing-body">
+                            <h3>2018 Ford Focus</h3>
+                            <p class="price">15,500</p>
+                            <p class="details">1.5L Diesel, 98,000km, NCT 03/25</p>
+                            <button class="btn btn-outline btn-full">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                 <div class="text-center" style="margin-top: 2rem;">
+                    <button class="btn btn-primary" id="list-car-btn">List Your Car for Sale</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Parts Section -->
+        <section class="parts" id="parts">
+            <div class="container">
+                <h2 class="section-title text-center">Need a Part?</h2>
+                <p class="text-center lead">Enter your car registration to find and order parts directly from our suppliers.</p>
+                <form class="parts-form" id="parts-form">
+                    <div class="form-group">
+                        <input type="text" name="part_reg" placeholder="Enter Your Car Registration" required>
+                        <button type="button" class="btn btn-secondary" id="find-parts-btn">Find Parts</button>
+                    </div>
+                </form>
+                <div id="parts-results">
+                    <!-- Parts results will be loaded here by the backend -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Section -->
+        <section class="payment" id="payment">
+            <div class="container text-center">
+                <h2 class="section-title">Pay Your Invoice</h2>
+                <p class="lead">You can securely pay your invoice online using Stripe. Please have your invoice number ready.</p>
+                <form class="payment-form" id="payment-form">
+                     <input type="text" name="invoice_number" placeholder="Enter Invoice Number" required>
+                     <input type="text" name="amount" placeholder="Enter Amount ()" required>
+                     <button type="submit" class="btn btn-primary">Pay with Stripe</button>
+                </form>
+                <p class="stripe-info">Powered by Stripe. We do not store your card details.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">LAVELLE'S AUTO</h3>
+                    <p>The future of car repairs on Achill Island. Honest, reliable, and skilled service.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <p>Achill Sound, Co. Mayo<br>
+                    <a href="tel:0871234567">087-123-4567</a><br>
+                    <a href="mailto:ethan@lavellesauto.ie">ethan@lavellesauto.ie</a></p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Hours</h3>
+                    <p>Mon - Fri: 9am - 6pm<br>
+                    Sat: 10am - 2pm<br>
+                    Sun: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+<!-- JS - Paste into Page Settings > Custom JavaScript -->
+<script>
+/* =============================================
+   LAVELLE'S AUTO - MAIN JAVASCRIPT
+   ============================================= */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = document.querySelector('.header').offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form Submission Simulation
+    const bookingForm = document.getElementById('booking-form');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = bookingForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const formData = new FormData(bookingForm);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/submit-booking', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                submitBtn.textContent = 'Booking Sent!';
+                bookingForm.reset();
+
+            } catch (error) {
+                console.error('Form submission error:', error);
+                submitBtn.textContent = 'Submission Failed';
+                alert('There was an error submitting your booking. Please try again.');
+            } finally {
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }, 3000);
+            }
+        });
+    }
+
+    // The rest of the forms can keep their simulation for now
+    const otherForms = ['parts-form', 'payment-form'];
+    otherForms.forEach(formId => {
+        const form = document.getElementById(formId);
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"], button[type="button"]');
+                const originalText = submitBtn.textContent;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Processing...';
+
+                setTimeout(() => {
+                    if (formId === 'parts-form') {
+                        submitBtn.textContent = 'Finding...';
+                        document.getElementById('parts-results').innerHTML = `<p>Searching for parts for your vehicle...</p>`;
+                    } else {
+                        submitBtn.textContent = 'Request Sent!';
+                    }
+
+                    if(formId === 'payment-form') submitBtn.textContent = 'Payment Successful!';
+                    
+                    if (formId !== 'parts-form') {
+                        form.reset();
+                    }
+
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                        if (formId === 'parts-form') {
+                            document.getElementById('parts-results').innerHTML = '';
+                        }
+                    }, 3000);
+                }, 1500);
+            });
+        }
+    });
+
+    // Show/Hide NCT Upload Field
+    const serviceTypeSelect = document.getElementById('service_type');
+    const nctUploadSection = document.getElementById('nct-upload-section');
+    if (serviceTypeSelect && nctUploadSection) {
+        serviceTypeSelect.addEventListener('change', function() {
+            if (this.value === 'post-nct') {
+                nctUploadSection.style.display = 'block';
+            } else {
+                nctUploadSection.style.display = 'none';
+            }
+        });
+    }
+
+    // Parts Finder Button
+    const findPartsBtn = document.getElementById('find-parts-btn');
+    if(findPartsBtn) {
+        findPartsBtn.addEventListener('click', function() {
+            const partsForm = document.getElementById('parts-form');
+            partsForm.dispatchEvent(new Event('submit'));
+        });
+    }
+
+    // Modal-like functionality for uploads/listings
+    const uploadShowcaseBtn = document.getElementById('upload-showcase-btn');
+    if(uploadShowcaseBtn) {
+        uploadShowcaseBtn.addEventListener('click', () => {
+            alert("Showcase upload form would appear here.");
+            // In a real app, this would open a modal with a form
+        });
+    }
+
+    const listCarBtn = document.getElementById('list-car-btn');
+    if(listCarBtn) {
+        listCarBtn.addEventListener('click', () => {
+            alert("List your car for sale form would appear here.");
+            // In a real app, this would open a modal with a form
+        });
+    }
+
+    // Video play on hover
+    const videoItems = document.querySelectorAll('.gallery-item-video');
+    videoItems.forEach(item => {
+        const video = item.querySelector('video');
+        item.addEventListener('mouseenter', () => {
+            video.play();
+        });
+        item.addEventListener('mouseleave', () => {
+            video.pause();
+        });
+    });
+
+    // Stripe Integration Placeholder
+    const paymentForm = document.getElementById('payment-form');
+    if(paymentForm) {
+        paymentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, you would initialize Stripe here,
+            // create a payment intent on your server, and then confirm the payment.
+            console.log("Stripe payment processing would be initiated here.");
+        });
+    }
+
+    // Console Branding
+    console.log('%c?? Lavelle\'s Auto Diagnostics & Repair', 'font-size: 20px; font-weight: bold; color: #005A9C;');
+    console.log('The future of car repairs on Achill Island.');
+});
+
+</script>

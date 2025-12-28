@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Service | Lavelle's Auto Diagnostics & Repair</title>
+    <meta name="description" content="Book your car service with Ethan Lavelle on Achill Island. Online booking, instant confirmation, and flexible scheduling.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Import same CSS as homepage */
+        :root {
+            --primary: #005A9C;
+            --primary-dark: #003D6B;
+            --secondary: #D40000;
+            --accent: #FDB813;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --gray: #666;
+            --font-display: 'Roboto Condensed', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease-in-out;
+            --radius: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--dark);
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') fixed center/cover;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .text-center { text-align: center; }
+        .lead { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 2px solid transparent;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+            border-color: var(--accent);
+            font-weight: 900;
+        }
+        .btn-accent:hover {
+            background: #e6a500;
+            transform: scale(1.05);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 10000;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo-img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .nav-link:hover { color: var(--accent); }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 20px 80px;
+            background: 
+                linear-gradient(135deg, rgba(0,90,156,0.75) 0%, rgba(0,61,107,0.78) 100%),
+                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .page-hero .lead {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Booking Section */
+        .booking-section {
+            padding: 80px 20px;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .booking-info {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            position: sticky;
+            top: 120px;
+        }
+
+        .booking-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .info-content h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .info-content p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .calendar-container {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            min-height: 700px;
+        }
+
+        .calendar-container h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* GHL Calendar Embed */
+        .ghl-calendar {
+            width: 100%;
+            min-height: 650px;
+            border: none;
+        }
+
+        /* Service Quick Links */
+        .service-quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .quick-link-btn {
+            padding: 15px 20px;
+            background: var(--light);
+            border: 2px solid var(--light);
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .quick-link-btn:hover {
+            border-color: var(--primary);
+            background: var(--white);
+        }
+
+        .quick-link-btn.active {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        .quick-link-btn span {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .quick-link-btn p {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 20px 30px;
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
+            background-size: cover;
+            background-position: center;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            grid-column: span 2;
+        }
+
+        .footer-brand h4 {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 1.35rem;
+            color: var(--accent);
+        }
+
+        .footer-brand p {
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .footer h4 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .footer ul li a {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Sticky Mobile Action Bar */
+        .mobile-action-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px;
+            justify-content: space-around;
+            gap: 10px;
+        }
+        .mobile-action-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: var(--radius);
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-call { background: var(--primary); color: var(--white); }
+        .btn-whatsapp { background: #25D366; color: var(--white); }
+
+        @media (max-width: 768px) {
+            .mobile-action-bar { display: flex; }
+            .footer { padding-bottom: 80px; } /* Space for bar */
+            
+            /* Mobile Navigation Fix */
+            .nav-toggle { display: block; z-index: 1001; }
+            .nav-menu {
+                display: flex; /* Override display: none */
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0,0,0,0.98);
+                flex-direction: column;
+                justify-content: center;
+                transition: var(--transition);
+                padding: 20px;
+                z-index: 1000;
+            }
+            .nav-menu.active { left: 0; }
+            .nav-link { font-size: 1.5rem; margin: 15px 0; }
+            
+            /* Resize logo for mobile */
+            .logo-img { width: 140px; height: 140px; }
+            .header { padding: 0.5rem 0; }
+
+            .service-quick-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .booking-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-info {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .service-quick-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Social Icons (Right Side) */
+        .social-icons {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        .social-icon:hover {
+            transform: scale(1.15);
+            box-shadow: var(--shadow-lg);
+        }
+        @media (max-width: 992px) {
+            .social-icons {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Mobile Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:0871234567" class="mobile-action-btn btn-call">📞 Call</a>
+        <a href="https://wa.me/353871234567" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="nav-logo">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo" class="logo-img">
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="loyalty.html" class="nav-link">Loyalty</a></li>
+                    <li><a href="parts.html" class="nav-link">Parts & Shop</a></li>
+                    <li><a href="partners.html" class="nav-link">Partners</a></li>
+                    <li><a href="tel:0871234567" class="btn btn-accent">📞 Call Now</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Social Media Icons (Right Side) -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook" style="color: #1877F2;">📘</a>
+        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram" style="color: #E4405F;">📷</a>
+        <a href="https://wa.me/353871234567" target="_blank" class="social-icon" title="WhatsApp" style="color: #25D366;">💬</a>
+        <a href="tel:0871234567" class="social-icon" title="Call Us" style="color: #005A9C;">📞</a>
+        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google" style="color: #4285F4;">🗺️</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Book Your Service</h1>
+            <p class="lead">Choose your service and pick a time that works for you — online, anytime</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <!-- Service Quick Select -->
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: var(--primary); text-align: center; margin-bottom: 20px;">Quick Service Select</h3>
+                <div class="service-quick-links">
+                    <div class="quick-link-btn" onclick="selectService('diagnostics')">
+                        <span>🔍</span>
+                        <p>DIAGNOSTICS</p>
+                    </div>
+                    <div class="quick-link-btn" onclick="selectService('oil-change')">
+                        <span>🛢️</span>
+                        <p>OIL CHANGE</p>
+                    </div>
+                    <div class="quick-link-btn" onclick="selectService('brakes')">
+                        <span>🛑</span>
+                        <p>BRAKES</p>
+                    </div>
+                    <div class="quick-link-btn" onclick="selectService('nct')">
+                        <span>📋</span>
+                        <p>NCT PREP</p>
+                    </div>
+                    <div class="quick-link-btn" onclick="selectService('tyres')">
+                        <span>🔧</span>
+                        <p>TYRES</p>
+                    </div>
+                    <div class="quick-link-btn" onclick="selectService('general')">
+                        <span>⚙️</span>
+                        <p>GENERAL SERVICE</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-grid">
+                <!-- Booking Info Sidebar -->
+                <div class="booking-info">
+                    <h3>Before You Book</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">⚡</div>
+                        <div class="info-content">
+                            <h4>Instant Confirmation</h4>
+                            <p>Your booking is confirmed immediately. You'll receive SMS and email confirmation.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">⏱️</div>
+                        <div class="info-content">
+                            <h4>Flexible Scheduling</h4>
+                            <p>Evenings (6pm-9pm) Mon-Fri, or Saturday mornings (9am-2pm). Need different times? Call us.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">❓</div>
+                        <div class="info-content">
+                            <h4>Need Help?</h4>
+                            <p>Not sure what you need? Call Ethan directly at <a href="tel:0871234567" style="color: var(--primary); font-weight: 700;">087-123-4567</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🏆</div>
+                        <div class="info-content">
+                            <h4>Earn Points</h4>
+                            <p>Every booking earns you loyalty points. Join Car Care Champions today!</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🚌</div>
+                        <div class="info-content">
+                            <h4>Need a Lift?</h4>
+                            <p>Dropping off your car? Use the <strong>An Seo Bus</strong> to get home and back. <br><span style="color: var(--secondary); font-weight: bold;">Free for Pensioners!</span></p>
+                            <a href="#" style="font-size: 0.85rem; text-decoration: underline;">View Bus Schedule</a>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 20px; padding: 20px; background: #e3f2fd; border: 1px solid #bbdefb; border-radius: var(--radius); text-align: center;">
+                        <h4 style="color: var(--primary); margin-bottom: 10px;">💡 Warning Light On?</h4>
+                        <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 15px;">Take a photo/video of the dash, add your Reg & Model, and send it to us before you arrive!</p>
+                        <a href="https://wa.me/353871234567?text=Hi Ethan, here is a photo of my dash warning light. Reg: [Enter Reg], Model: [Enter Model]" class="btn btn-primary" style="width: 100%; font-size: 0.9rem; padding: 10px;">📸 Upload via WhatsApp</a>
+                    </div>
+
+                    <div style="margin-top: 20px; padding: 20px; background: var(--light); border-radius: var(--radius); text-align: center;">
+                        <p style="font-size: 0.9rem; color: var(--gray); margin-bottom: 15px;">⚠️ <strong>Emergency Breakdown?</strong></p>
+                        <a href="tel:0871234567" class="btn btn-accent" style="width: 100%;">Call Now</a>
+                    </div>
+                </div>
+
+                <!-- Calendar -->
+                <div class="calendar-container">
+                    <h2>Choose Your Date & Time</h2>
+                    <p style="color: var(--gray); margin-bottom: 30px;">Select a service above, then pick your preferred slot below</p>
+                    
+                    <!-- GHL Calendar Embed -->
+                    <!-- REPLACE THIS WITH YOUR GHL CALENDAR EMBED CODE -->
+                    <iframe 
+                        class="ghl-calendar"
+                        src="https://api.leadconnectorhq.com/widget/booking/YOUR_CALENDAR_ID_HERE"
+                        scrolling="no">
+                    </iframe>
+
+                    <!-- Fallback if GHL not set up yet -->
+                    <div style="text-align: center; padding: 100px 20px; border: 2px dashed var(--light); border-radius: var(--radius);">
+                        <div style="font-size: 4rem; margin-bottom: 20px;">📅</div>
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">Calendar Integration Pending</h3>
+                        <p style="color: var(--gray); margin-bottom: 30px;">In the meantime, book your service by phone or WhatsApp</p>
+                        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                            <a href="tel:0871234567" class="btn btn-primary">📞 Call to Book</a>
+                            <a href="https://wa.me/353871234567?text=Hi Ethan, I'd like to book a service" class="btn btn-accent">💬 WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo">
+                    <h4>LAVELLE'S AUTO</h4>
+                    <p>The future of car repairs on Achill Island. Honest, reliable, and skilled service for over 50 years.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/lavellesauto" target="_blank">📘</a>
+                        <a href="https://www.instagram.com/lavellesauto" target="_blank">📷</a>
+                        <a href="https://wa.me/353871234567" target="_blank">💬</a>
+                        <a href="https://g.page/lavellesauto" target="_blank">🗺️</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="services.html">All Services</a></li>
+                        <li><a href="booking.html">Book Appointment</a></li>
+                        <li><a href="loyalty.html">Loyalty Program</a></li>
+                        <li><a href="parts.html">Order Parts</a></li>
+                        <li><a href="partners.html">Partner Services</a></li>
+                        <li><a href="payments.html" style="color: var(--accent);">Make a Payment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0;">
+                        <li><a href="#" title="TikTok">🎵 TikTok</a></li>
+                        <li><a href="#" title="Snapchat">👻 Snapchat</a></li>
+                        <li><a href="#" title="Telegram">✈️ Telegram</a></li>
+                        <li><a href="#" title="Reddit">🤖 Reddit</a></li>
+                        <li><a href="#" title="Facebook Marketplace">🏪 FB Market</a></li>
+                        <li><a href="#" title="Google Maps">📍 Maps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>📍 Achill Sound, Co. Mayo</li>
+                        <li>📞 <a href="tel:0871234567">087-123-4567</a></li>
+                        <li>📧 <a href="mailto:info@lavellesauto.ie">info@lavellesauto.ie</a></li>
+                        <li>💬 <a href="https://wa.me/353871234567">WhatsApp Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Hours</h4>
+                    <ul>
+                        <li>Mon-Fri: 6pm - 9pm</li>
+                        <li>Saturday: 9am - 2pm</li>
+                        <li>Sunday: Closed</li>
+                        <li style="margin-top: 10px; color: var(--accent);">🚨 Emergency call-outs 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
+                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank" style="color: var(--accent);">Exposure Solutions</a></p>
+                <div style="margin-top: 20px;">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Powered by Exposure Solutions AI" style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+    </script>
+    <!-- JavaScript -->
+    <script>
+        // Service selection
+        function selectService(service) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.quick-link-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to selected button
+            event.target.closest('.quick-link-btn').classList.add('active');
+            
+            // If GHL calendar is set up, this would pass the service selection to the calendar
+            console.log('Selected service:', service);
+            
+            // You can add GHL calendar API call here to filter by service
+            // Example: window.ghlCalendar.setService(service);
+        }
+
+        // Check URL for service parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (serviceParam) {
+            // Auto-select service if coming from homepage
+            const serviceBtn = document.querySelector(`[onclick="selectService('${serviceParam}')"]`);
+            if (serviceBtn) {
+                serviceBtn.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -39,6 +39,7 @@ export default async function handler(req, res) {
                 'car_make_model': formData.car,
                 'repair_status': 'Booked In',
                 'service_details': formData.issue,
+                'service_type': formData.service_type,
                 // 'nct_due_date': 'YYYY-MM-DD' // You would add this if you collect it
             }
         };

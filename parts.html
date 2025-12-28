@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parts & Marketplace | Lavelle's Auto Diagnostics & Repair</title>
+    <meta name="description" content="Order tyres, buy/sell cars and parts, and vehicle scrappage services on Achill Island.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* =============================================
+           LAVELLE'S AUTO - MAIN STYLESHEET (INLINE)
+           ============================================= */
+
+        :root {
+            --primary: #005A9C;
+            --primary-dark: #003D6B;
+            --secondary: #D40000;
+            --accent: #FDB813;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --gray: #666;
+            --font-display: 'Roboto Condensed', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease-in-out;
+            --radius: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--dark);
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') fixed center/cover;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .text-center { text-align: center; }
+        .lead { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 2px solid transparent;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--white);
+            border-color: var(--secondary);
+        }
+        .btn-secondary:hover {
+            background: #a80000;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var,--white;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var,--dark;
+            border-color: var(--accent);
+            font-weight: 900;
+        }
+        .btn-accent:hover {
+            background: #e6a500;
+            transform: scale(1.05);
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            position: relative;
+            z-index: 10000;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        .logo-img {
+            width: 220px;
+            height: 220px;
+            object-fit: contain;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--white);
+            text-decoration: none;
+            padding-bottom: 5px;
+            position: relative;
+            transition: var(--transition);
+        }
+        .nav-link:hover { color: var(--accent); }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .hamburger {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--white);
+            position: relative;
+            transition: var(--transition);
+        }
+        .hamburger::before, .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            transition: var(--transition);
+        }
+        .hamburger::before { top: -8px; }
+        .hamburger::after { top: 8px; }
+
+        /* Page Hero */
+        .page-hero {
+            padding: 180px 20px 80px;
+            background: 
+                linear-gradient(135deg, rgba(0,90,156,0.75) 0%, rgba(0,61,107,0.78) 100%),
+                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        /* Marketplace Sections */
+        .marketplace-section {
+            padding: 80px 20px;
+        }
+
+        .marketplace-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .market-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #eee;
+            transition: var(--transition);
+        }
+
+        .market-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .market-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .market-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-family: var(--font-display);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: 
+                linear-gradient(135deg, rgba(212,0,0,0.85) 0%, rgba(168,0,0,0.88) 100%),
+                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 12px 20px;
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .emergency-banner a {
+            color: var(--white);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 20px 30px;
+            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
+            background-size: cover;
+            background-position: center;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Sticky Mobile Action Bar */
+        .mobile-action-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px;
+            justify-content: space-around;
+            gap: 10px;
+        }
+        .mobile-action-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: var(--radius);
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-call { background: var(--primary); color: var(--white); }
+        .btn-whatsapp { background: #25D366; color: var(--white); }
+
+        /* =========================================
+           GOOGLE TRANSLATE CUSTOM STYLING (FIX)
+           ========================================= */
+        
+        /* Hide the Google Top Bar */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        } 
+        body {
+            top: 0px !important; 
+        }
+
+        /* Style the Container */
+        .goog-te-gadget {
+            font-family: 'Roboto Condensed', sans-serif !important;
+            color: transparent !important; /* Hides 'Powered by Google' text */
+            margin-top: 5px;
+        }
+
+        /* Style the Dropdown Box */
+        .goog-te-gadget-simple {
+            background-color: rgba(255, 255, 255, 0.1) !important; /* Glassy effect */
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            padding: 8px 12px !important;
+            border-radius: 4px !important;
+            font-size: 0.9rem !important;
+            line-height: 1 !important;
+            display: inline-block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .goog-te-gadget-simple:hover {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+            border-color: var(--accent) !important;
+        }
+
+        /* Style the Text inside Dropdown */
+        .goog-te-gadget-simple .goog-te-menu-value span {
+            color: var(--white) !important;
+            font-weight: 500 !important;
+            padding-right: 5px;
+        }
+        
+        /* Hide the Google Icon */
+        .goog-te-gadget-icon {
+            display: none !important;
+        }
+
+        /* Hide the vertical separator pipe */
+        .goog-te-gadget-simple .goog-te-menu-value span:nth-child(2) {
+            display: none !important;
+        }
+
+        /* Mobile Adjustments for Translate */
+        @media (max-width: 768px) {
+            .goog-te-gadget-simple {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+                background-color: #f4f4f4 !important; /* Dark text on mobile menu white bg */
+                border: 1px solid #ddd !important;
+            }
+            .goog-te-gadget-simple .goog-te-menu-value span {
+                color: var(--dark) !important; /* Dark text for mobile menu */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-action-bar { display: flex; }
+            .footer { padding-bottom: 80px; } /* Space for bar */
+            
+            /* Mobile Navigation Fix */
+            .nav-toggle { display: block; z-index: 1001; }
+            .nav-menu {
+                display: flex; /* Override display: none if set elsewhere */
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0,0,0,0.98);
+                flex-direction: column;
+                justify-content: center;
+                transition: var(--transition);
+                padding: 20px;
+                z-index: 1000;
+            }
+            .nav-menu.active { left: 0; }
+            .nav-link { font-size: 1.5rem; margin: 15px 0; }
+            
+            /* Resize logo for mobile */
+            .logo-img { width: 140px; height: 140px; }
+            .header { padding: 0.5rem 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Mobile Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:0871234567" class="mobile-action-btn btn-call">📞 Call</a>
+        <a href="https://wa.me/353871234567" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
+    </div>
+
+    <!-- Emergency Call-Out Banner -->
+    <div class="emergency-banner">
+        <strong>🚨 NEED PARTS URGENTLY?</strong> Call us now: <a href="tel:0871234567">087-123-4567</a> - We can source & fit!
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index-v2.html" class="nav-logo">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo" class="logo-img">
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index-v2.html#services" class="nav-link">Services</a></li>
+                    <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                    <li><a href="loyalty.html" class="nav-link">Loyalty</a></li>
+                    <li><a href="parts.html" class="nav-link">Parts & Shop</a></li>
+                    <li><a href="partners.html" class="nav-link">Partners</a></li>
+                    <li><div id="google_translate_element"></div></li>
+                    <li><a href="tel:0871234567" class="btn btn-accent">📞 Call Now</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle">
+                    <span class="hamburger"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Social Media Icons (Right Side) -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook" style="color: #1877F2;">📘</a>
+        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram" style="color: #E4405F;">📷</a>
+        <a href="https://wa.me/353871234567" target="_blank" class="social-icon" title="WhatsApp" style="color: #25D366;">💬</a>
+        <a href="sms:0871234567" class="social-icon" title="Text Us" style="color: #34B7F1;">📱</a>
+        <a href="tel:0871234567" class="social-icon" title="Call Us" style="color: #005A9C;">📞</a>
+        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google" style="color: #4285F4;">🗺️</a>
+        <a href="https://www.youtube.com/@lavellesauto" target="_blank" class="social-icon" title="YouTube" style="color: #FF0000;">📺</a>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Parts, Shop & Marketplace</h1>
+            <p class="lead">New & used parts, accessories, and vehicle sales</p>
+        </div>
+    </section>
+
+    <!-- AI Part Finder Section (New) -->
+    <section class="marketplace-section" style="background: #f0f7ff; border-bottom: 1px solid #e1e1e1;">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <div style="font-size: 3rem; margin-bottom: 10px;">🤖</div>
+                <h2 class="section-title" style="margin-bottom: 10px;">AI Used Part Finder</h2>
+                <p class="lead">Can't find a part? Let our AI Agent scan national scrap yards for you.</p>
+                <p style="color: var(--gray); margin-bottom: 30px;">We connect with hundreds of breakers yards to find quality second-hand parts (engines, gearboxes, body panels) at the best price. We handle the negotiation, shipping, and quality check.</p>
+                
+                <div style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow-md);">
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">Start Your Search</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                        <div class="form-group" style="text-align: left;">
+                            <label>Vehicle Registration / Model</label>
+                            <input type="text" class="form-control" id="part-reg" placeholder="e.g., 141-MO-1234">
+                        </div>
+                        <div class="form-group" style="text-align: left;">
+                            <label>Part Name</label>
+                            <input type="text" class="form-control" id="part-name" placeholder="e.g., Driver Side Headlight">
+                        </div>
+                    </div>
+                    <button onclick="searchParts()" class="btn btn-accent" style="width: 100%; font-size: 1.1rem;">🔍 Launch AI Search via WhatsApp</button>
+                    <p style="font-size: 0.8rem; color: var(--gray); margin-top: 10px;">*We charge a small sourcing fee only if we find your part.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethan's Accessories Shop (New) -->
+    <section class="marketplace-section" id="shop">
+        <div class="container">
+            <h2 class="section-title text-center">Ethan's Accessories Shop</h2>
+            <p class="lead text-center">Essential gear, tech upgrades, and safety equipment. Ordered & fitted.</p>
+
+            <div class="marketplace-grid">
+                <!-- Tech Upgrades -->
+                <div class="market-card">
+                    <div class="market-icon">📱</div>
+                    <h3>Tech Upgrades</h3>
+                    <p>Modernise your dashboard.</p>
+                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">
+                        <li>• Apple CarPlay / Android Auto Units</li>
+                        <li>• Bluetooth FM Transmitters</li>
+                        <li>• Reversing Cameras & Sensors</li>
+                        <li>• Dash Cams (Hardwired)</li>
+                    </ul>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I'm interested in tech upgrades for my car" class="btn btn-primary" style="width: 100%;">Enquire</a>
+                </div>
+
+                <!-- Touring & Towing -->
+                <div class="market-card">
+                    <div class="market-icon">🚙</div>
+                    <h3>Touring & Towing</h3>
+                    <p>Get ready for the adventure.</p>
+                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">
+                        <li>• Towbars & Hitches (Supplied & Fitted)</li>
+                        <li>• Roof Racks & Boxes</li>
+                        <li>• Trailers (Ordered to spec)</li>
+                        <li>• Power Inverters (12V to 220V)</li>
+                    </ul>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I need a quote for a towbar/roof rack" class="btn btn-primary" style="width: 100%;">Get Quote</a>
+                </div>
+
+                <!-- Comfort & Protection -->
+                <div class="market-card">
+                    <div class="market-icon">🛡️</div>
+                    <h3>Comfort & Protection</h3>
+                    <p>Keep your car clean and comfortable.</p>
+                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">
+                        <li>• Wind Deflectors (Air Protectors)</li>
+                        <li>• Heavy Duty Seat Covers</li>
+                        <li>• Boot Liners & Organisers</li>
+                        <li>• Custom Floor Mats</li>
+                    </ul>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, looking for seat covers/wind deflectors" class="btn btn-primary" style="width: 100%;">Order Now</a>
+                </div>
+
+                <!-- Safety Essentials -->
+                <div class="market-card">
+                    <div class="market-icon">⛑️</div>
+                    <h3>Safety Essentials</h3>
+                    <p>Don't get stuck on the Atlantic Drive.</p>
+                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray); font-size: 0.9rem;">
+                        <li>• NOCO Battery Jump Starters</li>
+                        <li>• Portable Air Compressors</li>
+                        <li>• Emergency Breakdown Kits</li>
+                        <li>• First Aid Kits</li>
+                    </ul>
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I want to buy a breakdown safety kit" class="btn btn-primary" style="width: 100%;">Buy Kit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tyres Section -->
+    <section class="marketplace-section" id="tyres" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title text-center">Order Tyres</h2>
+            <p class="lead text-center">Quality tyres at discounted agency prices</p>
+            
+            <div class="market-card" style="max-width: 800px; margin: 0 auto;">
+                <div class="text-center">
+                    <div class="market-icon">🔘</div>
+                    <h3>Tyre Ordering (Partner: Duffy Tyres)</h3>
+                    <p>We've partnered with <strong>Duffy Tyres</strong> to bring you the best selection and prices in Mayo. Order through us for seamless tracking, balancing, and fitting.</p>
+                </div>
+                
+                <div style="margin-top: 30px; text-align: left;">
+                    <p><strong>Why order through Lavelle's?</strong></p>
+                    <ul style="margin-bottom: 20px; color: var(--gray);">
+                        <li>✅ Access to Duffy Tyres' massive stock</li>
+                        <li>✅ Professional fitting & balancing included</li>
+                        <li>✅ 3D Wheel Alignment available</li>
+                        <li>✅ One bill, no hassle</li>
+                    </ul>
+                    
+                    <a href="https://wa.me/353871234567?text=Hi Ethan, I need a quote for tyres from Duffy's. Size: " class="btn btn-primary" style="width: 100%;">Get Quote via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Section -->
+    <section class="marketplace-section" style="background: var(--light);">
+        <div class="container">
+            <h2 class="section-title text-center">Community Marketplace</h2>
+            <p class="lead text-center">We help you buy and sell vehicles and parts</p>
+
+            <div class="marketplace-grid">
+                <!-- Sell Your Car -->
+                <div class="market-card">
+                    <div class="market-icon">🚗</div>
+                    <h3>Sell Your Car</h3>
+                    <p>Let our AI agent post your car to DoneDeal, Gumtree, and Facebook Marketplace for you.</p>
+                    <ul style="text-align: left; margin-bottom: 20px; color: var,--dark;">
+                        <li>✅ Professional listing creation</li>
+                        <li>✅ Multi-platform posting</li>
+                        <li>✅ We handle initial inquiries</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">List My Car</a>
+                </div>
+
+                <!-- Parts Wanted -->
+                <div class="market-card">
+                    <div class="market-icon">🔍</div>
+                    <h3>Parts Wanted</h3>
+                    <p>Looking for a specific part? We'll blast your request to our network and social channels.</p>
+                    <ul style="text-align: left; margin-bottom: 20px; color: var(--gray);">
+                        <li>✅ Reach local breakers</li>
+                        <li>✅ Community sourcing</li>
+                        <li>✅ Find cheaper used parts</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="width: 100%;">Request Part</a>
+                </div>
+
+                <!-- Scrappage -->
+                <div class="market-card">
+                    <div class="market-icon">♻️</div>
+                    <h3>Scrappage Service</h3>
+                    <p>End-of-life vehicle removal via our partner <strong>Eddie English</strong>.</p>
+                    <ul style="text-align: left; margin-bottom: 20px; color: var,--dark;">
+                        <li>✅ Vehicle collection</li>
+                        <li>✅ Revnocal cert processing</li>
+                        <li>✅ €150-300 value (approx)</li>
+                    </ul>
+                    <a href="partners.html#eddie" class="btn btn-secondary" style="width: 100%;">Scrap My Car</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner (New) -->
+    <div class="emergency-banner">
+        🚨 Emergency? Need urgent assistance? <a href="tel:0871234567">Call us now!</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
+                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank">Exposure Solutions</a></p>
+                <div style="margin-top: 20px;">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Powered by Exposure Solutions AI" style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,ga', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+
+        // AI Part Finder Logic
+        function searchParts() {
+            const reg = document.getElementById('part-reg').value;
+            const part = document.getElementById('part-name').value;
+            
+            if(!reg || !part) {
+                alert('Please enter both Vehicle Registration and Part Name');
+                return;
+            }
+
+            const message = `Hi Ethan, I need your AI to find a used part for me.%0A%0AVehicle: ${reg}%0APart: ${part}%0A%0APlease check scrap yard availability and price.`;
+            window.location.href = `https://wa.me/353871234567?text=${message}`;
+        }
+    </script>
+</body>
+</html>
