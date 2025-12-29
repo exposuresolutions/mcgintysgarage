@@ -1,0 +1,251 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavelle's Auto | Strategic Roadmap</title>
+    <meta name="description" content="Strategic growth plan and business roadmap for Lavelle's Auto.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Shared CSS */
+        :root {
+            --primary: #005A9C;
+            --primary-dark: #003D6B;
+            --secondary: #D40000;
+            --accent: #FDB813;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --gray: #666;
+            --font-display: 'Roboto Condensed', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease-in-out;
+            --radius: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--dark);
+            background: #f8f9fa;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo img { height: 60px; width: auto; }
+        .nav-link { text-decoration: none; color: var(--dark); font-weight: bold; margin-left: 20px; }
+        .nav-link:hover { color: var(--primary); }
+
+        /* Hero */
+        .strategy-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .strategy-hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .strategy-hero p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* Timeline */
+        .timeline-section { padding: 60px 20px; }
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .timeline-card {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left { left: 0; }
+        .right { left: 50%; }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .right::after { left: -10px; }
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+        .content h2 { color: var(--primary); font-size: 1.5rem; }
+        .content .date { color: var(--gray); font-weight: bold; margin-bottom: 10px; display: block; }
+
+        /* Mobile Timeline */
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .timeline-card { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-card::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
+            .left::after, .right::after { left: 21px; }
+            .right { left: 0%; }
+        }
+
+        /* Footer */
+        .footer { background: var(--dark); color: white; padding: 40px 20px; text-align: center; }
+        .footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-logo">
+                <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto">
+            </a>
+            <nav>
+                <a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-link">Home</a>
+                <a href="https://lavelles.exposuresolutions.me/feedback" class="nav-link">Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="strategy-hero">
+        <div class="container">
+            <h1>Strategic Roadmap 2025</h1>
+            <p>The vision for Lavelle's Auto: From Local Garage to Regional Leader</p>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="timeline">
+            <div class="timeline-card left">
+                <div class="content">
+                    <span class="date">Phase 1: Q1 2025</span>
+                    <h2>Foundation & Launch</h2>
+                    <p>
+                        ? Website Launch (Home, Services, Booking)<br>
+                        ? Brand Identity ("Third Generation Mechanics")<br>
+                        ?? <strong>Action:</strong> Gather client feedback via survey.<br>
+                        ?? <strong>Action:</strong> Finalize domain name (lavellesauto.ie vs elmotors.com).
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-card right">
+                <div class="content">
+                    <span class="date">Phase 2: Q2 2025</span>
+                    <h2>Digital Integration</h2>
+                    <p>
+                        ?? <strong>Online Booking System:</strong> Fully automated calendar sync.<br>
+                        ?? <strong>Parts Shop:</strong> Basic inventory (wipers, oil, dash cams) online.<br>
+                        ?? <strong>Loyalty Program:</strong> "Car Care Champions" beta launch.
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-card left">
+                <div class="content">
+                    <span class="date">Phase 3: Q3 2025</span>
+                    <h2>Expansion & "Road Ready"</h2>
+                    <p>
+                        ??? <strong>Achill Road Ready Package:</strong> Launch suspension/tyre upgrade service.<br>
+                        ?? <strong>Partner Network:</strong> Formalize towing and welding partnerships.<br>
+                        ?? <strong>Marketing:</strong> Local SEO push for "Mechanic Achill".
+                    </p>
+                </div>
+            </div>
+            <div class="timeline-card right">
+                <div class="content">
+                    <span class="date">Phase 4: 2026+</span>
+                    <h2>Automation & Scale</h2>
+                    <p>
+                        ?? <strong>AI Phone Agent:</strong> 24/7 call handling and booking.<br>
+                        ?? <strong>Workshop Expansion:</strong> Potential new lift/bay.<br>
+                        ?? <strong>Grant Funding:</strong> Apply for LEO digitalization grants.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="text-align: center; padding: 40px; background: white; margin-bottom: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <h2>Client Action Items</h2>
+        <p style="margin-bottom: 20px;">Ethan, we need your input on these key decisions:</p>
+        <ul style="list-style: none; text-align: left; max-width: 500px; margin: 0 auto;">
+            <li style="padding: 10px; border-bottom: 1px solid #eee;">? Review Feedback Survey questions</li>
+            <li style="padding: 10px; border-bottom: 1px solid #eee;">? Confirm pricing for "Road Ready" package</li>
+            <li style="padding: 10px; border-bottom: 1px solid #eee;">? Provide bank details for Stripe integration</li>
+        </ul>
+        <a href="https://wa.me/353851026371" class="btn" style="display: inline-block; margin-top: 20px; padding: 12px 25px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px;">Confirm via WhatsApp</a>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Lavelle's Auto. Internal Strategy Document.</p>
+        <p>Prepared by <a href="https://exposuresolutions.ie">Exposure Solutions</a></p>
+    </footer>
+
+</body>
+</html>
