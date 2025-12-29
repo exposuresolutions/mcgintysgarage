@@ -590,12 +590,28 @@
             // In production, this would send to GHL webhook or API
             console.log('Survey Data:', data);
             
-            // TODO: Replace with your actual GHL Webhook URL
-            // const WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID';
-            // fetch(WEBHOOK_URL, { method: 'POST', body: JSON.stringify(data) });
+            // ==========================================
+            // ?? STEP 1: PASTE YOUR GHL WEBHOOK URL HERE
+            // ==========================================
+            const WEBHOOK_URL = ''; // <-- PASTE URL INSIDE QUOTES (e.g. 'https://services.leadconnectorhq.com/hooks/...')
+            
+            if (WEBHOOK_URL) {
+                try {
+                    await fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    console.log('? Data sent to GHL Webhook');
+                } catch (err) {
+                    console.error('? Failed to send to GHL:', err);
+                }
+            } else {
+                console.warn('?? No Webhook URL set. Data was NOT sent to GHL. (Check console for data)');
+            }
 
-            // Simulate network request
-            await new Promise(r => setTimeout(r, 1000));
+            // Simulate network request (remove this if you want it to be instant)
+            await new Promise(r => setTimeout(r, 500));
 
             // Show thank you message
             document.querySelector('.container').innerHTML = `
