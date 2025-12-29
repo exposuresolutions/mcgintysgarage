@@ -4,441 +4,458 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Onboarding Process | Exposure Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff6b00;
-            --dark: #1a1a1a;
-            --light: #f5f5f5;
-            --white: #fff;
-            --gray: #666;
-            --green: #28a745;
-            --blue: #007bff;
+            --es-primary: #ff6b00;
+            --es-secondary: #1a1a2e;
+            --es-accent: #00d4ff;
+            --es-dark: #0f0f1a;
+            --es-light: #f8f9fa;
+            --es-white: #fff;
+            --es-gray: #6c757d;
+            --es-green: #28a745;
+            --es-gradient: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            --radius: 12px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--light); line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        h1,h2,h3 { color: var(--dark); }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: var(--es-light); 
+            line-height: 1.6; 
+            color: var(--es-dark);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         
-        .header { background: var(--dark); color: white; padding: 40px 20px; text-align: center; }
-        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .header p { opacity: 0.8; font-size: 1.2rem; }
+        /* Header */
+        .header { 
+            background: var(--es-dark); 
+            color: white; 
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 15px; }
+        .logo img { height: 50px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; }
+        .logo-text span { color: var(--es-primary); }
         
-        .section { background: white; padding: 30px; margin: 20px 0; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .section h2 { color: var(--primary); border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px; display: inline-block; }
+        /* Hero */
+        .hero { 
+            background: var(--es-gradient);
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 15px; }
+        .hero p { font-size: 1.3rem; opacity: 0.95; max-width: 600px; margin: 0 auto; }
+        .hero-badge { 
+            display: inline-block; 
+            background: rgba(255,255,255,0.2); 
+            padding: 10px 25px; 
+            border-radius: 30px; 
+            margin-top: 25px;
+            font-weight: 600;
+        }
         
-        .step { display: flex; gap: 20px; padding: 20px; border-left: 4px solid var(--primary); margin-bottom: 20px; background: var(--light); border-radius: 0 8px 8px 0; }
-        .step-number { background: var(--primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
-        .step-content h3 { margin-bottom: 10px; }
-        .step-content ul { margin-left: 20px; color: var(--gray); }
+        /* Sections */
+        .section { 
+            background: white; 
+            padding: 50px; 
+            margin: 30px auto; 
+            border-radius: var(--radius); 
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            max-width: 1200px;
+        }
+        .section-title { 
+            color: var(--es-secondary); 
+            font-size: 1.8rem; 
+            margin-bottom: 25px; 
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .section-title::before {
+            content: '';
+            width: 5px;
+            height: 30px;
+            background: var(--es-primary);
+            border-radius: 3px;
+        }
         
-        .checklist { list-style: none; }
-        .checklist li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 10px; }
-        .checklist li::before { content: '?'; font-size: 1.2rem; }
+        /* Progress Steps */
+        .progress-steps { 
+            display: flex; 
+            justify-content: space-between; 
+            margin: 40px 0;
+            position: relative;
+        }
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background: #e9ecef;
+            z-index: 0;
+        }
+        .step { 
+            text-align: center; 
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+        .step-number { 
+            width: 50px; 
+            height: 50px; 
+            background: var(--es-primary); 
+            color: white; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0 auto 15px;
+        }
+        .step-title { font-weight: 600; margin-bottom: 5px; }
+        .step-desc { font-size: 0.85rem; color: var(--es-gray); }
         
-        .form-field { margin-bottom: 20px; }
-        .form-field label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--dark); }
-        .form-field input, .form-field textarea, .form-field select { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; }
-        .form-field input:focus, .form-field textarea:focus { outline: none; border-color: var(--primary); }
-        .form-field small { color: var(--gray); font-size: 0.85rem; }
+        /* Cards Grid */
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { 
+            background: var(--es-light); 
+            padding: 30px; 
+            border-radius: var(--radius);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s;
+        }
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--es-primary);
+        }
+        .card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .card h3 { color: var(--es-secondary); margin-bottom: 10px; }
+        .card p { color: var(--es-gray); font-size: 0.95rem; }
         
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
-        
-        .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-right: 5px; }
+        /* Tags */
+        .tag { 
+            display: inline-block; 
+            padding: 4px 12px; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: 600; 
+            margin-right: 5px;
+            text-transform: uppercase;
+        }
         .tag-auto { background: #e3f2fd; color: #1976d2; }
         .tag-manual { background: #fff3e0; color: #f57c00; }
         .tag-client { background: #fce4ec; color: #c2185b; }
         
-        .learnings { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px; }
-        .learnings h2 { color: white; border-color: white; }
-        .learnings ul { margin-left: 20px; }
-        .learnings li { margin-bottom: 10px; }
+        /* Form */
+        .form-section { background: #fafafa; padding: 30px; border-radius: var(--radius); margin-top: 30px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-field { margin-bottom: 20px; }
+        .form-field label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--es-secondary); }
+        .form-field input, .form-field textarea, .form-field select { 
+            width: 100%; 
+            padding: 14px 18px; 
+            border: 2px solid #e9ecef; 
+            border-radius: var(--radius); 
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-field input:focus, .form-field textarea:focus, .form-field select:focus { 
+            outline: none; 
+            border-color: var(--es-primary); 
+        }
+        .form-field small { color: var(--es-gray); font-size: 0.85rem; margin-top: 5px; display: block; }
         
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: var(--light); font-weight: bold; }
+        /* Checklist */
+        .checklist { list-style: none; }
+        .checklist li { 
+            padding: 15px 20px; 
+            border-bottom: 1px solid #e9ecef; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px;
+            transition: background 0.3s;
+        }
+        .checklist li:hover { background: #f8f9fa; }
+        .checkbox { 
+            width: 24px; 
+            height: 24px; 
+            border: 2px solid #dee2e6; 
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .checkbox.checked { background: var(--es-green); border-color: var(--es-green); color: white; }
         
-        .btn { display: inline-block; padding: 12px 24px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; text-decoration: none; }
-        .btn:hover { opacity: 0.9; }
+        /* Learnings Box */
+        .learnings { 
+            background: linear-gradient(135deg, var(--es-secondary) 0%, #2d2d44 100%); 
+            color: white; 
+            padding: 40px; 
+            border-radius: var(--radius); 
+        }
+        .learnings h2 { color: white; margin-bottom: 25px; }
+        .learnings ul { margin-left: 25px; }
+        .learnings li { margin-bottom: 12px; line-height: 1.7; }
+        .learnings strong { color: var(--es-primary); }
+        
+        /* Portfolio */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .portfolio-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .portfolio-card:hover { transform: translateY(-5px); }
+        .portfolio-img { height: 180px; background: var(--es-gradient); display: flex; align-items: center; justify-content: center; }
+        .portfolio-img img { max-height: 100px; }
+        .portfolio-content { padding: 25px; }
+        .portfolio-content h4 { margin-bottom: 10px; }
+        .portfolio-content p { color: var(--es-gray); font-size: 0.9rem; margin-bottom: 15px; }
+        .portfolio-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .portfolio-tag { background: var(--es-light); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; }
+        
+        /* Button */
+        .btn { 
+            display: inline-block; 
+            padding: 14px 30px; 
+            background: var(--es-primary); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: var(--radius); 
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { background: #e65c00; transform: translateY(-2px); }
+        
+        /* Footer */
+        .footer { 
+            background: var(--es-dark); 
+            color: white; 
+            padding: 50px 20px; 
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-logo { margin-bottom: 20px; }
+        .footer-logo img { height: 60px; opacity: 0.9; }
+        .footer p { opacity: 0.7; }
+        .footer a { color: var(--es-primary); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section { padding: 30px 20px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .progress-steps { flex-direction: column; gap: 30px; }
+            .progress-steps::before { display: none; }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>?? Client Onboarding Process</h1>
-        <p>Exposure Solutions — Systemized Website & AI Setup</p>
-        <p style="margin-top: 10px; font-size: 0.9rem;">Based on learnings from: Lavelle's Auto, Alex's Smash Burger, Flavors</p>
+    <header class="header">
+        <div class="container header-flex">
+            <div class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Exposure Solutions">
+                <div class="logo-text">Exposure<span>Solutions</span></div>
+            </div>
+            <a href="https://exposuresolutions.ie" class="btn">Visit Website</a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>?? Client Onboarding System</h1>
+        <p>Streamlined process for launching beautiful, high-converting websites with AI integrations</p>
+        <div class="hero-badge">Version 2.0 — Based on 10+ Client Projects</div>
     </div>
 
     <div class="container">
         <!-- Process Overview -->
         <div class="section">
-            <h2>?? Process Overview</h2>
-            <p>This document outlines the complete client onboarding flow, from initial contact to live website with AI integrations.</p>
+            <h2 class="section-title">Process Overview</h2>
             
-            <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 200px; background: var(--light); padding: 20px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">??</div>
-                    <strong>Phase 1</strong>
-                    <p style="color: var(--gray);">Discovery & Registration</p>
+            <div class="progress-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Discovery</div>
+                    <div class="step-desc">Gather requirements</div>
                 </div>
-                <div style="flex: 1; min-width: 200px; background: var(--light); padding: 20px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">??</div>
-                    <strong>Phase 2</strong>
-                    <p style="color: var(--gray);">Design & Development</p>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Design</div>
+                    <div class="step-desc">Build & customize</div>
                 </div>
-                <div style="flex: 1; min-width: 200px; background: var(--light); padding: 20px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">?</div>
-                    <strong>Phase 3</strong>
-                    <p style="color: var(--gray);">Review & Approval</p>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Review</div>
+                    <div class="step-desc">Client approval</div>
                 </div>
-                <div style="flex: 1; min-width: 200px; background: var(--light); padding: 20px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">??</div>
-                    <strong>Phase 4</strong>
-                    <p style="color: var(--gray);">Launch & Handover</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Phase 1: Discovery -->
-        <div class="section">
-            <h2>Phase 1: Discovery & Registration</h2>
-            
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Initial Contact Form</h3>
-                    <p><span class="tag tag-auto">AUTO-POPULATED</span> from lead source</p>
-                    <ul>
-                        <li>Name, Email, Phone</li>
-                        <li>Business Name (if exists)</li>
-                        <li>Industry/Type</li>
-                        <li>Current website (if any)</li>
-                        <li>Social media links</li>
-                    </ul>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Launch</div>
+                    <div class="step-desc">Go live!</div>
                 </div>
             </div>
 
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Business Discovery Call / Form</h3>
-                    <p><span class="tag tag-client">CLIENT INPUT</span> Required information</p>
-                    <ul>
-                        <li>What does your business do? (elevator pitch)</li>
-                        <li>Who is your target customer?</li>
-                        <li>What problem do you solve?</li>
-                        <li>What makes you different from competitors?</li>
-                        <li>What are your top 3-5 services?</li>
-                        <li>Do you have existing branding (logo, colors)?</li>
-                        <li>What websites do you like the look of?</li>
-                        <li>Budget range for project</li>
-                        <li>Timeline expectations</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Auto-Research Phase</h3>
-                    <p><span class="tag tag-auto">AUTO-POPULATED</span> AI gathers info</p>
-                    <ul>
-                        <li>Scrape existing website for content</li>
-                        <li>Pull Google Business Profile info</li>
-                        <li>Analyze social media presence</li>
-                        <li>Research competitors in area</li>
-                        <li>Check domain availability</li>
-                        <li>Industry-specific page templates</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Client Registration Form -->
-        <div class="section">
-            <h2>?? Client Registration Form Template</h2>
-            <p style="margin-bottom: 20px;">This form auto-populates where possible and highlights what client needs to confirm/add.</p>
-            
-            <form id="registrationForm">
-                <h3 style="margin-bottom: 20px; color: var(--primary);">Business Information</h3>
-                <div class="grid-2">
-                    <div class="form-field">
-                        <label>Business Name *</label>
-                        <input type="text" name="business_name" placeholder="e.g., Lavelle's Auto">
-                        <small>What you want to be known as</small>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">??</div>
+                    <h3>Phase 1: Discovery</h3>
+                    <p>Collect business info, goals, branding preferences, and technical requirements through smart forms.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="tag tag-auto">AUTO</span>
+                        <span class="tag tag-client">CLIENT INPUT</span>
                     </div>
-                    <div class="form-field">
-                        <label>Legal Business Name</label>
-                        <input type="text" name="legal_name" placeholder="e.g., Ethan Lavelle T/A Lavelle's Auto">
-                        <small>For invoices/legal docs (can be same as above)</small>
+                </div>
+                <div class="card">
+                    <div class="card-icon">??</div>
+                    <h3>Phase 2: Design</h3>
+                    <p>AI-assisted page generation, custom styling, mobile optimization, and integration setup.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="tag tag-auto">AUTO</span>
+                        <span class="tag tag-manual">MANUAL</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">?</div>
+                    <h3>Phase 3: Review</h3>
+                    <p>Client feedback survey, network voting on names/domains, iteration based on responses.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="tag tag-client">CLIENT INPUT</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">??</div>
+                    <h3>Phase 4: Launch</h3>
+                    <p>DNS configuration, GHL deployment, final testing, and handover documentation.</p>
+                    <div style="margin-top: 15px;">
+                        <span class="tag tag-manual">MANUAL</span>
+                        <span class="tag tag-auto">AUTO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Section -->
+        <div class="section">
+            <h2 class="section-title">Recent Projects</h2>
+            <p style="color: var(--es-gray); margin-bottom: 20px;">Sites built using this process:</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img" style="background: linear-gradient(135deg, #005A9C, #003D6B);">
+                        <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto">
+                    </div>
+                    <div class="portfolio-content">
+                        <h4>Lavelle's Auto</h4>
+                        <p>Third-generation mechanic on Achill Island. Full website with booking, loyalty program, and partner network.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Automotive</span>
+                            <span class="portfolio-tag">GHL</span>
+                            <span class="portfolio-tag">Booking</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="grid-2">
-                    <div class="form-field">
-                        <label>Industry / Business Type *</label>
-                        <select name="industry">
-                            <option value="">Select...</option>
-                            <option value="automotive">Automotive / Mechanic</option>
-                            <option value="food">Food & Beverage</option>
-                            <option value="beauty">Beauty / Salon</option>
-                            <option value="trades">Trades (Plumber, Electrician, etc.)</option>
-                            <option value="retail">Retail / E-commerce</option>
-                            <option value="professional">Professional Services</option>
-                            <option value="health">Health & Wellness</option>
-                            <option value="other">Other</option>
-                        </select>
+                <div class="portfolio-card">
+                    <div class="portfolio-img" style="background: linear-gradient(135deg, #ff6b6b, #ee5a5a);">
+                        <span style="font-size: 3rem;">??</span>
                     </div>
-                    <div class="form-field">
-                        <label>Location / Service Area *</label>
-                        <input type="text" name="location" placeholder="e.g., Achill Island, Co. Mayo">
+                    <div class="portfolio-content">
+                        <h4>Alex's Smash Burger</h4>
+                        <p>Street food vendor with online ordering, event booking, and social media integration.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Food</span>
+                            <span class="portfolio-tag">E-commerce</span>
+                            <span class="portfolio-tag">Events</span>
+                        </div>
                     </div>
                 </div>
-
-                <h3 style="margin: 30px 0 20px; color: var(--primary);">Contact Details</h3>
-                <div class="grid-2">
-                    <div class="form-field">
-                        <label>Owner/Manager Name *</label>
-                        <input type="text" name="owner_name" placeholder="e.g., Ethan Lavelle">
+                
+                <div class="portfolio-card">
+                    <div class="portfolio-img" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <span style="font-size: 3rem;">???</span>
                     </div>
-                    <div class="form-field">
-                        <label>Main Phone Number *</label>
-                        <input type="tel" name="phone" placeholder="e.g., +353 85 102 6371">
-                        <small>Will be used for website, WhatsApp, calls</small>
-                    </div>
-                </div>
-                <div class="grid-2">
-                    <div class="form-field">
-                        <label>Email Address *</label>
-                        <input type="email" name="email" placeholder="e.g., ethan@lavellesauto.ie">
-                    </div>
-                    <div class="form-field">
-                        <label>Secondary Phone (Emergency/After Hours)</label>
-                        <input type="tel" name="phone_secondary" placeholder="e.g., +353 89 205 7388">
+                    <div class="portfolio-content">
+                        <h4>Flavors Restaurant</h4>
+                        <p>Fine dining establishment with reservation system, menu showcase, and gift cards.</p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Restaurant</span>
+                            <span class="portfolio-tag">Reservations</span>
+                            <span class="portfolio-tag">Menu</span>
+                        </div>
                     </div>
                 </div>
-
-                <h3 style="margin: 30px 0 20px; color: var(--primary);">Services & Pricing</h3>
-                <div class="form-field">
-                    <label>Main Services Offered *</label>
-                    <textarea name="services" rows="4" placeholder="List your main services, e.g.:
-- Diagnostics (€50-€80)
-- Oil Change (€70)
-- Brake Repairs (€150-€300)
-- NCT Prep (€30-€45)"></textarea>
-                    <small>Include approximate pricing if you want it shown on website</small>
-                </div>
-
-                <h3 style="margin: 30px 0 20px; color: var(--primary);">Branding</h3>
-                <div class="grid-2">
-                    <div class="form-field">
-                        <label>Do you have a logo?</label>
-                        <select name="has_logo">
-                            <option value="yes">Yes - I'll upload it</option>
-                            <option value="no">No - Please create one</option>
-                            <option value="update">I have one but want it updated</option>
-                        </select>
-                    </div>
-                    <div class="form-field">
-                        <label>Preferred Colors</label>
-                        <input type="text" name="colors" placeholder="e.g., Blue and Gold, or 'I don't mind'">
-                    </div>
-                </div>
-
-                <h3 style="margin: 30px 0 20px; color: var(--primary);">Online Presence</h3>
-                <div class="grid-2">
-                    <div class="form-field">
-                        <label>Current Website</label>
-                        <input type="url" name="current_website" placeholder="https://...">
-                        <small>Leave blank if none</small>
-                    </div>
-                    <div class="form-field">
-                        <label>Preferred Domain Name</label>
-                        <input type="text" name="domain_preference" placeholder="e.g., lavellesauto.ie">
-                        <small>We'll check availability</small>
-                    </div>
-                </div>
-                <div class="grid-2">
-                    <div class="form-field">
-                        <label>Facebook Page</label>
-                        <input type="url" name="facebook" placeholder="https://facebook.com/...">
-                    </div>
-                    <div class="form-field">
-                        <label>Instagram Handle</label>
-                        <input type="text" name="instagram" placeholder="@yourbusiness">
-                    </div>
-                </div>
-                <div class="form-field">
-                    <label>Google Business Profile</label>
-                    <input type="url" name="google_business" placeholder="https://g.page/...">
-                </div>
-
-                <h3 style="margin: 30px 0 20px; color: var(--primary);">Additional Features</h3>
-                <div class="form-field">
-                    <label>What features do you want on your website?</label>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">
-                        <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;"><input type="checkbox" name="features" value="booking"> Online Booking</label>
-                        <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;"><input type="checkbox" name="features" value="payments"> Online Payments</label>
-                        <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;"><input type="checkbox" name="features" value="whatsapp"> WhatsApp Integration</label>
-                        <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;"><input type="checkbox" name="features" value="reviews"> Review Management</label>
-                        <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;"><input type="checkbox" name="features" value="loyalty"> Loyalty Program</label>
-                        <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;"><input type="checkbox" name="features" value="shop"> Online Shop</label>
-                        <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;"><input type="checkbox" name="features" value="ai_receptionist"> AI Receptionist</label>
-                        <label style="display: flex; align-items: center; gap: 10px; font-weight: normal;"><input type="checkbox" name="features" value="email_marketing"> Email Marketing</label>
-                    </div>
-                </div>
-
-                <h3 style="margin: 30px 0 20px; color: var(--primary);">Anything Else?</h3>
-                <div class="form-field">
-                    <label>What would you like to ADD that's not listed above?</label>
-                    <textarea name="additions" rows="3" placeholder="Any specific features, pages, or functionality you need..."></textarea>
-                </div>
-                <div class="form-field">
-                    <label>What do you NOT want on your website?</label>
-                    <textarea name="exclusions" rows="3" placeholder="Anything you specifically don't want..."></textarea>
-                </div>
-            </form>
-        </div>
-
-        <!-- Phase 2: Development -->
-        <div class="section">
-            <h2>Phase 2: Design & Development</h2>
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Task</th>
-                        <th>Responsibility</th>
-                        <th>Auto?</th>
-                        <th>Est. Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Create GHL sub-account</td>
-                        <td>Exposure</td>
-                        <td>? Template</td>
-                        <td>5 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Setup GitHub repository</td>
-                        <td>Exposure</td>
-                        <td>? Script</td>
-                        <td>2 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Generate homepage from template</td>
-                        <td>AI + Exposure</td>
-                        <td>? AI</td>
-                        <td>30 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Create service pages</td>
-                        <td>AI + Exposure</td>
-                        <td>? AI</td>
-                        <td>30 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Setup booking calendar</td>
-                        <td>Exposure</td>
-                        <td>? Semi-auto</td>
-                        <td>15 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Integrate payment processing</td>
-                        <td>Exposure + Client</td>
-                        <td>? Manual</td>
-                        <td>30 mins</td>
-                    </tr>
-                    <tr>
-                        <td>Mobile optimization</td>
-                        <td>Exposure</td>
-                        <td>? Built-in</td>
-                        <td>10 mins</td>
-                    </tr>
-                    <tr>
-                        <td>SEO setup</td>
-                        <td>Exposure</td>
-                        <td>? AI</td>
-                        <td>15 mins</td>
-                    </tr>
-                </tbody>
-            </table>
+            </div>
         </div>
 
         <!-- Learnings -->
         <div class="section learnings">
-            <h2>?? Key Learnings from Lavelle's Auto Project</h2>
+            <h2>?? Key Learnings from Projects</h2>
             <ul>
-                <li><strong>Phone Numbers:</strong> Always confirm the correct phone number FIRST. We had to update across 10+ files.</li>
-                <li><strong>GHL vs GitHub:</strong> Clients don't understand the difference. Need clear explanation that GitHub = code storage, GHL = live hosting.</li>
-                <li><strong>Copy/Paste to GHL:</strong> This manual step causes issues. Consider automation or clearer instructions.</li>
-                <li><strong>Navigation Links:</strong> Must use full GHL URLs (https://subdomain.exposuresolutions.me/page), not relative paths.</li>
-                <li><strong>Emojis in Code:</strong> Can get corrupted. Use Unicode or emoji CDN instead of copy/paste.</li>
-                <li><strong>Page Slugs:</strong> GHL generates random slugs for pages (e.g., /home-703153). Need to document these.</li>
-                <li><strong>Header Consistency:</strong> Every page needs identical header/nav code. Use includes or components.</li>
-                <li><strong>Feedback Early:</strong> Get client approval on name/domain/branding BEFORE building full site.</li>
+                <li><strong>Phone Numbers First:</strong> Always confirm the correct phone number BEFORE building. We had to update across 10+ files on Lavelle's project.</li>
+                <li><strong>GHL vs GitHub:</strong> Clients don't understand the difference. Clear explanation needed: GitHub = code storage, GHL = live hosting.</li>
+                <li><strong>Navigation Links:</strong> Must use full GHL URLs (https://subdomain.exposuresolutions.me/page), not relative paths like /page.html</li>
+                <li><strong>Emojis:</strong> Can get corrupted when copy/pasting. Use sparingly or via Unicode.</li>
+                <li><strong>Feedback Early:</strong> Get client approval on name/domain/branding BEFORE building full site. Use survey!</li>
+                <li><strong>Mobile Action Bar:</strong> Essential for mobile users - always include Call + WhatsApp sticky buttons.</li>
                 <li><strong>Partner Services:</strong> Clearly distinguish "our services" vs "partner referrals" to avoid confusion.</li>
-                <li><strong>Mobile Action Bar:</strong> Essential for mobile users - always include Call + WhatsApp buttons.</li>
+                <li><strong>Domain Search:</strong> Include live domain availability check in strategy page so clients can decide on the spot.</li>
             </ul>
         </div>
 
-        <!-- Checklist -->
+        <!-- Pre-Launch Checklist -->
         <div class="section">
-            <h2>? Pre-Launch Checklist</h2>
+            <h2 class="section-title">Pre-Launch Checklist</h2>
             <ul class="checklist">
-                <li>All phone numbers are correct</li>
-                <li>All navigation links work</li>
-                <li>Logo displays correctly on all pages</li>
-                <li>Mobile responsive on iPhone & Android</li>
-                <li>WhatsApp links open correctly</li>
-                <li>Email links work</li>
-                <li>Booking calendar connected</li>
-                <li>Payment processing tested</li>
-                <li>Google Business Profile updated</li>
-                <li>Social media links work</li>
-                <li>Footer consistent on all pages</li>
-                <li>SEO titles & descriptions set</li>
-                <li>Favicon uploaded</li>
-                <li>SSL certificate active (https)</li>
-                <li>Client has approved all content</li>
-                <li>Backup/export of all code to GitHub</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> All phone numbers are correct</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> All navigation links work (tested on mobile)</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Logo displays correctly on all pages</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Mobile responsive on iPhone & Android</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> WhatsApp links open correctly with pre-filled message</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Booking calendar connected and working</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Payment processing tested (if applicable)</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Social media links work</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Footer consistent on all pages</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> SEO titles & descriptions set</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Client has approved all content</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Code backed up to GitHub</li>
+                <li><div class="checkbox" onclick="this.classList.toggle('checked')">?</div> Feedback survey created and linked</li>
             </ul>
         </div>
 
-        <!-- Pages Template -->
-        <div class="section">
-            <h2>?? Standard Pages for Service Business</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Page</th>
-                        <th>GHL Slug</th>
-                        <th>Purpose</th>
-                        <th>Priority</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Home</td><td>/home-[id]</td><td>First impression, hero, trust badges, CTA</td><td>?? Essential</td></tr>
-                    <tr><td>Services</td><td>/services</td><td>All services with pricing</td><td>?? Essential</td></tr>
-                    <tr><td>Booking</td><td>/booking</td><td>Calendar integration</td><td>?? Essential</td></tr>
-                    <tr><td>About</td><td>/about</td><td>Story, team, trust building</td><td>?? Important</td></tr>
-                    <tr><td>Contact</td><td>/contact</td><td>Location, hours, form</td><td>?? Important</td></tr>
-                    <tr><td>Payments</td><td>/payments</td><td>Payment options</td><td>?? Optional</td></tr>
-                    <tr><td>Loyalty</td><td>/loyalty</td><td>Rewards program</td><td>?? Optional</td></tr>
-                    <tr><td>Partners</td><td>/partners</td><td>Referral network</td><td>?? Optional</td></tr>
-                    <tr><td>Shop</td><td>/parts or /shop</td><td>E-commerce</td><td>?? Optional</td></tr>
-                    <tr><td>Strategy</td><td>/strategy</td><td>Internal client dashboard</td><td>?? Internal</td></tr>
-                    <tr><td>Feedback</td><td>/feedback</td><td>Survey for network</td><td>?? Internal</td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="section" style="text-align: center;">
-            <h2>?? Ready to Onboard a New Client?</h2>
-            <p style="margin-bottom: 20px;">Use this process document and registration form template.</p>
-            <a href="#registrationForm" class="btn">Use Registration Form</a>
+        <!-- CTA -->
+        <div class="section" style="text-align: center; background: var(--es-gradient); color: white;">
+            <h2 style="color: white; margin-bottom: 15px;">Ready to Onboard a New Client?</h2>
+            <p style="margin-bottom: 25px; opacity: 0.95;">Use this process to deliver exceptional results every time.</p>
+            <a href="https://exposuresolutions.ie/contact" class="btn" style="background: white; color: var(--es-primary);">Start New Project</a>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Exposure Solutions">
+        </div>
+        <p><strong>Exposure Solutions</strong></p>
+        <p style="margin-top: 10px;">AI-Powered Digital Marketing & Web Development</p>
+        <p style="margin-top: 20px;"><a href="https://exposuresolutions.ie">exposuresolutions.ie</a></p>
+    </footer>
 </body>
 </html>

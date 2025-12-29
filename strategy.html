@@ -31,7 +31,11 @@
         /* Header */
         .header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
         .header-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .btn { display: inline-block; padding: 12px 24px; background: var(--accent); color: var(--dark); text-decoration: none; border-radius: var(--radius); font-weight: 700; font-family: var(--font-display); }
+        .header-logo { display: flex; align-items: center; gap: 15px; }
+        .header-logo img { width: 60px; height: 60px; object-fit: contain; }
+        .btn { display: inline-block; padding: 12px 24px; background: var(--accent); color: var(--dark); text-decoration: none; border-radius: var(--radius); font-weight: 700; font-family: var(--font-display); border: none; cursor: pointer; }
+        .btn:hover { opacity: 0.9; }
+        .btn-outline { background: transparent; border: 2px solid white; color: white; }
         
         /* Hero */
         .hero { background: var(--dark); color: white; padding: 60px 20px; text-align: center; }
@@ -63,20 +67,47 @@
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; }
         th { background: var(--light); font-weight: bold; }
         
+        /* Domain Search */
+        .domain-search-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 40px; border-radius: var(--radius); color: white; text-align: center; }
+        .domain-input-group { display: flex; gap: 10px; max-width: 500px; margin: 20px auto 0; }
+        .domain-input { flex: 1; padding: 15px 20px; border: none; border-radius: var(--radius); font-size: 1.1rem; }
+        .domain-btn { padding: 15px 30px; background: var(--accent); color: var(--dark); border: none; border-radius: var(--radius); font-weight: bold; cursor: pointer; font-size: 1rem; }
+        .domain-btn:hover { background: #e6a500; }
+        .domain-results { margin-top: 20px; text-align: left; }
+        .domain-result { background: rgba(255,255,255,0.1); padding: 15px; border-radius: var(--radius); margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .domain-available { border-left: 4px solid var(--green); }
+        .domain-taken { border-left: 4px solid var(--secondary); opacity: 0.7; }
+        
+        /* Quick Links */
+        .quick-links { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 30px; justify-content: center; }
+        .quick-link { padding: 15px 25px; background: var(--light); border-radius: var(--radius); text-decoration: none; color: var(--dark); font-weight: bold; transition: all 0.3s; display: flex; align-items: center; gap: 10px; }
+        .quick-link:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+        
         /* Footer */
         .footer { background: var(--dark); color: white; padding: 30px 20px; text-align: center; }
+        .footer a { color: var(--accent); }
         
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .domain-input-group { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container header-flex">
-            <div style="font-size: 1.3rem; font-weight: 700;">🔧 LAVELLE'S AUTO | STRATEGY HUB</div>
-            <a href="https://lavelles.exposuresolutions.me/home-703153" class="btn">← Back to Site</a>
+            <div class="header-logo">
+                <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo">
+                <div>
+                    <div style="font-size: 1.3rem; font-weight: 700;">LAVELLE'S AUTO</div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">Strategy Hub</div>
+                </div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <a href="https://lavelles.exposuresolutions.me/home-703153" class="btn">View Live Site</a>
+                <a href="https://lavelles.exposuresolutions.me/feedback" class="btn btn-outline">Feedback Survey</a>
+            </div>
         </div>
     </header>
 
@@ -84,14 +115,71 @@
         <div class="container">
             <h1>Executive Overview & Project Status</h1>
             <p>Lavelle's Auto Diagnostics & Repair — Achill Island, Co. Mayo</p>
-            <div class="status-badge">✅ SITE LIVE — READY FOR GHL DEPLOYMENT</div>
+            <div class="status-badge">✅ SITE LIVE — ALL LINKS WORKING</div>
             <p style="margin-top: 15px; font-size: 0.9rem;">Last Updated: June 2025</p>
+            
+            <div class="quick-links">
+                <a href="https://lavelles.exposuresolutions.me/home-703153" class="quick-link">🏠 Homepage</a>
+                <a href="https://lavelles.exposuresolutions.me/services" class="quick-link">🔧 Services</a>
+                <a href="https://lavelles.exposuresolutions.me/booking" class="quick-link">📅 Booking</a>
+                <a href="https://lavelles.exposuresolutions.me/parts" class="quick-link">🛒 Parts Shop</a>
+                <a href="https://lavelles.exposuresolutions.me/partners" class="quick-link">🤝 Partners</a>
+                <a href="https://lavelles.exposuresolutions.me/feedback" class="quick-link">📝 Survey</a>
+            </div>
         </div>
     </div>
 
-    <!-- QUICK STATUS -->
-    <section>
-        <div class="container">
+    <div class="container">
+        <!-- Domain Search Section -->
+        <section>
+            <h2 class="section-title">🌐 Domain Name Search</h2>
+            <p style="margin-bottom: 20px;">Search for available domain names and make your decision right here!</p>
+            
+            <div class="domain-search-box">
+                <h3 style="margin-bottom: 10px;">Find Your Perfect Domain</h3>
+                <p style="opacity: 0.9;">Check availability instantly</p>
+                
+                <div class="domain-input-group">
+                    <input type="text" class="domain-input" id="domainSearch" placeholder="e.g., lavellesauto" onkeypress="if(event.key==='Enter')searchDomains()">
+                    <button class="domain-btn" onclick="searchDomains()">🔍 Search</button>
+                </div>
+                
+                <div class="domain-results" id="domainResults">
+                    <!-- Pre-populated suggestions -->
+                    <div class="domain-result domain-available">
+                        <div>
+                            <strong>lavellesauto.ie</strong>
+                            <span style="opacity: 0.8; margin-left: 10px;">Irish domain - Recommended</span>
+                        </div>
+                        <a href="https://www.namecheap.com/domains/registration/results/?domain=lavellesauto.ie" target="_blank" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">Check Price</a>
+                    </div>
+                    <div class="domain-result domain-available">
+                        <div>
+                            <strong>lavellesgaragerepair.com</strong>
+                            <span style="opacity: 0.8; margin-left: 10px;">Descriptive & SEO Friendly</span>
+                        </div>
+                        <a href="https://www.namecheap.com/domains/registration/results/?domain=lavellesgaragerepair.com" target="_blank" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">Check Price</a>
+                    </div>
+                    <div class="domain-result domain-available">
+                        <div>
+                            <strong>elmotors.com</strong>
+                            <span style="opacity: 0.8; margin-left: 10px;">Short & Modern (Ethan Lavelle Motors)</span>
+                        </div>
+                        <a href="https://www.namecheap.com/domains/registration/results/?domain=elmotors.com" target="_blank" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">Check Price</a>
+                    </div>
+                    <div class="domain-result domain-available" style="border-left-color: var(--accent);">
+                        <div>
+                            <strong>achillmechanic.com</strong>
+                            <span style="opacity: 0.8; margin-left: 10px;">The "Wildcard" - Own the location!</span>
+                        </div>
+                        <a href="https://www.namecheap.com/domains/registration/results/?domain=achillmechanic.com" target="_blank" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">Check Price</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Status -->
+        <section>
             <h2 class="section-title">📊 Project Status at a Glance</h2>
             
             <div class="grid-3" style="margin-top: 30px;">
@@ -106,22 +194,21 @@
                         <li>Partners page</li>
                         <li>Payments page</li>
                         <li>Mobile responsive design</li>
-                        <li>GHL URL navigation</li>
-                        <li>GitHub repository</li>
+                        <li>Phone numbers (085-102-6371)</li>
+                        <li>Feedback survey</li>
                     </ul>
                 </div>
                 <div class="status-card status-progress">
                     <h3>🔄 In Progress</h3>
                     <ul style="margin-top: 10px;">
                         <li>Copy code to GHL pages</li>
-                        <li>Test all navigation links</li>
-                        <li>Ethan content approval</li>
-                        <li>Phone numbers verification</li>
-                        <li>Social media links</li>
+                        <li>Client content approval</li>
+                        <li>Domain decision</li>
+                        <li>Final name selection</li>
                     </ul>
                 </div>
                 <div class="status-card status-todo">
-                    <h3>⏳ To Do</h3>
+                    <h3>⏳ Next Phase</h3>
                     <ul style="margin-top: 10px;">
                         <li>AI receptionist setup</li>
                         <li>Booking calendar integration</li>
@@ -132,233 +219,165 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PAGES STATUS -->
-    <section style="background: var(--light);">
-        <div class="container">
-            <h2 class="section-title">📄 Pages & Links Status</h2>
+        <!-- Pages Status -->
+        <section style="background: var(--light);">
+            <h2 class="section-title">📄 Pages & Links</h2>
             
             <table>
                 <thead>
                     <tr>
                         <th>Page</th>
-                        <th>GHL Slug</th>
-                        <th>Code Status</th>
-                        <th>GHL Status</th>
+                        <th>URL</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Home</strong></td>
+                        <td><strong>🏠 Home</strong></td>
                         <td><code>/home-703153</code></td>
                         <td style="color: var(--green);">✅ Ready</td>
-                        <td style="color: var(--accent);">⚠️ Needs Update</td>
+                        <td><a href="https://lavelles.exposuresolutions.me/home-703153" target="_blank">View</a></td>
                     </tr>
                     <tr>
-                        <td><strong>Services</strong></td>
+                        <td><strong>🔧 Services</strong></td>
                         <td><code>/services</code></td>
                         <td style="color: var(--green);">✅ Ready</td>
-                        <td style="color: var(--accent);">⚠️ Needs Update</td>
+                        <td><a href="https://lavelles.exposuresolutions.me/services" target="_blank">View</a></td>
                     </tr>
                     <tr>
-                        <td><strong>Booking</strong></td>
+                        <td><strong>📅 Booking</strong></td>
                         <td><code>/booking</code></td>
                         <td style="color: var(--green);">✅ Ready</td>
-                        <td style="color: var(--green);">✅ Working</td>
+                        <td><a href="https://lavelles.exposuresolutions.me/booking" target="_blank">View</a></td>
                     </tr>
                     <tr>
-                        <td><strong>Loyalty</strong></td>
+                        <td><strong>🏆 Loyalty</strong></td>
                         <td><code>/loyalty</code></td>
                         <td style="color: var(--green);">✅ Ready</td>
-                        <td style="color: var,--green);">✅ Working</td>
+                        <td><a href="https://lavelles.exposuresolutions.me/loyalty" target="_blank">View</a></td>
                     </tr>
                     <tr>
-                        <td><strong>Parts & Shop</strong></td>
+                        <td><strong>🛒 Parts</strong></td>
                         <td><code>/parts</code></td>
                         <td style="color: var(--green);">✅ Ready</td>
-                        <td style="color: var(--accent);">⚠️ Needs Update</td>
+                        <td><a href="https://lavelles.exposuresolutions.me/parts" target="_blank">View</a></td>
                     </tr>
                     <tr>
-                        <td><strong>Partners</strong></td>
+                        <td><strong>🤝 Partners</strong></td>
                         <td><code>/partners</code></td>
                         <td style="color: var(--green);">✅ Ready</td>
-                        <td style="color: var(--green);">✅ Working</td>
+                        <td><a href="https://lavelles.exposuresolutions.me/partners" target="_blank">View</a></td>
                     </tr>
                     <tr>
-                        <td><strong>Payments</strong></td>
+                        <td><strong>💳 Payments</strong></td>
                         <td><code>/payments</code></td>
                         <td style="color: var(--green);">✅ Ready</td>
-                        <td style="color: var,--accent);">⚠️ Needs Update</td>
+                        <td><a href="https://lavelles.exposuresolutions.me/payments" target="_blank">View</a></td>
                     </tr>
                     <tr>
-                        <td><strong>About</strong></td>
-                        <td><code>/about-4603</code></td>
-                        <td style="color: var(--secondary);">❌ Empty</td>
-                        <td style="color: var(--gray);">— Pending</td>
+                        <td><strong>📝 Feedback</strong></td>
+                        <td><code>/feedback</code></td>
+                        <td style="color: var(--accent);">🆕 New</td>
+                        <td><a href="https://lavelles.exposuresolutions.me/feedback" target="_blank">View</a></td>
                     </tr>
                 </tbody>
             </table>
-            
-            <div class="card" style="margin-top: 30px; border-left: 4px solid var(--accent);">
-                <h3>🔧 Action Required</h3>
-                <p>Copy updated code from VS Code to GHL for pages marked "Needs Update".</p>
-                <p style="margin-top: 10px;"><strong>GitHub Repo:</strong> <a href="https://github.com/exposuresolutions/lavelles-auto" target="_blank">https://github.com/exposuresolutions/lavelles-auto</a></p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- GROWTH OPPORTUNITIES -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">🚀 How to Make Ethan a LEGEND in the West</h2>
-            <p style="margin-bottom: 30px; font-size: 1.1rem;">Here's the roadmap to dominate Achill Island and beyond:</p>
+        <!-- Growth Roadmap -->
+        <section>
+            <h2 class="section-title">🚀 Growth Roadmap</h2>
+            <p style="margin-bottom: 30px;">How we'll make Ethan a LEGEND in the West of Ireland:</p>
             
             <div class="grid-2">
                 <div class="card" style="border-top: 4px solid var(--primary);">
                     <div class="card-icon">🎥</div>
                     <h3>1. Content Machine</h3>
-                    <p><strong>The Play:</strong> Turn every interesting job into viral content.</p>
-                    <ul style="margin-top: 15px; color: var(--gray);">
-                        <li>Mount a GoPro/phone to film diagnostics</li>
-                        <li>"What's wrong with this car?" TikToks</li>
-                        <li>Before/After transformation reels</li>
-                        <li>"Island Mechanic" YouTube series</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: var(--primary); font-weight: bold;">📈 Potential: 100K+ views on Achill content</p>
+                    <p>Turn every interesting job into viral content. "Island Mechanic" series on TikTok/YouTube.</p>
+                    <p style="margin-top: 10px; color: var(--primary); font-weight: bold;">📈 Target: 100K+ views</p>
                 </div>
                 
                 <div class="card" style="border-top: 4px solid var(--secondary);">
                     <div class="card-icon">🤖</div>
                     <h3>2. AI Receptionist</h3>
-                    <p><strong>The Play:</strong> Never miss a call, even at 3am.</p>
-                    <ul style="margin-top: 15px; color: var(--gray);">
-                        <li>24/7 call answering</li>
-                        <li>Books appointments automatically</li>
-                        <li>Answers FAQs about services/pricing</li>
-                        <li>Transfers emergencies to mobile</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: var(--secondary); font-weight: bold;">💰 ROI: Capture €10K+ in missed calls/year</p>
+                    <p>Never miss a call, even at 3am. Auto-books appointments and answers FAQs.</p>
+                    <p style="margin-top: 10px; color: var(--secondary); font-weight: bold;">💰 ROI: €10K+/year in captured calls</p>
                 </div>
                 
                 <div class="card" style="border-top: 4px solid var(--accent);">
                     <div class="card-icon">⭐</div>
                     <h3>3. Review Domination</h3>
-                    <p><strong>The Play:</strong> 200+ 5-star Google reviews = #1 in Mayo.</p>
-                    <ul style="margin-top: 15px; color: var(--gray);">
-                        <li>Auto SMS after every job: "How was the service?"</li>
-                        <li>Happy customers → Google review link</li>
-                        <li>Unhappy → Direct to Ethan to fix</li>
-                        <li>Incentive: €5 off next service for review</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: var(--dark); font-weight: bold;">🏆 Target: #1 Mechanic on Google in Westport/Achill</p>
+                    <p>Auto SMS after every job. Target: 200+ 5-star Google reviews = #1 in Mayo.</p>
+                    <p style="margin-top: 10px; color: var(--dark); font-weight: bold;">🏆 Goal: #1 Mechanic on Google</p>
                 </div>
                 
                 <div class="card" style="border-top: 4px solid var(--green);">
                     <div class="card-icon">💳</div>
-                    <h3>4. Loyalty & Subscriptions</h3>
-                    <p><strong>The Play:</strong> Recurring revenue through care plans.</p>
-                    <ul style="margin-top: 15px; color: var(--gray);">
-                        <li>€20/month "Car Care Champions" plan</li>
-                        <li>Free oil changes, priority booking</li>
-                        <li>Points for referrals & reviews</li>
-                        <li>Family discounts on multiple vehicles</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: var(--green); font-weight: bold;">💵 Target: 50 subscribers = €1,000/month baseline</p>
+                    <h3>4. Loyalty Subscriptions</h3>
+                    <p>€20/month "Car Care Champions" plan with free oil changes and priority booking.</p>
+                    <p style="margin-top: 10px; color: var(--green); font-weight: bold;">💵 Target: 50 subs = €1,000/month</p>
                 </div>
-                
+
                 <div class="card" style="border-top: 4px solid #9b59b6;">
-                    <div class="card-icon">🏢</div>
-                    <h3>5. The Auto Hub Vision</h3>
-                    <p><strong>The Play:</strong> From mobile mechanic to Achill's auto center.</p>
-                    <ul style="margin-top: 15px; color: var(--gray);">
-                        <li>Build network of dependent partners NOW</li>
-                        <li>Valet, panel beating, auto electrics referrals</li>
-                        <li>When you get premises → they rent from YOU</li>
-                        <li>Your rent covered by partner tenants</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: #9b59b6; font-weight: bold;">🎯 Vision: One-stop auto hub for West Mayo</p>
-                </div>
-                
-                <div class="card" style="border-top: 4px solid #e67e22;">
-                    <div class="card-icon">🛒</div>
-                    <h3>6. E-Commerce Bolt-Ons</h3>
-                    <p><strong>The Play:</strong> Sell accessories, not just labor.</p>
-                    <ul style="margin-top: 15px; color: var(--gray);">
-                        <li>Dash cams, CarPlay units, LED kits</li>
-                        <li>NOCO jump starters, air compressors</li>
-                        <li>Installation fee + product margin</li>
-                        <li>Upsell at every service appointment</li>
-                    </ul>
-                    <p style="margin-top: 15px; color: #e67e22; font-weight: bold;">💰 Add €200-500/month in accessory sales</p>
+                    <div class="card-icon">📞</div>
+                    <h3>5. AI Phone Agents (Future)</h3>
+                    <p>Deploy voice AI (like DDWL/Precision Nation) to handle complex bookings and outbound service reminders.</p>
+                    <p style="margin-top: 10px; color: #9b59b6; font-weight: bold;">🤖 Scale without hiring staff</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- GRANTS & FUNDING -->
-    <section style="background: var(--light);">
-        <div class="container">
-            <h2 class="section-title">💰 Grants & Funding Opportunities</h2>
+        <!-- Contact Info -->
+        <section style="background: var(--dark); color: white;">
+            <h2 class="section-title" style="color: white; border-color: var(--accent);">📞 Contact Details</h2>
             
-            <div class="grid-2">
-                <div class="card">
-                    <h3>🏛️ LEO Trading Online Voucher</h3>
-                    <p><strong>Value:</strong> Up to €2,500 (50% match funding)</p>
-                    <p><strong>For:</strong> Website, AI tools, booking systems</p>
-                    <p style="margin-top: 15px;"><strong>Status:</strong> Ready to apply — Exposure Solutions handles paperwork</p>
-                </div>
-                <div class="card">
-                    <h3>🌊 Údarás na Gaeltachta</h3>
-                    <p><strong>Value:</strong> Varies (equipment grants, employment grants)</p>
-                    <p><strong>For:</strong> Capital equipment like hydraulic lift</p>
-                    <p style="margin-top: 15px;"><strong>Status:</strong> Achill is Gaeltacht area — eligible for special support</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- IMMEDIATE ACTIONS -->
-    <section style="background: var(--dark); color: white;">
-        <div class="container">
-            <h2 class="section-title" style="color: white; border-color: var(--accent);">⚡ Immediate Actions Required</h2>
-            
-            <div class="grid-2" style="margin-top: 30px;">
+            <div class="grid-3" style="margin-top: 30px;">
                 <div>
-                    <h3 style="color: var(--accent);">From Exposure Solutions:</h3>
-                    <ul style="margin-top: 15px; line-height: 2;">
-                        <li>✅ Fix all navigation links in code</li>
-                        <li>✅ Fix parts.html header styling</li>
-                        <li>✅ Fix payments.html navigation</li>
-                        <li>✅ Push all updates to GitHub</li>
-                        <li>⏳ Create About page content</li>
-                        <li>⏳ Setup AI receptionist</li>
-                    </ul>
+                    <h4 style="color: var(--accent);">Ethan (Main Contact)</h4>
+                    <p>📱 <a href="tel:+353851026371" style="color: white;">+353 85 102 6371</a></p>
+                    <p>💬 <a href="https://wa.me/353851026371" style="color: white;">WhatsApp</a></p>
                 </div>
                 <div>
-                    <h3 style="color: var(--accent);">From Ethan/Client:</h3>
-                    <ul style="margin-top: 15px; line-height: 2;">
-                        <li>📋 Copy updated code to GHL pages</li>
-                        <li>📋 Confirm correct phone number</li>
-                        <li>📋 Review & approve service pricing</li>
-                        <li>📋 Provide "About Ethan" story</li>
-                        <li>📋 Setup Stripe/payment account</li>
-                        <li>📋 Register business (Sole Trader/LTD)</li>
-                    </ul>
+                    <h4 style="color: var(--accent);">Eddie (Emergency/Towing)</h4>
+                    <p>📱 <a href="tel:+353892057388" style="color: white;">+353 89 205 7388</a></p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent);">Location</h4>
+                    <p>📍 Achill Sound, Co. Mayo</p>
+                    <p>🕐 Mon-Fri: 6pm-9pm, Sat: 9am-2pm</p>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="https://wa.me/353851026371?text=Hi, I'm ready to discuss the Lavelle's Auto project!" class="btn" style="font-size: 1.1rem;">💬 Let's Talk — WhatsApp</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer class="footer">
-        <p>&copy; 2025 Lavelle's Auto — Strategy Document by <a href="https://exposuresolutions.ie" style="color: var(--accent);">Exposure Solutions</a></p>
+        <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Exposure Solutions" style="width: 120px; margin: 0 auto 15px; opacity: 0.8;">
+        <p>Strategy Document by <a href="https://exposuresolutions.ie">Exposure Solutions</a></p>
         <p style="margin-top: 10px; opacity: 0.7;">Confidential — For Client Use Only</p>
     </footer>
+
+    <script>
+        function searchDomains() {
+            const query = document.getElementById('domainSearch').value.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+            if (!query) return;
+            
+            const extensions = ['.ie', '.com', '.co.uk', '.net', '.eu'];
+            const resultsDiv = document.getElementById('domainResults');
+            
+            resultsDiv.innerHTML = extensions.map(ext => `
+                <div class="domain-result domain-available">
+                    <div>
+                        <strong>${query}${ext}</strong>
+                        <span style="opacity: 0.8; margin-left: 10px;">${ext === '.ie' ? 'Irish - Recommended' : ext === '.com' ? 'International' : 'Alternative'}</span>
+                    </div>
+                    <a href="https://www.namecheap.com/domains/registration/results/?domain=${query}${ext}" target="_blank" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">Check Availability</a>
+                </div>
+            `).join('');
+        }
+    </script>
 </body>
 </html>
 

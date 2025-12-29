@@ -177,31 +177,31 @@
         <form id="surveyForm" onsubmit="submitSurvey(event)">
             <!-- Q1: Business Name -->
             <div class="survey-card">
-                <h2>1. What Name Do You Prefer?</h2>
-                <p>We're deciding between these options. Which sounds best for a trusted mechanic on Achill?</p>
+                <h2>1. The Name Game</h2>
+                <p>A name isn't just a label; it's a feeling. Which of these makes you trust us with your car?</p>
                 <div class="options" id="name-options">
                     <label class="option" onclick="selectOption(this, 'name')">
                         <input type="radio" name="business_name" value="Lavelle's Auto">
                         <div class="option-check">?</div>
                         <div class="option-content">
                             <h4>Lavelle's Auto</h4>
-                            <p>Clean, professional, family heritage focus</p>
+                            <p>Classic, reliable, family heritage. "I'm going to Lavelle's."</p>
                         </div>
                     </label>
                     <label class="option" onclick="selectOption(this, 'name')">
-                        <input type="radio" name="business_name" value="Lavelle's Auto Diagnostics & Repair">
+                        <input type="radio" name="business_name" value="Lavelle's Garage Repair">
                         <div class="option-check">?</div>
                         <div class="option-content">
-                            <h4>Lavelle's Auto Diagnostics & Repair</h4>
-                            <p>Highlights the diagnostic expertise</p>
+                            <h4>Lavelle's Garage Repair</h4>
+                            <p>Does exactly what it says on the tin. No nonsense.</p>
                         </div>
                     </label>
                     <label class="option" onclick="selectOption(this, 'name')">
-                        <input type="radio" name="business_name" value="Ethan Lavelle Mechanics">
+                        <input type="radio" name="business_name" value="EL Motors">
                         <div class="option-check">?</div>
                         <div class="option-content">
-                            <h4>Ethan Lavelle Mechanics</h4>
-                            <p>Personal touch, puts Ethan's name front and center</p>
+                            <h4>EL Motors (Ethan Lavelle)</h4>
+                            <p>Modern, snappy, feels like a larger established brand.</p>
                         </div>
                     </label>
                     <label class="option" onclick="selectOption(this, 'name')">
@@ -209,51 +209,88 @@
                         <div class="option-check">?</div>
                         <div class="option-content">
                             <h4>Achill Auto Care</h4>
-                            <p>Location-focused, community feel</p>
+                            <p>Community-first. It belongs to the island.</p>
                         </div>
                     </label>
-                </div>
-                <div style="margin-top: 15px;">
-                    <input type="text" name="name_other" placeholder="Or suggest your own name idea...">
                 </div>
             </div>
 
             <!-- Q2: Domain -->
             <div class="survey-card">
-                <h2>2. Which Domain (Web Address)?</h2>
-                <p>This will be the website address customers visit.</p>
+                <h2>2. The Web Address</h2>
+                <p>If you were typing it in, which is easiest?</p>
                 <div class="options" id="domain-options">
                     <label class="option" onclick="selectOption(this, 'domain')">
                         <input type="radio" name="domain" value="lavellesauto.ie">
                         <div class="option-check">?</div>
                         <div class="option-content">
                             <h4>lavellesauto.ie</h4>
-                            <p>Irish domain, professional, easy to remember</p>
+                            <p>Short, Irish, Professional.</p>
                         </div>
                     </label>
                     <label class="option" onclick="selectOption(this, 'domain')">
-                        <input type="radio" name="domain" value="lavellesauto.com">
+                        <input type="radio" name="domain" value="lavellesgaragerepair.com">
                         <div class="option-check">?</div>
                         <div class="option-content">
-                            <h4>lavellesauto.com</h4>
-                            <p>International, universal recognition</p>
+                            <h4>lavellesgaragerepair.com</h4>
+                            <p>Descriptive, but a bit longer to type.</p>
                         </div>
                     </label>
                     <label class="option" onclick="selectOption(this, 'domain')">
-                        <input type="radio" name="domain" value="achillauto.ie">
+                        <input type="radio" name="domain" value="elmotors.com">
                         <div class="option-check">?</div>
                         <div class="option-content">
-                            <h4>achillauto.ie</h4>
-                            <p>Location-focused, great for local SEO</p>
+                            <h4>elmotors.com</h4>
+                            <p>Very quick to type. Sounds corporate.</p>
                         </div>
                     </label>
                 </div>
             </div>
 
-            <!-- Q3: Website Rating -->
+            <!-- Q3: Pain Points (Strategic) -->
             <div class="survey-card">
-                <h2>3. Rate the Website Design</h2>
-                <p>How would you rate the look and feel of the website? (1 = Poor, 10 = Excellent)</p>
+                <h2>3. The "Magic Wand" Question</h2>
+                <p>Think about your last few experiences with mechanics (anywhere). If you could wave a magic wand and fix ONE annoying thing, what would it be?</p>
+                <div class="options" id="pain-options">
+                    <label class="option" onclick="selectOption(this, 'pain')">
+                        <input type="radio" name="pain_point" value="communication">
+                        <div class="option-check">?</div>
+                        <div class="option-content">
+                            <h4>Communication / Updates</h4>
+                            <p>"I never know when my car is ready or how much it will cost until the end."</p>
+                        </div>
+                    </label>
+                    <label class="option" onclick="selectOption(this, 'pain')">
+                        <input type="radio" name="pain_point" value="booking">
+                        <div class="option-check">?</div>
+                        <div class="option-content">
+                            <h4>Booking Hassle</h4>
+                            <p>"It's hard to get someone on the phone or find a slot."</p>
+                        </div>
+                    </label>
+                    <label class="option" onclick="selectOption(this, 'pain')">
+                        <input type="radio" name="pain_point" value="trust">
+                        <div class="option-check">?</div>
+                        <div class="option-content">
+                            <h4>Trust / Transparency</h4>
+                            <p>"I feel like I'm being upsold or don't understand what I'm paying for."</p>
+                        </div>
+                    </label>
+                    <label class="option" onclick="selectOption(this, 'pain')">
+                        <input type="radio" name="pain_point" value="speed">
+                        <div class="option-check">?</div>
+                        <div class="option-content">
+                            <h4>Speed of Repair</h4>
+                            <p>"My car is gone for days and I'm stuck without transport."</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Q4: Website Rating -->
+            <div class="survey-card">
+                <h2>4. First Impressions</h2>
+                <p>We built this demo site to show what's possible. How does it feel?</p>
                 <div class="rating" id="design-rating">
                     <button type="button" class="rating-btn" onclick="selectRating(this, 'design')">1</button>
                     <button type="button" class="rating-btn" onclick="selectRating(this, 'design')">2</button>
@@ -269,9 +306,9 @@
                 <input type="hidden" name="design_rating" id="design_rating_input">
             </div>
 
-            <!-- Q4: Favorite Feature -->
+            <!-- Q5: Favorite Feature -->
             <div class="survey-card">
-                <h2>4. What Do You Like Most?</h2>
+                <h2>5. What Do You Like Most?</h2>
                 <p>Select all that appeal to you.</p>
                 <div class="options" id="features-options">
                     <label class="option" onclick="toggleMulti(this)">
@@ -325,9 +362,9 @@
                 </div>
             </div>
 
-            <!-- Q5: Services Wanted -->
+            <!-- Q6: Services Wanted -->
             <div class="survey-card">
-                <h2>5. What Services Would You Use?</h2>
+                <h2>6. What Services Would You Use?</h2>
                 <p>Select all services you'd likely need in the next 12 months.</p>
                 <div class="options" id="services-options">
                     <label class="option" onclick="toggleMulti(this)">
@@ -368,23 +405,23 @@
                 </div>
             </div>
 
-            <!-- Q6: Missing Features -->
+            <!-- Q7: Missing Features -->
             <div class="survey-card">
-                <h2>6. What's Missing?</h2>
+                <h2>7. What's Missing?</h2>
                 <p>Is there anything you'd want added to the website or services?</p>
                 <textarea name="missing_features" placeholder="Tell us what you'd like to see..."></textarea>
             </div>
 
-            <!-- Q7: General Feedback -->
+            <!-- Q8: General Feedback -->
             <div class="survey-card">
-                <h2>7. Any Other Feedback?</h2>
+                <h2>8. Any Other Feedback?</h2>
                 <p>Comments, suggestions, or things you particularly like or dislike?</p>
                 <textarea name="general_feedback" placeholder="Your thoughts..."></textarea>
             </div>
 
             <!-- Contact Info -->
             <div class="survey-card">
-                <h2>8. Your Details (Optional)</h2>
+                <h2>9. Your Details (Optional)</h2>
                 <p>Enter to win a FREE oil change and be first to hear about launch offers!</p>
                 <input type="text" name="name" placeholder="Your Name">
                 <input type="email" name="email" placeholder="Your Email">
