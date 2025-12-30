@@ -486,6 +486,76 @@
           font-size: 1.2rem;
         }
       }
+
+      /* Footer Styles */
+      .footer {
+        background: rgba(26, 26, 26, 0.95);
+        color: var(--light);
+        padding: 60px 20px 30px;
+        margin-top: 80px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .footer-brand img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      .footer-brand h4 {
+        color: var(--primary);
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+      .footer-brand p {
+        color: var(--gray);
+        line-height: 1.6;
+      }
+      .footer-links h4 {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-links ul li {
+        margin-bottom: 10px;
+      }
+      .footer-links ul li a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .footer-links ul li a:hover {
+        color: var(--accent);
+      }
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      .footer-social a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary);
+        color: var(--white);
+        border-radius: 50%;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+      .footer-social a:hover {
+        background: var(--accent);
+        transform: scale(1.1);
+      }
     </style>
   </head>
   <body>
@@ -717,6 +787,12 @@
                     <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Repair Logo">
                     <h4>MCGINTY'S GARAGE REPAIR</h4>
                     <p>The future of car repairs on Achill Island. Honest, reliable, and skilled service for over 50 years.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/mcgintysgarage" target="_blank" title="Facebook">📘</a>
+                        <a href="https://www.instagram.com/mcgintysgarage" target="_blank" title="Instagram">📷</a>
+                        <a href="https://wa.me/353851026371" target="_blank" title="WhatsApp">💬</a>
+                        <a href="https://g.page/mcgintysgarage" target="_blank" title="Google Maps">🗺️</a>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -730,6 +806,9 @@
                         <li><a href="https://mcgintys.exposuresolutions.me/strategy" style="color: #ff9900; font-weight: bold;">Strategy Hub (Client)</a></li>
                     </ul>
                 </div>
+            </div>
+            <div style="text-align: center; padding-top: 30px; border-top: 1px solid #333; color: var(--gray); font-size: 0.9rem;">
+                <p>&copy; 2025 McGinty's Garage Repair. All Rights Reserved. | Powered by <a href="https://exposuresolutions.ie" style="color: var(--accent); text-decoration: none;">Exposure Solutions</a></p>
             </div>
         </div>
     </footer>
