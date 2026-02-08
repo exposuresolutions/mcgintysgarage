@@ -3,585 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partners | Lavelle's Auto Diagnostics & Repair</title>
-    <meta name="description" content="Our trusted partners on Achill Island. Welding, towing, and specialist services.">
+    
+    <!-- Primary Meta Tags -->
+    <title>Partners | McGinty's Garage Repair - Achill Island</title>
+    <meta name="description" content="Partner with McGinty's Garage on Achill Island. Join our network of trusted local businesses for referrals and collaborative service. Duffy Tyres, TFI Anseo, and more.">
+    <meta name="keywords" content="garage partners Achill, business partnership Mayo, Duffy Tyres, TFI Anseo, McGinty's Garage partners">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="IE-MO">
+    <meta name="geo.placename" content="Achill Island, County Mayo">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mcgintysgarage.store/partners">
+    <meta property="og:title" content="Partners | McGinty's Garage Repair">
+    <meta property="og:description" content="Partner with McGinty's Garage. Join our network of trusted local businesses.">
+    <meta property="og:image" content="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://mcgintysgarage.store/partners">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="shared/css/main.css">
+    
+    <!-- Page-specific styles -->
     <style>
-        /* Same CSS as index-v2.html */
-        :root {
-            --primary: #005A9C;
-            --primary-dark: #003D6B;
-            --secondary: #D40000;
-            --accent: #FDB813;
-            --dark: #1a1a1a;
-            --light: #f4f4f4;
-            --white: #ffffff;
-            --gray: #666;
-            --font-display: 'Roboto Condensed', sans-serif;
-            --font-body: 'Roboto', sans-serif;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
-            --transition: all 0.3s ease-in-out;
-            --radius: 8px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--dark);
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') fixed center/cover;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-
-        .text-center { text-align: center; }
-        .lead { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; }
-        img { max-width: 100%; height: auto; display: block; }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: 2px solid transparent;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: var(--dark);
-            border-color: var(--accent);
-            font-weight: 900;
-        }
-        .btn-accent:hover {
-            background: #e6a500;
-            transform: scale(1.05);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-        .btn-outline:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 9999;
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
-            background-size: cover;
-            background-position: center;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            position: relative;
-            z-index: 10000;
-        }
-
-        .nav-logo img {
-            width: 220px;
-            height: 220px;
-            object-fit: contain;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-link {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        .nav-link:hover { color: var(--accent); }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-        
-        .hamburger {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: var(--white);
-            position: relative;
-            transition: var(--transition);
-        }
-        .hamburger::before, .hamburger::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
-            transition: var(--transition);
-        }
-        .hamburger::before { top: -8px; }
-        .hamburger::after { top: 8px; }
-
-        /* Social Icons (Right Side) */
-        .social-icons {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1100;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--white);
-            border-radius: 50%;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            text-decoration: none;
-            font-size: 1.5rem;
-        }
-        .social-icon:hover {
-            transform: scale(1.15);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Page Hero */
-        .page-hero {
-            padding: 180px 20px 80px;
-            background: 
-                linear-gradient(135deg, rgba(0,90,156,0.75) 0%, rgba(0,61,107,0.78) 100%),
-                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
-            color: var(--white);
-            text-align: center;
-        }
-
-        .page-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
-        }
-
-        /* Partner Section */
-        .partner-section {
-            padding: 80px 20px;
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-6);
         }
 
         .partner-card {
             background: var(--white);
-            border-radius: var(--radius);
+            border-radius: var(--radius-md);
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
         }
 
-        .partner-image {
-            background: var(--gray);
-            min-height: 300px;
-            position: relative;
-        }
-        
-        .partner-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
+        .partner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .partner-content {
-            padding: 40px;
+        .partner-header {
+            padding: var(--space-6);
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            border-bottom: 1px solid var(--gray-200);
         }
 
-        .partner-content h3 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .partner-badge {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--dark);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            margin-bottom: 20px;
-        }
-
-        .service-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .service-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .service-list li::before {
-            content: '🔧';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 60px 20px 30px;
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
-            background-size: cover;
-            background-position: center;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand {
-            text-align: center;
-        }
-
-        .footer-brand h4 {
-            margin: 10px 0;
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        .footer-brand p {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .footer-social a {
-            margin: 0 10px;
-            font-size: 1.2rem;
-            color: inherit;
-            transition: color 0.2s;
-        }
-        .footer-social a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* Sticky Mobile Action Bar */
-        .mobile-action-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 10px;
-            justify-content: space-around;
-            gap: 10px;
-        }
-        .mobile-action-btn {
-            flex: 1;
-            padding: 12px;
+        .partner-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--gray-100);
             border-radius: var(--radius);
-            text-align: center;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            font-size: 2.5rem;
+            flex-shrink: 0;
         }
-        .btn-call { background: var(--primary); color: var(--white); }
-        .btn-whatsapp { background: #25D366; color: var(--white); }
 
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .mobile-action-bar { display: flex; }
-            .footer { padding-bottom: 80px; } /* Space for bar */
-            
-            /* Mobile Navigation Fix */
-            .nav-toggle { display: block; z-index: 1001; }
-            .nav-menu {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(0,0,0,0.98);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: var(--transition);
-                padding: 20px;
-                z-index: 1000;
-            }
-            .nav-menu.active { left: 0; }
-            .nav-menu li { list-style: none; margin: 10px 0; }
-            .nav-link { font-size: 1.5rem; margin: 15px 0; display: block; color: var(--white); }
-            
-            /* Resize logo for mobile */
-            .logo-img { width: 140px; height: 140px; }
-            .nav-logo img { width: 140px; height: 140px; }
-            .header { padding: 0.5rem 0; }
-            
-            .partner-card { grid-template-columns: 1fr; }
-            .partner-image { min-height: 250px; }
-            
-            /* Hide social icons on mobile */
-            .social-icons { display: none; }
+        .partner-info h3 {
+            color: var(--primary);
+            margin-bottom: var(--space-1);
+        }
+
+        .partner-info p {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        .partner-body {
+            padding: var(--space-6);
+        }
+
+        .partner-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-top: var(--space-4);
+        }
+
+        .partner-service-tag {
+            background: var(--gray-100);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+            font-weight: 500;
+        }
+
+        .partner-footer {
+            padding: var(--space-4) var(--space-6);
+            background: var(--gray-100);
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+        }
+
+        .become-partner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .become-partner h2 {
+            color: var(--white);
+        }
+
+        .become-partner .lead {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-5);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-3);
+        }
+
+        .benefit-card h4 {
+            color: var(--accent);
+            margin-bottom: var(--space-2);
+        }
+
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--text-sm);
+        }
+
+        .cars-section {
+            background: var(--gray-100);
+        }
+
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .car-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .car-image {
+            height: 200px;
+            background: var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .car-body {
+            padding: var(--space-5);
+        }
+
+        .car-body h4 {
+            margin-bottom: var(--space-2);
+        }
+
+        .car-price {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: var(--space-3);
+        }
+
+        .car-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-bottom: var(--space-4);
+        }
+
+        .car-detail {
+            background: var(--gray-100);
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-xs);
         }
     </style>
 </head>
 <body>
-    <!-- Sticky Mobile Action Bar -->
-    <div class="mobile-action-bar">
-        <a href="tel:0851026371" class="mobile-action-btn btn-call">📞 Call</a>
-        <a href="https://wa.me/353851026371" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-logo">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo" class="logo-img">
+                <a href="https://mcgintysgarage.store/home" class="nav-logo">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Repair Logo" class="logo-img">
                 </a>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-link">Home</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/services" class="nav-link">Services</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/booking" class="nav-link">Book Now</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/loyalty" class="nav-link">Loyalty</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/parts" class="nav-link">Parts & Shop</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/partners" class="nav-link">Partners</a></li>
+                <ul class="nav-menu" id="nav-menu" aria-hidden="true">
+                    <li><a href="https://mcgintysgarage.store/home" class="nav-link">Home</a></li>
+                    <li><a href="https://mcgintysgarage.store/services" class="nav-link">Services</a></li>
+                    <li><a href="https://mcgintysgarage.store/booking" class="nav-link">Book Now</a></li>
+                    <li><a href="https://mcgintysgarage.store/loyalty" class="nav-link">Loyalty</a></li>
+                    <li><a href="https://mcgintysgarage.store/parts" class="nav-link">Parts & Shop</a></li>
+                    <li><a href="https://mcgintysgarage.store/partners" class="nav-link active">Partners</a></li>
                     <li><a href="tel:0851026371" class="btn btn-accent">📞 Call Now</a></li>
                 </ul>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                     <span class="hamburger"></span>
                 </button>
             </nav>
         </div>
     </header>
 
-    <!-- Social Media Icons (Right Side) -->
-    <div class="social-icons">
-        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook" style="color: #1877F2;">📘</a>
-        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram" style="color: #E4405F;">📷</a>
-        <a href="https://wa.me/353851026371" target="_blank" class="social-icon" title="WhatsApp" style="color: #25D366;">💬</a>
-        <a href="sms:0851026371" class="social-icon" title="Text Us" style="color: #34B7F1;">📱</a>
-        <a href="tel:0851026371" class="social-icon" title="Call Us" style="color: #005A9C;">📞</a>
-        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google" style="color: #4285F4;">🗺️</a>
-        <a href="https://www.youtube.com/@lavellesauto" target="_blank" class="social-icon" title="YouTube" style="color: #FF0000;">📺</a>
-    </div>
-
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1>Friends of the Family</h1>
-            <p class="lead">Trusted local partners we recommend for specialist services</p>
+            <h1>🤝 Our Partners</h1>
+            <p class="lead">Trusted local businesses we work with to serve you better</p>
         </div>
     </section>
 
-    <!-- Partners List -->
-    <section class="partner-section">
+    <!-- Partners Grid -->
+    <section class="section">
         <div class="container">
-            
-            <!-- Eddie English -->
-            <div class="partner-card" id="eddie">
-                <div class="partner-image">
-                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Welding">
-                </div>
-                <div class="partner-content">
-                    <div class="partner-badge">MASTER WELDER & SCRAPPAGE</div>
-                    <h3>Eddie English Welding</h3>
-                    <p>A trusted family friend and expert welder with over 20 years of experience on Achill. Eddie handles all our heavy fabrication and end-of-life vehicle processing.</p>
-                    
-                    <ul class="service-list">
-                        <li>Exhaust welding & repairs</li>
-                        <li>Chassis rust repair</li>
-                        <li>Custom fabrication</li>
-                        <li>Vehicle Scrappage (Revnocal Certs)</li>
-                        <li>Heavy towing services</li>
-                    </ul>
+            <h2 class="section-title text-center">Trusted Partners</h2>
+            <p class="lead text-center">We work with the best to give you the best</p>
 
-                    <div style="margin-top: 30px; padding: 15px; background: var(--light); border-left: 4px solid var(--primary); font-size: 0.9rem;">
-                        <strong>Note:</strong> Ethan arranges the booking, but the service is provided directly by Eddie English.
+            <div class="partners-grid mt-8">
+                <!-- TFI Anseo -->
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <div class="partner-logo">🚌</div>
+                        <div class="partner-info">
+                            <h3>TFI Anseo</h3>
+                            <p>On-demand bus service</p>
+                        </div>
                     </div>
-
-                    <a href="tel:+353892057388" class="btn btn-primary" style="margin-top: 20px;">Call Eddie Directly (+353 89 205 7388)</a>
-                </div>
-            </div>
-
-            <!-- Duffy Tyres -->
-            <div class="partner-card" id="duffy">
-                <div class="partner-image">
-                    <img src="https://images.unsplash.com/photo-1578844251758-2f71da645217?w=800&h=600&fit=crop" alt="Tyre Fitting">
-                </div>
-                <div class="partner-content">
-                    <div class="partner-badge">TYRE SPECIALISTS</div>
-                    <h3>Duffy Tyres (Mayo)</h3>
-                    <p>We are proud to partner with S.A.M. Duffy Tyres Ltd, Mayo's premier tyre experts. With bases in Swinford and Castlebar, plus mobile units, they provide top-quality rubber for all vehicle types.</p>
-                    
-                    <ul class="service-list">
-                        <li>All major brands (Michelin, Bridgestone, etc.)</li>
-                        <li>Computerised 4-Wheel Alignment</li>
-                        <li>High-speed wheel balancing</li>
-                        <li>Mobile tyre fitting service</li>
-                        <li>Agricultural & Commercial tyres</li>
-                    </ul>
-
-                    <div style="margin-top: 30px; padding: 15px; background: var(--light); border-left: 4px solid var(--primary); font-size: 0.9rem;">
-                        <strong>Booking Process:</strong> Book your tyres through Ethan. We handle the ordering, tracking, and payment. You just show up for the fitting (or we arrange mobile fitting).
+                    <div class="partner-body">
+                        <p>Need a lift home when dropping off your car? TFI Anseo provides door-to-door minibus service across Achill Island and Curraun Peninsula.</p>
+                        <div class="partner-services">
+                            <span class="partner-service-tag">Door-to-door</span>
+                            <span class="partner-service-tag">€3 per trip</span>
+                            <span class="partner-service-tag">Free Travel Pass</span>
+                            <span class="partner-service-tag">7am-8pm daily</span>
+                        </div>
                     </div>
-
-                    <a href="https://wa.me/353851026371?text=Hi Ethan, I need a quote for tyres (Size: ___)" class="btn btn-primary" style="margin-top: 20px;">Get Tyre Quote</a>
-                </div>
-            </div>
-
-            <!-- Windows & Keys Placeholder -->
-            <div class="partner-card" id="keys">
-                <div class="partner-image">
-                    <img src="https://images.unsplash.com/photo-1562519819-016930b66555?w=800&h=600&fit=crop" alt="Car Keys">
-                </div>
-                <div class="partner-content">
-                    <div class="partner-badge">COMING SOON</div>
-                    <h3>Auto Locksmith & Glass</h3>
-                    <p>We are currently finalizing partnerships with top-rated auto locksmiths and windscreen repair specialists to bring these services directly to Achill.</p>
-                    
-                    <ul class="service-list">
-                        <li>Lost key replacement</li>
-                        <li>Key programming & coding</li>
-                        <li>Windscreen replacement</li>
-                        <li>Chip repairs</li>
-                    </ul>
-
-                    <div style="margin-top: 30px; padding: 15px; background: var(--light); border-left: 4px solid var(--gray); font-size: 0.9rem;">
-                        <strong>Need this now?</strong> Call Ethan, and he can recommend a trusted provider in Castlebar or Westport.
+                    <div class="partner-footer">
+                        <a href="tel:0949005150" class="btn btn-primary btn-sm">📞 094 900 5150</a>
+                        <a href="https://apps.apple.com/ie/app/tfi-anseo/id6467011498" target="_blank" rel="noopener" class="btn btn-outline btn-sm">📱 Get App</a>
                     </div>
+                </div>
 
-                    <a href="tel:0851026371" class="btn btn-outline" style="margin-top: 20px;">Call for Recommendation</a>
+                <!-- Duffy Tyres -->
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <div class="partner-logo">🔘</div>
+                        <div class="partner-info">
+                            <h3>Duffy Tyres</h3>
+                            <p>Mayo's leading tyre specialists</p>
+                        </div>
+                    </div>
+                    <div class="partner-body">
+                        <p>Our trusted partner for all tyre needs. From budget to premium brands, plus 3D wheel alignment and mobile fitting service.</p>
+                        <div class="partner-services">
+                            <span class="partner-service-tag">New Tyres</span>
+                            <span class="partner-service-tag">3D Alignment</span>
+                            <span class="partner-service-tag">Puncture Repair</span>
+                            <span class="partner-service-tag">Mobile Fitting</span>
+                        </div>
+                    </div>
+                    <div class="partner-footer">
+                        <a href="tel:0851026371" class="btn btn-primary btn-sm">📞 Order via McGinty's</a>
+                    </div>
+                </div>
+
+                <!-- Parts Suppliers -->
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <div class="partner-logo">🔧</div>
+                        <div class="partner-info">
+                            <h3>Parts Network</h3>
+                            <p>Multiple supplier access</p>
+                        </div>
+                    </div>
+                    <div class="partner-body">
+                        <p>We search multiple suppliers to get you the best price on parts. Micks Garage, Euro Car Parts, Halfords, and trade suppliers.</p>
+                        <div class="partner-services">
+                            <span class="partner-service-tag">Best Prices</span>
+                            <span class="partner-service-tag">Next-day Delivery</span>
+                            <span class="partner-service-tag">New & Used</span>
+                            <span class="partner-service-tag">Trade Access</span>
+                        </div>
+                    </div>
+                    <div class="partner-footer">
+                        <a href="https://mcgintysgarage.store/parts" class="btn btn-primary btn-sm">🔍 Search Parts</a>
+                    </div>
+                </div>
+
+                <!-- Exposure Solutions -->
+                <div class="partner-card">
+                    <div class="partner-header">
+                        <div class="partner-logo">💻</div>
+                        <div class="partner-info">
+                            <h3>Exposure Solutions</h3>
+                            <p>Digital marketing & AI</p>
+                        </div>
+                    </div>
+                    <div class="partner-body">
+                        <p>The team behind this website and our digital presence. Specialists in AI-powered business solutions for SMEs.</p>
+                        <div class="partner-services">
+                            <span class="partner-service-tag">Web Design</span>
+                            <span class="partner-service-tag">AI Automation</span>
+                            <span class="partner-service-tag">Marketing</span>
+                            <span class="partner-service-tag">GHL Partner</span>
+                        </div>
+                    </div>
+                    <div class="partner-footer">
+                        <a href="https://exposuresolutions.ie" target="_blank" rel="noopener" class="btn btn-outline btn-sm">🌐 Visit Website</a>
+                    </div>
                 </div>
             </div>
-
-            <!-- More partners placeholder -->
-            <div class="text-center" style="margin-top: 60px;">
-                <h3>Are you a local automotive specialist?</h3>
-                <p>We're always looking to expand our trusted network on Achill.</p>
-                <a href="mailto:info@lavellesauto.ie" class="btn btn-outline">Partner With Us</a>
-            </div>
-
         </div>
     </section>
+
+    <!-- Become a Partner -->
+    <section class="section become-partner">
+        <div class="container">
+            <h2 class="section-title text-center">Become a Partner</h2>
+            <p class="lead text-center">Join our network of trusted local businesses</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📣</div>
+                    <h4>Cross-Promotion</h4>
+                    <p>We recommend your services to our customers and you recommend ours.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h4>Quality Referrals</h4>
+                    <p>Get warm referrals from customers who already trust us.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h4>Partner Discounts</h4>
+                    <p>Special rates on services for partner businesses and their staff.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h4>Online Presence</h4>
+                    <p>Featured on our website and social media channels.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="mb-4">Interested in partnering with McGinty's Garage?</p>
+                <a href="tel:0851026371" class="btn btn-accent btn-lg">📞 Let's Talk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars for Sale -->
+    <section class="section cars-section" id="cars">
+        <div class="container">
+            <h2 class="section-title text-center">🚗 Cars for Sale</h2>
+            <p class="lead text-center">Vehicles we've serviced and can vouch for</p>
+
+            <div class="cars-grid">
+                <div class="car-card">
+                    <div class="car-image">🚗</div>
+                    <div class="car-body">
+                        <h4>Coming Soon</h4>
+                        <p class="car-price">Check Back Later</p>
+                        <p class="text-gray">We're preparing our first listings. Quality used cars with full service history.</p>
+                        <a href="tel:0851026371" class="btn btn-outline btn-full mt-4">Register Interest</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <div class="car-image">📋</div>
+                    <div class="car-body">
+                        <h4>Sell Your Car</h4>
+                        <p class="car-price">Free Valuation</p>
+                        <p class="text-gray">Looking to sell? We can help you find a buyer or buy it ourselves.</p>
+                        <a href="https://wa.me/353851026371?text=Hi, I'd like a valuation for my car" target="_blank" rel="noopener" class="btn btn-primary btn-full mt-4">Get Valuation</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <div class="car-image">♻️</div>
+                    <div class="car-body">
+                        <h4>Scrap My Car</h4>
+                        <p class="car-price">Free Collection</p>
+                        <p class="text-gray">End of life vehicle? We'll arrange collection and proper disposal.</p>
+                        <a href="tel:0851026371" class="btn btn-outline btn-full mt-4">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://www.facebook.com/mcgintysgarage" target="_blank" rel="noopener" title="Facebook" class="social-facebook">📘</a>
+        <a href="https://www.instagram.com/mcgintysgarage" target="_blank" rel="noopener" title="Instagram" class="social-instagram">📷</a>
+        <a href="https://wa.me/353851026371" target="_blank" rel="noopener" title="WhatsApp" class="social-whatsapp">💬</a>
+        <a href="tel:0851026371" title="Call Us" class="social-phone">📞</a>
+        <a href="https://g.page/mcgintysgarage" target="_blank" rel="noopener" title="Google Maps" class="social-google">🗺️</a>
+    </div>
+
+    <!-- Mobile Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:0851026371" class="mobile-action-btn btn-call">📞 Call</a>
+        <a href="https://wa.me/353851026371" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo">
-                    <h4>LAVELLE'S AUTO</h4>
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Repair Logo">
+                    <h4>McGinty's Garage Repair</h4>
                     <p>The future of car repairs on Achill Island. Honest, reliable, and skilled service for over 50 years.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/lavellesauto" target="_blank">📘</a>
-                        <a href="https://www.instagram.com/lavellesauto" target="_blank">📷</a>
-                        <a href="https://wa.me/353851026371" target="_blank">💬</a>
-                        <a href="https://g.page/lavellesauto" target="_blank">🗺️</a>
+                        <a href="https://www.facebook.com/mcgintysgarage" target="_blank" rel="noopener" title="Facebook">📘</a>
+                        <a href="https://www.instagram.com/mcgintysgarage" target="_blank" rel="noopener" title="Instagram">📷</a>
+                        <a href="https://wa.me/353851026371" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+                        <a href="https://g.page/mcgintysgarage" target="_blank" rel="noopener" title="Google Maps">🗺️</a>
+                        <a href="https://www.youtube.com/@mcgintysgarage" target="_blank" rel="noopener" title="YouTube">📺</a>
                     </div>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="https://lavelles.exposuresolutions.me/services">All Services</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/booking">Book Appointment</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/loyalty">Loyalty Program</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/parts">Order Parts</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/partners">Partner Services</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/payments" style="color: var(--accent);">Make a Payment</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/strategy" style="color: #ff9900; font-weight: bold;">Strategy Hub (Client)</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Connect</h4>
-                    <ul style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0;">
-                        <li><a href="#" title="TikTok">🎵 TikTok</a></li>
-                        <li><a href="#" title="Snapchat">👻 Snapchat</a></li>
-                        <li><a href="#" title="Telegram">✈️ Telegram</a></li>
-                        <li><a href="#" title="Reddit">🤖 Reddit</a></li>
-                        <li><a href="#" title="Facebook Marketplace">🏪 FB Market</a></li>
-                        <li><a href="#" title="Google Maps">📍 Maps</a></li>
+                        <li><a href="https://mcgintysgarage.store/services">All Services</a></li>
+                        <li><a href="https://mcgintysgarage.store/booking">Book Appointment</a></li>
+                        <li><a href="https://mcgintysgarage.store/loyalty">Loyalty Program</a></li>
+                        <li><a href="https://mcgintysgarage.store/parts">Order Parts</a></li>
+                        <li><a href="https://mcgintysgarage.store/partners">Partner Services</a></li>
                     </ul>
                 </div>
                 <div>
@@ -589,8 +467,8 @@
                     <ul>
                         <li>📍 Achill Sound, Co. Mayo</li>
                         <li>📞 <a href="tel:0851026371">085-102-6371</a></li>
-                        <li>📧 <a href="mailto:info@lavellesauto.ie">info@lavellesauto.ie</a></li>
                         <li>💬 <a href="https://wa.me/353851026371">WhatsApp Us</a></li>
+                        <li>🚨 Emergency: <a href="tel:+353892057388">089-205-7388</a></li>
                     </ul>
                 </div>
                 <div>
@@ -599,40 +477,22 @@
                         <li>Mon-Fri: 6pm - 9pm</li>
                         <li>Saturday: 9am - 2pm</li>
                         <li>Sunday: Closed</li>
-                        <li style="margin-top: 10px; color: var(--accent);">🚨 Emergency call-outs 24/7</li>
+                        <li class="footer-emergency">🚨 Emergency 24/7</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
-                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank" style="color: var(--accent);">Exposure Solutions</a></p>
-                <div style="margin-top: 20px;">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Powered by Exposure Solutions AI" style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
-                </div>
+                <p>&copy; 2025 McGinty's Garage Repair. All Rights Reserved.</p>
+                <p class="footer-credit">Website by <a href="https://exposuresolutions.ie" target="_blank" rel="noopener">Exposure Solutions</a></p>
             </div>
         </div>
     </footer>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,ga', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        document.getElementById('nav-toggle').addEventListener('click', function() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-menu').classList.remove('active');
-            });
-        });
-    </script>
+    <!-- Shared JavaScript -->
+    <script src="shared/js/constants.js"></script>
+    <script src="shared/js/navigation.js"></script>
+    <script src="shared/js/forms.js"></script>
+    <script src="shared/js/interactions.js"></script>
 </body>
 </html>
 

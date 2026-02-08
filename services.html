@@ -1,971 +1,500 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Services | McGinty's Garage Repair</title>
-    <meta name="description"
-        content="Complete automotive services on Achill Island. From diagnostics to full repairs, NCT prep to emergency breakdown. Expert service you can trust.">
+    
+    <!-- Primary Meta Tags -->
+    <title>Our Services | McGinty's Garage Repair - Achill Island</title>
+    <meta name="description" content="Full range of car repair services on Achill Island. Diagnostics, NCT prep, oil changes, brakes, tyres, and 24/7 emergency call-outs. Call 085-102-6371">
+    <meta name="keywords" content="car services Achill, mechanic Mayo, NCT prep, oil change, brake service, diagnostics, emergency breakdown Achill">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="IE-MO">
+    <meta name="geo.placename" content="Achill Island, County Mayo">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mcgintysgarage.store/services">
+    <meta property="og:title" content="Our Services | McGinty's Garage Repair">
+    <meta property="og:description" content="Full range of car repair services. Diagnostics, NCT prep, oil changes, brakes, and 24/7 emergency call-outs.">
+    <meta property="og:image" content="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://mcgintysgarage.store/services">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="shared/css/main.css">
+    
+    <!-- Page-specific styles -->
     <style>
-        /* Same CSS as index-v2.html */
-        :root {
-            --primary: #005A9C;
-            --primary-dark: #003D6B;
-            --secondary: #D40000;
-            --accent: #FDB813;
-            --dark: #1a1a1a;
-            --light: #f4f4f4;
-            --white: #ffffff;
-            --gray: #666;
-            --font-display: 'Roboto Condensed', sans-serif;
-            --font-body: 'Roboto', sans-serif;
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-            --transition: all 0.3s ease-in-out;
-            --radius: 8px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--dark);
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png')
-                fixed center/cover;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .lead {
-            font-size: 1.2rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: 2px solid transparent;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: var(--dark);
-            border-color: var(--accent);
-            font-weight: 900;
-        }
-
-        .btn-accent:hover {
-            background: #e6a500;
-            transform: scale(1.05);
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 9999;
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
-            background-size: cover;
-            background-position: center;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            position: relative;
-            z-index: 10000;
-        }
-
-        .nav-logo img {
-            width: 220px;
-            height: auto;
-            max-height: 80px;
-            object-fit: contain;
-            background: transparent;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-link {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-        }
-
-        /* Mobile Menu */
-        .nav-menu.mobile-active {
-            max-height: 500px;
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .hamburger {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: var(--white);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .hamburger::before,
-        .hamburger::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
-            transition: var(--transition);
-        }
-
-        .hamburger::before {
-            top: -8px;
-        }
-
-        .hamburger::after {
-            top: 8px;
-        }
-
-        /* Page Hero */
-        .page-hero {
-            padding: 160px 20px 60px;
-            /* Reduced padding */
-            background:
-                linear-gradient(135deg, rgba(0, 90, 156, 0.75) 0%, rgba(0, 61, 107, 0.78) 100%),
-                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
-            color: var(--white);
-            text-align: center;
-        }
-
-        .page-hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3rem);
-            /* Slightly smaller max size */
-            margin-bottom: 0.5rem;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 20px;
-        }
-
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 3rem;
+            gap: var(--space-6);
         }
 
-        .service-card {
+        .service-detail-card {
             background: var(--white);
-            border: 2px solid var(--light);
-            border-radius: var(--radius);
-            padding: 40px;
-            transition: var(--transition);
-            cursor: pointer;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
         }
 
-        .service-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
+        .service-detail-card:hover {
+            transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
         }
 
-        .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        .service-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: var(--space-5);
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
         }
 
-        .service-card h3 {
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin-bottom: 15px;
+        .service-header-icon {
+            font-size: 2.5rem;
         }
 
-        .service-price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin: 15px 0;
+        .service-header h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: var(--text-xl);
         }
 
-        .service-duration {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 20px;
+        .service-header .price {
+            font-size: var(--text-lg);
+            opacity: 0.9;
         }
 
-        .service-card p {
-            color: var(--gray);
-            margin-bottom: 20px;
-            line-height: 1.7;
+        .service-body {
+            padding: var(--space-5);
+        }
+
+        .service-body p {
+            margin-bottom: var(--space-4);
         }
 
         .service-includes {
-            background: var(--light);
-            padding: 20px;
+            background: var(--gray-100);
+            padding: var(--space-4);
             border-radius: var(--radius);
-            margin-top: 20px;
+            margin-bottom: var(--space-4);
         }
 
         .service-includes h4 {
-            font-size: 0.9rem;
+            font-size: var(--text-sm);
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: var(--space-2);
         }
 
         .service-includes ul {
             list-style: none;
-            padding: 0;
         }
 
         .service-includes li {
-            padding: 5px 0;
-            font-size: 0.9rem;
-            color: var(--gray);
+            padding: var(--space-1) 0;
+            font-size: var(--text-sm);
+            color: var(--gray-700);
         }
 
         .service-includes li::before {
-            content: '✅ ';
-            margin-right: 8px;
+            content: '✓ ';
+            color: var(--success);
+            font-weight: 700;
         }
 
-        /* Footer */
-        .footer {
-            padding: 40px 20px 20px;
-            /* Reduced padding */
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
-            background-size: cover;
-            background-position: center;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .footer-brand img {
-            width: 180px;
-            margin-bottom: 1rem;
-        }
-
-        .footer-social {
+        .service-meta {
             display: flex;
-            gap: 10px;
-            margin-top: 10px;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--gray-200);
         }
 
-        .footer-social a {
-            display: inline-block;
-            width: 36px;
-            height: 36px;
-            text-align: center;
-            line-height: 36px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+        .service-duration {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+        }
+
+        .emergency-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
             color: var(--white);
-            transition: all 0.3s;
         }
 
-        .footer-social a:hover {
-            background: var(--accent);
+        .emergency-section h2 {
+            color: var(--white);
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-4);
+            margin-top: var(--space-6);
         }
 
-        .footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        /* Sticky Mobile Action Bar */
-        .mobile-action-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 10px;
-            justify-content: space-around;
-            gap: 10px;
-        }
-
-        .mobile-action-btn {
-            flex: 1;
-            padding: 12px;
+        .emergency-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-5);
             border-radius: var(--radius);
             text-align: center;
-            text-decoration: none;
+        }
+
+        .emergency-card h4 {
+            color: var(--white);
+            margin-bottom: var(--space-2);
+        }
+
+        .emergency-card .price {
+            font-size: var(--text-2xl);
             font-weight: 700;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            color: var(--accent);
         }
 
-        .btn-call {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: var(--white);
-        }
-
-        /* Social Icons (Right Side) */
-        .social-icons {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1100;
-            /* Increased to sit above header */
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--white);
-            border-radius: 50%;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-            text-decoration: none;
-            font-size: 1.5rem;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.15);
-            box-shadow: var(--shadow-lg);
-        }
-
-        @media (max-width: 768px) {
-            .mobile-action-bar {
-                display: flex;
-            }
-
-            .footer {
-                padding-bottom: 80px;
-            }
-            /* Space for bar */
-
-            /* Mobile Navigation Fix */
-            .nav-toggle {
-                display: block;
-                z-index: 1001;
-            }
-
-            .nav-menu {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.98);
-                flex-direction: column;
-                justify-content: center;
-                transition: var(--transition);
-                padding: 20px;
-                z-index: 1000;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-link {
-                font-size: 1.5rem;
-                margin: 15px 0;
-            }
-
-            /* Resize logo for mobile */
-            .logo-img {
-                width: 140px;
-                height: 140px;
-            }
-
-            .header {
-                padding: 0.5rem 0;
-            }
-        }
-
-        /* Emergency Banner */
-        .emergency-banner {
-            background: rgba(255, 0, 0, 0.8);
-            color: var(--white);
-            padding: 10px 0;
+        .pricing-note {
+            background: var(--gray-100);
+            padding: var(--space-6);
+            border-radius: var(--radius-md);
             text-align: center;
-            font-weight: 700;
-            font-size: 0.95rem;
+            margin-top: var(--space-8);
+        }
+
+        .pricing-note h3 {
+            color: var(--primary);
+            margin-bottom: var(--space-3);
         }
     </style>
 </head>
-
 <body>
-    <!-- Sticky Mobile Action Bar -->
-    <div class="mobile-action-bar">
-        <a href="tel:0851026371" class="mobile-action-btn btn-call">📞 Call</a>
-        <a href="https://wa.me/353851026371" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
-    </div>
-
-    <!-- Header & Navigation -->
+    <!-- Header -->
     <header class="header">
-        <!-- Emergency Call-Out Banner -->
-        <div class="emergency-banner">
-            <strong>🚨 EMERGENCY BREAKDOWN?</strong> Call Eddie now: <a href="tel:+353892057388">089-205-7388</a> - We come
-            to you!
-        </div>
         <div class="container">
             <nav class="navbar">
-                <a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-logo">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png"
-                        alt="McGinty's Garage Repair Logo" style="width: 180px; height: auto;">
+                <a href="https://mcgintysgarage.store/home" class="nav-logo">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Repair Logo" class="logo-img">
                 </a>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-link">Home</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/services" class="nav-link">Services</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/booking" class="nav-link">Book Now</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/loyalty" class="nav-link">Loyalty</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/parts" class="nav-link">Parts & Shop</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/partners" class="nav-link">Partners</a></li>
+                <ul class="nav-menu" id="nav-menu" aria-hidden="true">
+                    <li><a href="https://mcgintysgarage.store/home" class="nav-link">Home</a></li>
+                    <li><a href="https://mcgintysgarage.store/services" class="nav-link active">Services</a></li>
+                    <li><a href="https://mcgintysgarage.store/booking" class="nav-link">Book Now</a></li>
+                    <li><a href="https://mcgintysgarage.store/loyalty" class="nav-link">Loyalty</a></li>
+                    <li><a href="https://mcgintysgarage.store/parts" class="nav-link">Parts & Shop</a></li>
+                    <li><a href="https://mcgintysgarage.store/partners" class="nav-link">Partners</a></li>
                     <li><a href="tel:0851026371" class="btn btn-accent">📞 Call Now</a></li>
                 </ul>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                     <span class="hamburger"></span>
                 </button>
             </nav>
         </div>
     </header>
 
-    <!-- Social Media Icons (Right Side) -->
-    <div class="social-icons">
-        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook"
-            style="color: #1877F2;">📘</a>
-        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram"
-            style="color: #E4405F;">📷</a>
-        <a href="https://wa.me/353851026371" target="_blank" class="social-icon" title="WhatsApp"
-            style="color: #25D366;">💬</a>
-        <a href="tel:0851026371" class="social-icon" title="Call Us" style="color: #005A9C;">📞</a>
-        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google"
-            style="color: #4285F4;">🗺️</a>
-    </div>
-
     <!-- Page Hero -->
-    <section class="page-hero">
+    <section class="page-hero hero-bg" style="background-image: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');">
         <div class="container">
-            <h1>All Services</h1>
-            <p class="lead">Complete automotive care from diagnostics to full repairs</p>
+            <h1>🔧 Our Services</h1>
+            <p class="lead">Expert repairs, honest pricing, and quality you can trust</p>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="services">
+    <!-- Main Services -->
+    <section class="section">
         <div class="container">
-            <div class="services-grid">
+            <h2 class="section-title text-center">Core Services</h2>
+            <p class="lead text-center">Everything your vehicle needs, under one roof</p>
+
+            <div class="services-grid mt-8 stagger-children">
                 <!-- Diagnostics -->
-                <div class="service-card" onclick="window.location.href='https://lavelles.exposuresolutions.me/booking'">
-                    <div class="service-icon">💻</div>
-                    <h3>Advanced Diagnostics</h3>
-                    <div class="service-price">€50 - €80</div>
-                    <div class="service-duration">⏱️ 30-60 minutes</div>
-                    <p>Dealer-level diagnostic equipment to pinpoint exact problems. Engine lights, electrical faults, performance
-                    issues.</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Full OBD scan</li>
-                            <li>Error code reading & interpretation</li>
-                            <li>Visual inspection</li>
-                            <li>Detailed report with photos</li>
-                            <li>Repair quote</li>
-                        </ul>
+                <div class="service-detail-card">
+                    <div class="service-header">
+                        <div class="service-header-icon">💻</div>
+                        <div>
+                            <h3>Advanced Diagnostics</h3>
+                            <div class="price">€50 - €80</div>
+                        </div>
                     </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Diagnostic Scan</a>
+                    <div class="service-body">
+                        <p>Dealer-level diagnostic equipment to pinpoint exact problems fast. No more guesswork.</p>
+                        <div class="service-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>Full system scan</li>
+                                <li>Fault code reading & clearing</li>
+                                <li>Live data analysis</li>
+                                <li>Written report</li>
+                            </ul>
+                        </div>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 30-60 mins</span>
+                            <a href="https://mcgintysgarage.store/booking?service=diagnostics" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Oil Change -->
-                <div class="service-card" onclick="window.location.href='https://lavelles.exposuresolutions.me/booking'">
-                    <div class="service-icon">🛢️</div>
-                    <h3>Express Oil Change</h3>
-                    <div class="service-price">€70</div>
-                    <div class="service-duration">⏱️ 30 minutes guaranteed</div>
-                    <p>Quick Saturday service. Book your slot and we'll have you in and out in 30 minutes!</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Premium engine oil</li>
-                            <li>New oil filter</li>
-                            <li>Free brake check</li>
-                            <li>Fluid level check</li>
-                            <li>Tyre pressure check</li>
-                        </ul>
+                <div class="service-detail-card">
+                    <div class="service-header" style="background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);">
+                        <div class="service-header-icon">🛢️</div>
+                        <div>
+                            <h3 style="color: var(--dark);">Express Oil Change</h3>
+                            <div class="price" style="color: var(--dark);">€70</div>
+                        </div>
                     </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Oil Change</a>
+                    <div class="service-body">
+                        <p>Quick Saturday service. In and out in 30 minutes with premium oil and filter.</p>
+                        <div class="service-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>Premium engine oil</li>
+                                <li>Quality oil filter</li>
+                                <li>Fluid level check</li>
+                                <li>Visual inspection</li>
+                            </ul>
+                        </div>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 30 mins guaranteed</span>
+                            <a href="https://mcgintysgarage.store/booking?service=oil-change" class="btn btn-accent btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NCT Prep -->
+                <div class="service-detail-card">
+                    <div class="service-header">
+                        <div class="service-header-icon">📋</div>
+                        <div>
+                            <h3>NCT Concierge</h3>
+                            <div class="price">€30 - €45</div>
+                        </div>
+                    </div>
+                    <div class="service-body">
+                        <p>Full NCT management. Pre-test, repairs, booking, and re-test. 95% pass rate!</p>
+                        <div class="service-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>Pre-NCT inspection</li>
+                                <li>Identify potential failures</li>
+                                <li>Fix issues before test</li>
+                                <li>NCT booking assistance</li>
+                            </ul>
+                        </div>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 1-2 hours</span>
+                            <a href="https://mcgintysgarage.store/booking?service=nct" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Brakes -->
-                <div class="service-card" onclick="window.location.href='https://lavelles.exposuresolutions.me/booking'">
-                    <div class="service-icon">🛑</div>
-                    <h3>Brake Services</h3>
-                    <div class="service-price">€120 - €400</div>
-                    <div class="service-duration">⏱️ 1-3 hours</div>
-                    <p>Complete brake system service. Safety is our #1 priority. Free brake check with every service.</p>
-                    <div class="service-includes">
-                        <h4>WE DO:</h4>
-                        <ul>
-                            <li>Brake pad replacement</li>
-                            <li>Brake disc replacement</li>
-                            <li>Brake fluid change</li>
-                            <li>Handbrake adjustment</li>
-                            <li>Safety inspection</li>
-                        </ul>
+                <div class="service-detail-card">
+                    <div class="service-header">
+                        <div class="service-header-icon">🛑</div>
+                        <div>
+                            <h3>Brake Services</h3>
+                            <div class="price">€120 - €400</div>
+                        </div>
                     </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Brake Service</a>
-                </div>
-
-                <!-- NCT Concierge -->
-                <div class="service-card" onclick="window.location.href='https://lavelles.exposuresolutions.me/booking'">
-                    <div class="service-icon">📋</div>
-                    <h3>NCT Concierge</h3>
-                    <div class="service-price">€30 - €45</div>
-                    <div class="service-duration">⏱️ We handle everything</div>
-                    <p>Full NCT management service. Pre-test, repairs if needed, test booking, and re-test. 95% pass rate!</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Pre-NCT 58-point inspection</li>
-                            <li>Repair quote if needed</li>
-                            <li>NCT test booking</li>
-                            <li>Post-fail repairs</li>
-                            <li>Re-test booking</li>
-                        </ul>
+                    <div class="service-body">
+                        <p>Complete brake system service. Pads, discs, fluid, calipers. Safety is our #1 priority.</p>
+                        <div class="service-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>Brake inspection</li>
+                                <li>Pad replacement</li>
+                                <li>Disc machining/replacement</li>
+                                <li>Fluid flush</li>
+                            </ul>
+                        </div>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 1-3 hours</span>
+                            <a href="https://mcgintysgarage.store/booking?service=brakes" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
                     </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book NCT Service</a>
-                </div>
-
-                <!-- Tyres (Updated with Duffy Tyres Partnership) -->
-                <div class="service-card" onclick="window.location.href='/partners#duffy'">
-                    <div class="service-icon">🔘</div>
-                    <h3>Tyres & Tracking</h3>
-                    <p style="font-style: italic; color: var(--primary); margin-bottom: 10px;">In Partnership with Duffy Tyres
-                    </p>
-                    <div class="service-price">€15 - €200</div>
-                    <div class="service-duration">⏱️ Fitting & Balancing</div>
-                    <p>We've partnered with Mayo's leading tyre specialists, Duffy Tyres, to bring you the best rubber at the best
-                    prices. Order through us for seamless fitting.</p>
-                    <div class="service-includes">
-                        <h4>WE DO:</h4>
-                        <ul>
-                            <li>New Tyres (Budget to Premium)</li>
-                            <li>3D Wheel Alignment (Tracking)</li>
-                            <li>Wheel Balancing</li>
-                            <li>Puncture Repairs</li>
-                            <li>Mobile Fitting Available</li>
-                        </ul>
-                    </div>
-                    <a href="https://lavelles.exposuresolutions.me/partners#duffy" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Order Tyres</a>
-                </div>
-
-                <!-- Emergency -->
-                <div class="service-card" style="border-color: var(--secondary);" onclick="window.location.href='tel:0851026371'">
-                    <div class="service-icon">🚨</div>
-                    <h3>Emergency Call-Out</h3>
-                    <div class="service-price">€60 + parts</div>
-                    <div class="service-duration">⏱️ Within 30 mins on Achill</div>
-                    <p>Breakdown? Flat battery? We come to you. Available for emergencies across Achill Island 24/7.</p>
-                    <div class="service-includes">
-                        <h4>WE DO:</h4>
-                        <ul>
-                            <li>Jump starts (€30)</li>
-                            <li>Flat tyre changes</li>
-                            <li>Basic roadside repairs</li>
-                            <li>Towing (via Eddie English)</li>
-                            <li>Live GPS tracking</li>
-                        </ul>
-                    </div>
-                    <a href="tel:0851026371" class="btn btn-accent"
-                        style="width: 100%; margin-top: 20px;">📞 Call Now</a>
                 </div>
 
                 <!-- Full Service -->
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Full Service</h3>
-                    <div class="service-price">€180 - €220</div>
-                    <div class="service-duration">⏱️ 2-3 hours</div>
-                    <p>Comprehensive service for peace of mind. Recommended every 12 months or 15,000km.</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Oil & filter change</li>
-                            <li>58-point inspection</li>
-                            <li>All fluids checked/topped</li>
-                            <li>Brake check</li>
-                            <li>Diagnostic scan</li>
-                            <li>NCT pre-check</li>
-                        </ul>
+                <div class="service-detail-card">
+                    <div class="service-header">
+                        <div class="service-header-icon">⚙️</div>
+                        <div>
+                            <h3>Full Service</h3>
+                            <div class="price">€150 - €250</div>
+                        </div>
                     </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking?service=full-service" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Full Service</a>
+                    <div class="service-body">
+                        <p>Comprehensive service covering all major systems. Keep your car running smoothly.</p>
+                        <div class="service-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>Oil & filter change</li>
+                                <li>Air & cabin filter</li>
+                                <li>Brake check</li>
+                                <li>Suspension check</li>
+                                <li>Fluid top-ups</li>
+                            </ul>
+                        </div>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 2-3 hours</span>
+                            <a href="https://mcgintysgarage.store/booking?service=general" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Timing Belt -->
-                <div class="service-card">
-                    <div class="service-icon">⛓️</div>
-                    <h3>Timing Belt Replacement</h3>
-                    <div class="service-price">€350 - €600</div>
-                    <div class="service-duration">⏱️ 3-5 hours</div>
-                    <p>Essential service to prevent catastrophic engine damage. Check your manual for replacement interval.</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Timing belt replacement</li>
-                            <li>Water pump (recommended)</li>
-                            <li>Tensioners & pulleys</li>
-                            <li>Coolant change</li>
-                            <li>12-month warranty</li>
-                        </ul>
+                <!-- Tyres -->
+                <div class="service-detail-card">
+                    <div class="service-header">
+                        <div class="service-header-icon">🔘</div>
+                        <div>
+                            <h3>Tyres & Alignment</h3>
+                            <div class="price">From €40/tyre</div>
+                        </div>
                     </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking?service=timing-belt" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Timing Belt</a>
-                </div>
-
-                <!-- Clutch -->
-                <div class="service-card">
-                    <div class="service-icon">🦶</div>
-                    <h3>Clutch Replacement</h3>
-                    <div class="service-price">€400 - €800</div>
-                    <div class="service-duration">⏱️ 4-6 hours</div>
-                    <p>Slipping clutch? Heavy pedal? We fit quality clutch kits with proper warranty.</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Complete clutch kit</li>
-                            <li>Release bearing</li>
-                            <li>Flywheel inspection</li>
-                            <li>Slave cylinder check</li>
-                            <li>12-month warranty</li>
-                        </ul>
+                    <div class="service-body">
+                        <p>New tyres, puncture repairs, and wheel alignment. Partnership with Duffy Tyres.</p>
+                        <div class="service-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>Budget to premium tyres</li>
+                                <li>Fitting & balancing</li>
+                                <li>Puncture repairs</li>
+                                <li>Wheel alignment</li>
+                            </ul>
+                        </div>
+                        <div class="service-meta">
+                            <span class="service-duration">⏱️ 30-60 mins</span>
+                            <a href="https://mcgintysgarage.store/booking?service=tyres" class="btn btn-primary btn-sm">Book Now</a>
+                        </div>
                     </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking?service=clutch" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Clutch Service</a>
                 </div>
-
-                <!-- Suspension -->
-                <div class="service-card">
-                    <div class="service-icon">🚙</div>
-                    <h3>Suspension & Steering</h3>
-                    <div class="service-price">€150 - €500</div>
-                    <div class="service-duration">⏱️ 2-4 hours</div>
-                    <p>Bumpy ride? Uneven tyre wear? We diagnose and repair all suspension issues.</p>
-                    <div class="service-includes">
-                        <h4>WE FIX:</h4>
-                        <ul>
-                            <li>Shock absorbers</li>
-                            <li>Springs & coilovers</li>
-                            <li>Ball joints & links</li>
-                            <li>Track rod ends</li>
-                            <li>Wheel alignment after</li>
-                        </ul>
-                    </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking?service=suspension" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Suspension Work</a>
-                </div>
-
-                <!-- Exhaust -->
-                <div class="service-card">
-                    <div class="service-icon">💨</div>
-                    <h3>Exhaust Repairs</h3>
-                    <div class="service-price">€80 - €400</div>
-                    <div class="service-duration">⏱️ 1-3 hours</div>
-                    <p>Loud exhaust? Emissions fail? We repair or replace exhaust systems. Welding via Eddie English.</p>
-                    <div class="service-includes">
-                        <h4>WE DO:</h4>
-                        <ul>
-                            <li>Exhaust welding</li>
-                            <li>Silencer replacement</li>
-                            <li>Catalytic converter</li>
-                            <li>DPF cleaning</li>
-                            <li>Hangers & brackets</li>
-                        </ul>
-                    </div>
-                    <a href="https://lavelles.exposuresolutions.me/partners#eddie" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Request Welding</a>
-                </div>
-
-                <!-- Battery -->
-                <div class="service-card">
-                    <div class="service-icon">🔋</div>
-                    <h3>Battery Service</h3>
-                    <div class="service-price">€100 - €200</div>
-                    <div class="service-duration">⏱️ 30 minutes</div>
-                    <p>Battery health check, replacement, and charging system diagnostics.</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Battery load test</li>
-                            <li>Alternator check</li>
-                            <li>Quality replacement battery</li>
-                            <li>Terminal cleaning</li>
-                            <li>3-year warranty</li>
-                        </ul>
-                    </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking?service=battery" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Battery Service</a>
-                </div>
-
-                <!-- Customisation & Shop (Updated) -->
-                <div class="service-card" onclick="window.location.href='/parts#shop'">
-                    <div class="service-icon">✨</div>
-                    <h3>Customisation & Shop</h3>
-                    <div class="service-price">POA</div>
-                    <div class="service-duration">⏱️ Supply & Fit</div>
-                    <p>Modernise your vehicle with the latest tech and style. Visit our new Accessories Shop for cameras, racks,
-                    and more.</p>
-                    <div class="service-includes">
-                        <h4>WE INSTALL:</h4>
-                        <ul>
-                            <li>Apple CarPlay / Android Auto</li>
-                            <li>Reversing cameras & sensors</li>
-                            <li>Dash cams (hardwired)</li>
-                            <li>Towbars & Roof Racks</li>
-                            <li>Wind Deflectors</li>
-                        </ul>
-                    </div>
-                    <a href="https://lavelles.exposuresolutions.me/parts#shop" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Visit Shop</a>
-                </div>
-
-                <!-- Rust Prevention (Restored from Old Site) -->
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Rust Repair & Prevention</h3>
-                    <div class="service-price">From €150</div>
-                    <div class="service-duration">⏱️ 1-2 Days</div>
-                    <p>Essential protection for island cars. Specialist packages to fight salt air corrosion.</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Deep underbody wash</li>
-                            <li>Rust converter treatment</li>
-                            <li>Protective underseal coating</li>
-                            <li>Cavity wax injection</li>
-                            <li>Chassis inspection</li>
-                        </ul>
-                    </div>
-                    <a href="https://lavelles.exposuresolutions.me/booking?service=rust" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Rust Protection</a>
-                </div>
-
-                <!-- Windows & Locks (Placeholder) -->
-                <div class="service-card">
-                    <div class="service-icon">🔑</div>
-                    <h3>Windows & Keys</h3>
-                    <div class="service-price">POA</div>
-                    <div class="service-duration">⏱️ Specialist Service</div>
-                    <p>Locked out? Chipped windscreen? We work with specialist partners to sort your glass and key programming
-                    needs.</p>
-                    <div class="service-includes">
-                        <h4>SERVICES:</h4>
-                        <ul>
-                            <li>Key Fob Programming</li>
-                            <li>Windscreen Chip Repair</li>
-                            <li>Window Regulator Repair</li>
-                            <li>Central Locking Fixes</li>
-                            <li>Spare Key Cutting</li>
-                        </ul>
-                    </div>
-                    <a href="tel:0851026371" class="btn btn-outline"
-                        style="width: 100%; margin-top: 20px;">Enquire Now</a>
-                </div>
-
-                <!-- Weekend Valeting (New) -->
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>Weekend Valeting</h3>
-                    <div class="service-price">From €40</div>
-                    <div class="service-duration">⏱️ Saturdays Only</div>
-                    <p>Get that new car feeling back. Professional wash, wax, and interior deep clean available on weekends.</p>
-                    <div class="service-includes">
-                        <h4>INCLUDES:</h4>
-                        <ul>
-                            <li>Exterior Hand Wash & Wax</li>
-                            <li>Interior Vacuum & Dash Polish</li>
-                            <li>Window Cleaning</li>
-                            <li>Tyre Shine</li>
-                            <li style="color: var(--secondary); font-weight: bold;">⚠️ +€20 if car not emptied</li>
-                        </ul>
-                    </div>
-                    <a href="booking.html?service=valet" class="btn btn-primary"
-                        style="width: 100%; margin-top: 20px;">Book Valet</a>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--light); border-radius:
-                var(--radius);">
-                <h2 style="color: var(--primary); margin-bottom: 20px;">CAN'T FIND WHAT YOU NEED?</h2>
-                <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 30px;">Call Ethan directly for custom
-                work, specialist repairs, or advice</p>
-                <a href="tel:0851026371" class="btn btn-accent" style="margin-right: 15px;">📞 Call Now</a>
-                <a href="https://wa.me/353851026371" class="btn btn-primary">💬 WhatsApp</a>
             </div>
         </div>
     </section>
+
+    <!-- Emergency Services -->
+    <section class="section emergency-section">
+        <div class="container">
+            <h2 class="section-title text-center">🚨 Emergency Services</h2>
+            <p class="lead text-center" style="color: rgba(255,255,255,0.9);">Breakdown? We come to you. Available 24/7 across Achill Island.</p>
+
+            <div class="emergency-grid">
+                <div class="emergency-card">
+                    <h4>🔋 Jump Start</h4>
+                    <div class="price">€30</div>
+                    <p>Flat battery? We come to you with professional equipment.</p>
+                </div>
+                <div class="emergency-card">
+                    <h4>🔧 Roadside Repair</h4>
+                    <div class="price">€60 + parts</div>
+                    <p>Minor repairs at your location. Get you back on the road.</p>
+                </div>
+                <div class="emergency-card">
+                    <h4>🚗 Recovery</h4>
+                    <div class="price">From €80</div>
+                    <p>Can't be fixed roadside? We'll tow you to the garage.</p>
+                </div>
+                <div class="emergency-card">
+                    <h4>🔑 Lockout</h4>
+                    <div class="price">€50</div>
+                    <p>Locked out of your car? We can help.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="mb-4" style="font-size: var(--text-lg);">📞 Call Eddie for emergencies:</p>
+                <a href="tel:+353892057388" class="btn btn-accent btn-lg">089-205-7388</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Note -->
+    <section class="section">
+        <div class="container">
+            <div class="pricing-note">
+                <h3>💰 Transparent Pricing</h3>
+                <p class="lead">All prices are estimates. We'll always give you a quote before starting work.</p>
+                <p class="text-gray">No hidden fees. No surprise charges. Just honest service.</p>
+                <div class="flex justify-center gap-4 flex-wrap mt-6">
+                    <a href="https://mcgintysgarage.store/booking" class="btn btn-primary">Book a Service</a>
+                    <a href="tel:0851026371" class="btn btn-outline">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TFI Anseo Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="anseo-card">
+                <h3>🚌 Need a Lift While Your Car is Being Fixed?</h3>
+                <p class="lead">Use TFI Anseo - the on-demand bus service covering Achill Island</p>
+                
+                <div class="anseo-features">
+                    <div class="anseo-feature">Daily 7am - 8pm</div>
+                    <div class="anseo-feature">Only €3 per trip</div>
+                    <div class="anseo-feature">Book 2hrs ahead</div>
+                    <div class="anseo-feature">Free Travel Pass OK</div>
+                </div>
+                
+                <div class="anseo-actions">
+                    <a href="https://apps.apple.com/ie/app/tfi-anseo/id6467011498" target="_blank" rel="noopener" class="btn btn-ghost">📱 iOS App</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ridewithvia.tfi.tfianseo" target="_blank" rel="noopener" class="btn btn-ghost">📱 Android</a>
+                    <a href="tel:0949005150" class="btn btn-accent">📞 094 900 5150</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://www.facebook.com/mcgintysgarage" target="_blank" rel="noopener" title="Facebook" class="social-facebook">📘</a>
+        <a href="https://www.instagram.com/mcgintysgarage" target="_blank" rel="noopener" title="Instagram" class="social-instagram">📷</a>
+        <a href="https://wa.me/353851026371" target="_blank" rel="noopener" title="WhatsApp" class="social-whatsapp">💬</a>
+        <a href="tel:0851026371" title="Call Us" class="social-phone">📞</a>
+        <a href="https://g.page/mcgintysgarage" target="_blank" rel="noopener" title="Google Maps" class="social-google">🗺️</a>
+    </div>
+
+    <!-- Mobile Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:0851026371" class="mobile-action-btn btn-call">📞 Call</a>
+        <a href="https://wa.me/353851026371" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png"
-                        alt="McGinty's Garage Repair Logo">
-                    <h4>MCGINTY'S GARAGE REPAIR</h4>
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Repair Logo">
+                    <h4>McGinty's Garage Repair</h4>
                     <p>The future of car repairs on Achill Island. Honest, reliable, and skilled service for over 50 years.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/lavellesauto" target="_blank">📘</a>
-                        <a href="https://www.instagram.com/lavellesauto" target="_blank">📷</a>
-                        <a href="https://wa.me/353851026371" target="_blank">💬</a>
-                        <a href="https://g.page/lavellesauto" target="_blank">🗺️</a>
+                        <a href="https://www.facebook.com/mcgintysgarage" target="_blank" rel="noopener" title="Facebook">📘</a>
+                        <a href="https://www.instagram.com/mcgintysgarage" target="_blank" rel="noopener" title="Instagram">📷</a>
+                        <a href="https://wa.me/353851026371" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+                        <a href="https://g.page/mcgintysgarage" target="_blank" rel="noopener" title="Google Maps">🗺️</a>
+                        <a href="https://www.youtube.com/@mcgintysgarage" target="_blank" rel="noopener" title="YouTube">📺</a>
                     </div>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="https://lavelles.exposuresolutions.me/services">All Services</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/booking">Book Appointment</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/loyalty">Loyalty Program</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/parts">Order Parts</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/partners">Partner Services</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/payments" style="color: var(--accent);">Make a Payment</a>
-                        </li>
-                        <li><a href="https://lavelles.exposuresolutions.me/strategy" style="color: #ff9900; font-weight: bold;">Strategy Hub (Client)</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Connect</h4>
-                    <ul style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0;">
-                        <li><a href="#" title="TikTok">🎵 TikTok</a></li>
-                        <li><a href="#" title="Snapchat">👻 Snapchat</a></li>
-                        <li><a href="#" title="Telegram">✈️ Telegram</a></li>
-                        <li><a href="#" title="Reddit">🤖 Reddit</a></li>
-                        <li><a href="#" title="Facebook Marketplace">🏪 FB Market</a></li>
-                        <li><a href="#" title="Google Maps">📍 Maps</a></li>
+                        <li><a href="https://mcgintysgarage.store/services">All Services</a></li>
+                        <li><a href="https://mcgintysgarage.store/booking">Book Appointment</a></li>
+                        <li><a href="https://mcgintysgarage.store/loyalty">Loyalty Program</a></li>
+                        <li><a href="https://mcgintysgarage.store/parts">Order Parts</a></li>
+                        <li><a href="https://mcgintysgarage.store/partners">Partner Services</a></li>
                     </ul>
                 </div>
                 <div>
@@ -973,8 +502,8 @@
                     <ul>
                         <li>📍 Achill Sound, Co. Mayo</li>
                         <li>📞 <a href="tel:0851026371">085-102-6371</a></li>
-                        <li>📧 <a href="mailto:info@lavellesauto.ie">info@lavellesauto.ie</a></li>
                         <li>💬 <a href="https://wa.me/353851026371">WhatsApp Us</a></li>
+                        <li>🚨 Emergency: <a href="tel:+353892057388">089-205-7388</a></li>
                     </ul>
                 </div>
                 <div>
@@ -983,39 +512,23 @@
                         <li>Mon-Fri: 6pm - 9pm</li>
                         <li>Saturday: 9am - 2pm</li>
                         <li>Sunday: Closed</li>
-                        <li style="margin-top: 10px; color: var(--accent);">🚨 Emergency call-outs 24/7</li>
+                        <li class="footer-emergency">🚨 Emergency 24/7</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 McGinty's Garage Repair. All Rights Reserved.</p>
-                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank"
-                        style="color: var(--accent);">Exposure Solutions</a></p>
-                <div style="margin-top: 20px;">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg"
-                        alt="Powered by Exposure Solutions AI"
-                        style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
-                </div>
+                <p class="footer-credit">Website by <a href="https://exposuresolutions.ie" target="_blank" rel="noopener">Exposure Solutions</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        document.getElementById('nav-toggle').addEventListener('click', function () {
-            document.getElementById('nav-menu').classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-menu').classList.remove('active');
-            });
-        });
-    </script>
+    <!-- Shared JavaScript -->
+    <script src="shared/js/constants.js"></script>
+    <script src="shared/js/navigation.js"></script>
+    <script src="shared/js/forms.js"></script>
+    <script src="shared/js/interactions.js"></script>
 </body>
-
 </html>
 
 

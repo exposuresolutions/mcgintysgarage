@@ -3,459 +3,529 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Care Champions | Loyalty Program</title>
-    <meta name="description" content="Join Lavelle's Auto Loyalty Program. Earn points on every service and get free repairs.">
+    
+    <!-- Primary Meta Tags -->
+    <title>Car Care Champions | McGinty's Garage Repair - Loyalty Program</title>
+    <meta name="description" content="Join McGinty's Car Care Champions loyalty program. Earn points on every service, get exclusive discounts, and redeem for free repairs. Achill Island, Mayo.">
+    <meta name="keywords" content="car loyalty program, garage rewards, McGinty's Garage, Achill Island, car service discounts">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="IE-MO">
+    <meta name="geo.placename" content="Achill Island, County Mayo">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mcgintysgarage.store/loyalty">
+    <meta property="og:title" content="Car Care Champions | McGinty's Garage Repair">
+    <meta property="og:description" content="Join our loyalty program. Earn points, get discounts, redeem for free repairs.">
+    <meta property="og:image" content="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://mcgintysgarage.store/loyalty">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="shared/css/main.css">
+    
+    <!-- Page-specific styles -->
     <style>
-        /* Same CSS as index-v2.html */
-        :root {
-            --primary: #005A9C;
-            --primary-dark: #003D6B;
-            --secondary: #D40000;
-            --accent: #FDB813;
-            --dark: #1a1a1a;
-            --light: #f4f4f4;
-            --white: #ffffff;
-            --gray: #666;
-            --font-display: 'Roboto Condensed', sans-serif;
-            --font-body: 'Roboto', sans-serif;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
-            --transition: all 0.3s ease-in-out;
-            --radius: 8px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.7;
+        .loyalty-hero {
+            background: linear-gradient(135deg, var(--accent) 0%, #e6a500 100%);
             color: var(--dark);
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') fixed center/cover;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-display);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-
-        .text-center { text-align: center; }
-        .lead { font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem; }
-        img { max-width: 100%; height: auto; display: block; }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: 2px solid transparent;
-            border-radius: var(--radius);
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: var(--dark);
-            border-color: var(--accent);
-            font-weight: 900;
-        }
-        .btn-accent:hover {
-            background: #e6a500;
-            transform: scale(1.05);
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 9999;
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
-            background-size: cover;
-            background-position: center;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-            position: relative;
-            z-index: 10000;
-        }
-
-        .nav-logo img {
-            width: 220px;
-            height: 220px;
-            object-fit: contain;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-link {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        .nav-link:hover { color: var(--accent); }
-
-        .nav-toggle { display: none; }
-
-        /* Page Hero */
-        .page-hero {
-            padding: 180px 20px 80px;
-            background: 
-                linear-gradient(135deg, rgba(0,90,156,0.75) 0%, rgba(0,61,107,0.78) 100%),
-                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover;
-            color: var(--white);
+            padding: calc(80px + var(--space-12)) var(--space-4) var(--space-12);
             text-align: center;
         }
 
-        .page-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
+        .loyalty-hero h1 {
+            color: var(--dark);
         }
 
-        /* Loyalty Section */
-        .loyalty-section {
-            padding: 80px 20px;
+        .loyalty-hero .lead {
+            color: rgba(0, 0, 0, 0.7);
         }
 
-        .points-grid {
+        .how-it-works-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: var(--space-6);
+            margin-top: var(--space-8);
         }
 
-        .point-card {
+        .step-card {
             background: var(--white);
-            padding: 30px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
+            padding: var(--space-6);
+            border-radius: var(--radius-md);
             text-align: center;
-            border-top: 5px solid var(--accent);
+            box-shadow: var(--shadow);
+            position: relative;
         }
 
-        .point-value {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 10px 0;
-        }
-
-        .rewards-list {
-            max-width: 800px;
-            margin: 60px auto 0;
-            background: var(--white);
-            padding: 40px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .reward-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .reward-item:last-child { border-bottom: none; }
-
-        .reward-points {
+        .step-number {
+            position: absolute;
+            top: calc(-1 * var(--space-4));
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
             background: var(--accent);
             color: var(--dark);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 60px 20px 30px;
-            background: url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png');
-            background-size: cover;
-            background-position: center;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand {
-            grid-column: span 2;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .footer-social a {
-            color: rgba(255,255,255,0.9);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        .footer-social a:hover { color: var(--accent); }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* Sticky Mobile Action Bar */
-        .mobile-action-bar {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 10px;
-            justify-content: space-around;
-            gap: 10px;
-        }
-        .mobile-action-btn {
-            flex: 1;
-            padding: 12px;
-            border-radius: var(--radius);
-            text-align: center;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
+            border-radius: var(--radius-full);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            font-size: var(--text-xl);
+            font-weight: 700;
+            box-shadow: var(--shadow);
         }
-        .btn-call { background: var(--primary); color: var(--white); }
-        .btn-whatsapp { background: #25D366; color: var(--white); }
 
-        @media (max-width: 768px) {
-            .mobile-action-bar { display: flex; }
-            .footer { padding-bottom: 80px; } /* Space for bar */
-            
-            /* Mobile Navigation Fix */
-            .nav-toggle { display: block; z-index: 1001; }
-            .nav-menu {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100vh;
-                background: rgba(0,0,0,0.98);
-                flex-direction: column;
-                justify-content: center;
-                transition: var(--transition);
-                padding: 20px;
-                z-index: 1000;
-            }
-            .nav-menu.active { left: 0; }
-            .nav-link { font-size: 1.5rem; margin: 15px 0; }
-            
-            /* Resize logo for mobile */
-            .logo-img { width: 140px; height: 140px; }
-            .header { padding: 0.5rem 0; }
+        .step-card h3 {
+            margin-top: var(--space-4);
+            color: var(--primary);
+        }
+
+        .points-table {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .points-table-header {
+            background: var(--primary);
+            color: var(--white);
+            padding: var(--space-4);
+            text-align: center;
+        }
+
+        .points-table-header h3 {
+            color: var(--white);
+            margin: 0;
+        }
+
+        .points-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-4);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .points-row:last-child {
+            border-bottom: none;
+        }
+
+        .points-row:hover {
+            background: var(--gray-100);
+        }
+
+        .points-service {
+            font-weight: 500;
+        }
+
+        .points-value {
+            background: var(--accent);
+            color: var(--dark);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: var(--text-sm);
+        }
+
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .reward-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+        }
+
+        .reward-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .reward-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: var(--space-5);
+            text-align: center;
+        }
+
+        .reward-header h4 {
+            color: var(--white);
+            margin: 0;
+        }
+
+        .reward-points {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .reward-body {
+            padding: var(--space-5);
+            text-align: center;
+        }
+
+        .reward-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-3);
+        }
+
+        .tiers-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--gray-900) 100%);
+            color: var(--white);
+        }
+
+        .tiers-section h2 {
+            color: var(--white);
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .tier-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: var(--space-6);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+
+        .tier-card:hover {
+            border-color: var(--accent);
+        }
+
+        .tier-card.featured {
+            border-color: var(--accent);
+            background: rgba(253, 184, 19, 0.1);
+        }
+
+        .tier-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-3);
+        }
+
+        .tier-card h4 {
+            color: var(--accent);
+            margin-bottom: var(--space-2);
+        }
+
+        .tier-points {
+            font-size: var(--text-sm);
+            color: var(--gray-400);
+            margin-bottom: var(--space-4);
+        }
+
+        .tier-benefits {
+            list-style: none;
+            text-align: left;
+        }
+
+        .tier-benefits li {
+            padding: var(--space-2) 0;
+            font-size: var(--text-sm);
+            color: var(--gray-300);
+        }
+
+        .tier-benefits li::before {
+            content: '✓ ';
+            color: var(--accent);
+        }
+
+        .join-cta {
+            background: var(--accent);
+            color: var(--dark);
+            padding: var(--space-12) 0;
+            text-align: center;
+        }
+
+        .join-cta h2 {
+            color: var(--dark);
+        }
+
+        .join-cta .lead {
+            color: rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
-    <!-- Sticky Mobile Action Bar -->
-    <div class="mobile-action-bar">
-        <a href="tel:0851026371" class="mobile-action-btn btn-call">📞 Call</a>
-        <a href="https://wa.me/353851026371" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-logo">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo" class="logo-img">
+                <a href="https://mcgintysgarage.store/home" class="nav-logo">
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Repair Logo" class="logo-img">
                 </a>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="https://lavelles.exposuresolutions.me/home-703153" class="nav-link">Home</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/services" class="nav-link">Services</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/booking" class="nav-link">Book Now</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/loyalty" class="nav-link">Loyalty</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/parts" class="nav-link">Parts & Shop</a></li>
-                    <li><a href="https://lavelles.exposuresolutions.me/partners" class="nav-link">Partners</a></li>
+                <ul class="nav-menu" id="nav-menu" aria-hidden="true">
+                    <li><a href="https://mcgintysgarage.store/home" class="nav-link">Home</a></li>
+                    <li><a href="https://mcgintysgarage.store/services" class="nav-link">Services</a></li>
+                    <li><a href="https://mcgintysgarage.store/booking" class="nav-link">Book Now</a></li>
+                    <li><a href="https://mcgintysgarage.store/loyalty" class="nav-link active">Loyalty</a></li>
+                    <li><a href="https://mcgintysgarage.store/parts" class="nav-link">Parts & Shop</a></li>
+                    <li><a href="https://mcgintysgarage.store/partners" class="nav-link">Partners</a></li>
                     <li><a href="tel:0851026371" class="btn btn-accent">📞 Call Now</a></li>
                 </ul>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                     <span class="hamburger"></span>
                 </button>
             </nav>
         </div>
     </header>
 
-    <!-- Social Media Icons (Right Side) -->
-    <div class="social-icons">
-        <a href="https://www.facebook.com/lavellesauto" target="_blank" class="social-icon" title="Facebook" style="color: #1877F2;">📘</a>
-        <a href="https://www.instagram.com/lavellesauto" target="_blank" class="social-icon" title="Instagram" style="color: #E4405F;">📷</a>
-        <a href="https://wa.me/353851026371" target="_blank" class="social-icon" title="WhatsApp" style="color: #25D366;">💬</a>
-        <a href="sms:0851026371" class="social-icon" title="Text Us" style="color: #34B7F1;">📱</a>
-        <a href="tel:0851026371" class="social-icon" title="Call Us" style="color: #005A9C;">📞</a>
-        <a href="https://g.page/lavellesauto" target="_blank" class="social-icon" title="Google" style="color: #4285F4;">🗺️</a>
-        <a href="https://www.youtube.com/@lavellesauto" target="_blank" class="social-icon" title="YouTube" style="color: #FF0000;">📺</a>
+    <!-- Hero -->
+    <section class="loyalty-hero">
+        <div class="container">
+            <h1>🏆 Car Care Champions</h1>
+            <p class="lead">Earn points on every service. Redeem for free repairs and exclusive discounts.</p>
+            <a href="#join" class="btn btn-primary btn-lg mt-6">Join Free Today</a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title text-center">How It Works</h2>
+            <p class="lead text-center">Simple, rewarding, and free to join</p>
+
+            <div class="how-it-works-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up Free</h3>
+                    <p>Join in seconds. Just give us your phone number when you book.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Earn Points</h3>
+                    <p>Get points for every service. The more you spend, the more you earn.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Redeem Rewards</h3>
+                    <p>Use your points for free services, discounts, and exclusive perks.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Level Up</h3>
+                    <p>Reach higher tiers for even better rewards and priority service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Points Table -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="grid grid-2 gap-8 items-start">
+                <div>
+                    <h2 class="section-title">Earn Points</h2>
+                    <p class="lead">Every €1 spent = 1 point. Plus bonus points on popular services!</p>
+                    
+                    <div class="points-table mt-6">
+                        <div class="points-table-header">
+                            <h3>Points Per Service</h3>
+                        </div>
+                        <div class="points-row">
+                            <span class="points-service">🛢️ Oil Change</span>
+                            <span class="points-value">70 pts + 20 bonus</span>
+                        </div>
+                        <div class="points-row">
+                            <span class="points-service">💻 Diagnostics</span>
+                            <span class="points-value">50-80 pts</span>
+                        </div>
+                        <div class="points-row">
+                            <span class="points-service">📋 NCT Prep</span>
+                            <span class="points-value">30-45 pts + 15 bonus</span>
+                        </div>
+                        <div class="points-row">
+                            <span class="points-service">🛑 Brake Service</span>
+                            <span class="points-value">120-400 pts</span>
+                        </div>
+                        <div class="points-row">
+                            <span class="points-service">⚙️ Full Service</span>
+                            <span class="points-value">150-250 pts + 50 bonus</span>
+                        </div>
+                        <div class="points-row">
+                            <span class="points-service">🔘 Tyres (each)</span>
+                            <span class="points-value">40+ pts</span>
+                        </div>
+                        <div class="points-row">
+                            <span class="points-service">⭐ Referral Bonus</span>
+                            <span class="points-value">100 pts FREE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="section-title">Redeem Rewards</h2>
+                    <p class="lead">Turn your points into real value</p>
+                    
+                    <div class="rewards-grid mt-6">
+                        <div class="reward-card">
+                            <div class="reward-header">
+                                <div class="reward-points">250</div>
+                                <h4>Points</h4>
+                            </div>
+                            <div class="reward-body">
+                                <div class="reward-icon">🔍</div>
+                                <p>Free Diagnostic Scan</p>
+                            </div>
+                        </div>
+                        <div class="reward-card">
+                            <div class="reward-header">
+                                <div class="reward-points">500</div>
+                                <h4>Points</h4>
+                            </div>
+                            <div class="reward-body">
+                                <div class="reward-icon">🛢️</div>
+                                <p>Free Oil Change</p>
+                            </div>
+                        </div>
+                        <div class="reward-card">
+                            <div class="reward-header">
+                                <div class="reward-points">100</div>
+                                <h4>Points</h4>
+                            </div>
+                            <div class="reward-body">
+                                <div class="reward-icon">💰</div>
+                                <p>€10 Off Any Service</p>
+                            </div>
+                        </div>
+                        <div class="reward-card">
+                            <div class="reward-header">
+                                <div class="reward-points">1000</div>
+                                <h4>Points</h4>
+                            </div>
+                            <div class="reward-body">
+                                <div class="reward-icon">⚙️</div>
+                                <p>Free Full Service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tiers -->
+    <section class="section tiers-section">
+        <div class="container">
+            <h2 class="section-title text-center">Membership Tiers</h2>
+            <p class="lead text-center lead-light">The more you visit, the better it gets</p>
+
+            <div class="tiers-grid">
+                <div class="tier-card">
+                    <div class="tier-icon">🔧</div>
+                    <h4>Starter</h4>
+                    <div class="tier-points">0 - 499 points</div>
+                    <ul class="tier-benefits">
+                        <li>Earn 1 point per €1 spent</li>
+                        <li>Birthday bonus points</li>
+                        <li>Service reminders</li>
+                    </ul>
+                </div>
+                <div class="tier-card featured">
+                    <div class="tier-icon">⭐</div>
+                    <h4>Champion</h4>
+                    <div class="tier-points">500 - 999 points</div>
+                    <ul class="tier-benefits">
+                        <li>Earn 1.25 points per €1</li>
+                        <li>Priority booking</li>
+                        <li>10% off parts</li>
+                        <li>Free fluid top-ups</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <div class="tier-icon">🏆</div>
+                    <h4>Legend</h4>
+                    <div class="tier-points">1000+ points</div>
+                    <ul class="tier-benefits">
+                        <li>Earn 1.5 points per €1</li>
+                        <li>VIP priority service</li>
+                        <li>15% off all parts</li>
+                        <li>Free annual inspection</li>
+                        <li>Exclusive member events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join CTA -->
+    <section class="join-cta" id="join">
+        <div class="container">
+            <h2>🎉 Join Car Care Champions Today</h2>
+            <p class="lead">It's free, it's easy, and you start earning immediately</p>
+            
+            <form class="waitlist-form mt-8" id="loyalty-signup">
+                <input type="tel" name="phone" placeholder="Your phone number" required>
+                <button type="submit" class="btn btn-primary">Join Now - It's Free!</button>
+            </form>
+            
+            <p class="mt-4" style="font-size: var(--text-sm);">
+                Or just mention "Car Care Champions" when you book your next service!
+            </p>
+        </div>
+    </section>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://www.facebook.com/mcgintysgarage" target="_blank" rel="noopener" title="Facebook" class="social-facebook">📘</a>
+        <a href="https://www.instagram.com/mcgintysgarage" target="_blank" rel="noopener" title="Instagram" class="social-instagram">📷</a>
+        <a href="https://wa.me/353851026371" target="_blank" rel="noopener" title="WhatsApp" class="social-whatsapp">💬</a>
+        <a href="tel:0851026371" title="Call Us" class="social-phone">📞</a>
+        <a href="https://g.page/mcgintysgarage" target="_blank" rel="noopener" title="Google Maps" class="social-google">🗺️</a>
     </div>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1>Car Care Champions</h1>
-            <p class="lead">Earn points on every service and get rewarded</p>
-        </div>
-    </section>
-
-    <!-- How it Works -->
-    <section class="loyalty-section">
-        <div class="container">
-            <h2 class="section-title text-center">How to Earn Points</h2>
-            
-            <div class="points-grid">
-                <div class="point-card">
-                    <h3>Book a Service</h3>
-                    <div class="point-value">100</div>
-                    <p>Points per visit</p>
-                </div>
-                <div class="point-card">
-                    <h3>Refer a Friend</h3>
-                    <div class="point-value">250</div>
-                    <p>Points when they book</p>
-                </div>
-                <div class="point-card">
-                    <h3>Leave a Review</h3>
-                    <div class="point-value">50</div>
-                    <p>Points per review</p>
-                </div>
-            </div>
-
-            <div class="rewards-list">
-                <h3 class="text-center" style="margin-bottom: 30px;">Redeem Your Rewards</h3>
-                
-                <div class="reward-item">
-                    <div>
-                        <h4>Free Oil Change</h4>
-                        <p style="color: var(--gray);">Includes filter and labour</p>
-                    </div>
-                    <div class="reward-points">500 PTS</div>
-                </div>
-
-                <div class="reward-item">
-                    <div>
-                        <h4>Free Diagnostic Scan</h4>
-                        <p style="color: var(--gray);">Full system check</p>
-                    </div>
-                    <div class="reward-points">1000 PTS</div>
-                </div>
-
-                <div class="reward-item">
-                    <div>
-                        <h4>€100 Off Any Service</h4>
-                        <p style="color: var(--gray);">Use on any repair or service</p>
-                    </div>
-                    <div class="reward-points">2500 PTS</div>
-                </div>
-            </div>
-
-            <div class="text-center" style="margin-top: 60px;">
-                <h3>Join Free Today</h3>
-                <p class="lead">Start earning points with your next booking</p>
-                <a href="https://lavelles.exposuresolutions.me/booking" class="btn btn-primary">Book & Join</a>
-            </div>
-        </div>
-    </section>
+    <!-- Mobile Action Bar -->
+    <div class="mobile-action-bar">
+        <a href="tel:0851026371" class="mobile-action-btn btn-call">📞 Call</a>
+        <a href="https://wa.me/353851026371" class="mobile-action-btn btn-whatsapp">💬 WhatsApp</a>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c3256078883f5afa88cff.png" alt="Lavelle's Auto Logo">
-                    <h4>LAVELLE'S AUTO</h4>
+                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Repair Logo">
+                    <h4>McGinty's Garage Repair</h4>
                     <p>The future of car repairs on Achill Island. Honest, reliable, and skilled service for over 50 years.</p>
                     <div class="footer-social">
-                        <a href="https://www.facebook.com/lavellesauto" target="_blank">📘</a>
-                        <a href="https://www.instagram.com/lavellesauto" target="_blank">📷</a>
-                        <a href="https://wa.me/353851026371" target="_blank">💬</a>
-                        <a href="https://g.page/lavellesauto" target="_blank">🗺️</a>
+                        <a href="https://www.facebook.com/mcgintysgarage" target="_blank" rel="noopener" title="Facebook">📘</a>
+                        <a href="https://www.instagram.com/mcgintysgarage" target="_blank" rel="noopener" title="Instagram">📷</a>
+                        <a href="https://wa.me/353851026371" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+                        <a href="https://g.page/mcgintysgarage" target="_blank" rel="noopener" title="Google Maps">🗺️</a>
+                        <a href="https://www.youtube.com/@mcgintysgarage" target="_blank" rel="noopener" title="YouTube">📺</a>
                     </div>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="https://lavelles.exposuresolutions.me/services">All Services</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/booking">Book Appointment</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/loyalty">Loyalty Program</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/parts">Order Parts</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/partners">Partner Services</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/payments" style="color: var(--accent);">Make a Payment</a></li>
-                        <li><a href="https://lavelles.exposuresolutions.me/strategy" style="color: #ff9900; font-weight: bold;">Strategy Hub (Client)</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Connect</h4>
-                    <ul style="display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0;">
-                        <li><a href="javascript:void(0)" title="TikTok">🎵 TikTok</a></li>
-                        <li><a href="javascript:void(0)" title="Snapchat">👻 Snapchat</a></li>
-                        <li><a href="javascript:void(0)" title="Telegram">✈️ Telegram</a></li>
-                        <li><a href="javascript:void(0)" title="Reddit">🤖 Reddit</a></li>
-                        <li><a href="https://www.facebook.com/marketplace" target="_blank" title="Facebook Marketplace">🏪 FB Market</a></li>
-                        <li><a href="https://g.page/lavellesauto" target="_blank" title="Google Maps">📍 Maps</a></li>
+                        <li><a href="https://mcgintysgarage.store/services">All Services</a></li>
+                        <li><a href="https://mcgintysgarage.store/booking">Book Appointment</a></li>
+                        <li><a href="https://mcgintysgarage.store/loyalty">Loyalty Program</a></li>
+                        <li><a href="https://mcgintysgarage.store/parts">Order Parts</a></li>
+                        <li><a href="https://mcgintysgarage.store/partners">Partner Services</a></li>
                     </ul>
                 </div>
                 <div>
@@ -463,8 +533,8 @@
                     <ul>
                         <li>📍 Achill Sound, Co. Mayo</li>
                         <li>📞 <a href="tel:0851026371">085-102-6371</a></li>
-                        <li>📧 <a href="mailto:info@lavellesauto.ie">info@lavellesauto.ie</a></li>
                         <li>💬 <a href="https://wa.me/353851026371">WhatsApp Us</a></li>
+                        <li>🚨 Emergency: <a href="tel:+353892057388">089-205-7388</a></li>
                     </ul>
                 </div>
                 <div>
@@ -473,36 +543,44 @@
                         <li>Mon-Fri: 6pm - 9pm</li>
                         <li>Saturday: 9am - 2pm</li>
                         <li>Sunday: Closed</li>
-                        <li style="margin-top: 10px; color: var(--accent);">🚨 Emergency call-outs 24/7</li>
+                        <li class="footer-emergency">🚨 Emergency 24/7</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Lavelle's Auto Diagnostics & Repair. All Rights Reserved.</p>
-                <p style="margin-top: 10px;">Website by <a href="https://exposuresolutions.ie" target="_blank" style="color: var(--accent);">Exposure Solutions</a></p>
-                <div style="margin-top: 20px;">
-                    <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c816ccfdc2fd8de5e712c.jpeg" alt="Powered by Exposure Solutions AI" style="max-width: 150px; height: auto; display: inline-block; opacity: 0.8;">
-                </div>
+                <p>&copy; 2025 McGinty's Garage Repair. All Rights Reserved.</p>
+                <p class="footer-credit">Website by <a href="https://exposuresolutions.ie" target="_blank" rel="noopener">Exposure Solutions</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- Shared JavaScript -->
+    <script src="shared/js/constants.js"></script>
+    <script src="shared/js/navigation.js"></script>
+    <script src="shared/js/forms.js"></script>
+    <script src="shared/js/interactions.js"></script>
+    
+    <!-- Page-specific JavaScript -->
     <script>
-        // Mobile menu toggle
-        document.getElementById('nav-toggle').addEventListener('click', function() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-menu').classList.remove('active');
-            });
+        // Loyalty signup form
+        document.getElementById('loyalty-signup')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const phone = this.querySelector('input[name="phone"]').value;
+            
+            this.innerHTML = `
+                <div class="text-center">
+                    <div style="font-size: 4rem;">🎉</div>
+                    <h3 style="color: var(--dark); margin-top: var(--space-4);">Welcome to Car Care Champions!</h3>
+                    <p style="color: rgba(0,0,0,0.7);">You're now earning points on every service.</p>
+                </div>
+            `;
+            
+            if (window.McGintysForums) {
+                window.McGintysForums.showNotification('Welcome to Car Care Champions! 🏆', 'success');
+            }
         });
     </script>
 </body>
 </html>
-
 
 
