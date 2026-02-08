@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>McGinty's Garage | Achill Island Car Repairs</title>
+    <meta name="description" content="Your trusted local mechanic on Achill Island. Easy booking, honest repairs, 24/7 emergency callouts. Third-generation expertise.">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="IE-MO">
+    <meta name="geo.placename" content="Achill Island, County Mayo">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mcgintysgarage.store/">
+    <meta property="og:title" content="McGinty's Garage | Achill Island Car Repairs">
+    <meta property="og:description" content="Your trusted local mechanic. Easy booking, honest repairs.">
+    <meta property="og:image" content="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==================== CSS RESET & VARIABLES ==================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #005A9C;
+            --primary-dark: #003d6b;
+            --accent: #FDB813;
+            --accent-hover: #e5a611;
+            --success: #25D366;
+            --danger: #D40000;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            
+            --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            --radius: 16px;
+            --radius-lg: 24px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ==================== ACCESSIBILITY - LARGE TEXT ==================== */
+        h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; }
+        h2 { font-size: 2rem; font-weight: 700; line-height: 1.3; }
+        h3 { font-size: 1.5rem; font-weight: 600; }
+        p { font-size: 1.1rem; }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 2.5rem; }
+        }
+
+        /* ==================== HEADER - SIMPLE & CLEAN ==================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 12px 20px;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark);
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            background: var(--primary);
+            padding: 4px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: none;
+        }
+
+        @media (min-width: 600px) {
+            .logo-text { display: block; }
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 52px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-lg {
+            padding: 18px 36px;
+            font-size: 1.2rem;
+            min-height: 64px;
+        }
+
+        .btn-xl {
+            padding: 24px 48px;
+            font-size: 1.4rem;
+            min-height: 80px;
+            border-radius: var(--radius-lg);
+        }
+
+        .btn-icon {
+            font-size: 1.3em;
+        }
+
+        /* ==================== HERO - SIMPLE & FOCUSED ==================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%);
+        }
+
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 24px;
+            border-radius: 20px;
+            background: var(--primary);
+            padding: 10px;
+            box-shadow: var(--shadow-lg);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        @media (min-width: 600px) {
+            .hero-actions {
+                flex-direction: row;
+                max-width: 600px;
+            }
+            .hero-actions .btn {
+                flex: 1;
+            }
+        }
+
+        .hero-trust {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .trust-icon {
+            font-size: 1.5rem;
+        }
+
+        /* ==================== QUICK ACTIONS - BIG BUTTONS ==================== */
+        .quick-actions {
+            padding: 60px 20px;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .action-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .action-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .action-card {
+            background: var(--light);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .action-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .action-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .action-card h3 {
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .action-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* ==================== UPGRADES SECTION - EMOTIONAL SELLING ==================== */
+        .upgrades {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .upgrades .section-title h2 {
+            color: var(--white);
+        }
+
+        .upgrades .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .upgrade-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .upgrade-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .upgrade-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .upgrade-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .upgrade-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .upgrade-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .upgrade-card h3 {
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .upgrade-tagline {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .upgrade-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .upgrade-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .price-from {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .price-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--success);
+        }
+
+        .upgrade-card .btn {
+            width: 100%;
+        }
+
+        /* ==================== SERVICES PREVIEW ==================== */
+        .services-preview {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+
+        .service-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .service-item-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .service-item-content {
+            flex: 1;
+        }
+
+        .service-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .service-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .service-item-price {
+            font-weight: 700;
+            color: var(--success);
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        .section-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        .contact {
+            padding: 80px 20px;
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .contact p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 600px) {
+            .contact-buttons {
+                flex-direction: row;
+            }
+            .contact-buttons .btn {
+                flex: 1;
+            }
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .contact-info-item {
+            text-align: center;
+        }
+
+        .contact-info-item strong {
+            display: block;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            padding: 40px 20px;
+            background: #111;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ==================== MOBILE NAV ==================== */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            padding: 8px 16px 16px;
+        }
+
+        @media (max-width: 767px) {
+            .mobile-nav {
+                display: flex;
+                justify-content: space-around;
+            }
+            
+            body {
+                padding-bottom: 80px;
+            }
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+
+        .mobile-nav-item:hover,
+        .mobile-nav-item.active {
+            color: var(--primary);
+            background: var(--light);
+        }
+
+        .mobile-nav-item span:first-child {
+            font-size: 1.5rem;
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage" class="logo-img">
+                <span class="logo-text">McGinty's Garage</span>
+            </a>
+            <div class="header-cta">
+                <a href="tel:0851026371" class="btn btn-accent">
+                    <span class="btn-icon">📞</span>
+                    <span class="btn-text">Call</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Logo" class="hero-logo">
+        <h1>Your <span>Local Mechanic</span><br>on Achill Island</h1>
+        <p class="hero-subtitle">Third-generation expertise. Honest repairs. Here when you need us.</p>
+        
+        <div class="hero-actions">
+            <a href="/booking" class="btn btn-accent btn-xl">
+                <span class="btn-icon">📅</span>
+                Book a Service
+            </a>
+            <a href="tel:0851026371" class="btn btn-primary btn-xl">
+                <span class="btn-icon">📞</span>
+                Call Now
+            </a>
+        </div>
+
+        <div class="hero-trust">
+            <div class="trust-item">
+                <span class="trust-icon">✅</span>
+                <span>50+ Years Experience</span>
+            </div>
+            <div class="trust-item">
+                <span class="trust-icon">⭐</span>
+                <span>95% NCT Pass Rate</span>
+            </div>
+                    </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions" id="actions">
+        <div class="section-title">
+            <h2>How Can We Help?</h2>
+            <p>Tap what you need - it's that simple</p>
+        </div>
+        
+        <div class="action-grid">
+            <a href="/booking" class="action-card">
+                <span class="action-icon">📅</span>
+                <h3>Book a Service</h3>
+                <p>Schedule your appointment online</p>
+            </a>
+            <a href="tel:0851026371" class="action-card">
+                <span class="action-icon">📞</span>
+                <h3>Call the Garage</h3>
+                <p>Speak to Ethan directly</p>
+            </a>
+            <a href="/services" class="action-card">
+                <span class="action-icon">🔧</span>
+                <h3>Our Services</h3>
+                <p>See what we can do for you</p>
+            </a>
+            <a href="#upgrades" class="action-card">
+                <span class="action-icon">🛡️</span>
+                <h3>Upgrades & Safety</h3>
+                <p>Prevention is better than cure</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Upgrades Section - Emotional Selling -->
+    <section class="upgrades" id="upgrades">
+        <div class="section-title">
+            <h2>🛡️ Upgrades & Prevention</h2>
+            <p>Because prevention is better than cure - and your loved ones deserve the best</p>
+        </div>
+
+        <div class="upgrade-grid">
+            <!-- Reversing Camera -->
+            <div class="upgrade-card fade-in">
+                <span class="upgrade-emoji">📹</span>
+                <h3>Reversing Camera</h3>
+                <p class="upgrade-tagline">"A gift they'll never forget"</p>
+                <p>Perfect for a parent or grandparent. No more guessing when reversing - see everything clearly. Save bumpers, save stress, save lives.</p>
+                <div class="upgrade-price">
+                    <span class="price-from">From</span>
+                    <span class="price-value">€149</span>
+                </div>
+                <a href="/booking?service=reversing-camera" class="btn btn-accent">Order & Install</a>
+            </div>
+
+            <!-- Suspension Upgrade -->
+            <div class="upgrade-card fade-in">
+                <span class="upgrade-emoji">🛞</span>
+                <h3>Suspension Upgrade</h3>
+                <p class="upgrade-tagline">"If you love her, upgrade the suspension"</p>
+                <p>Achill roads are tough on cars - and passengers. A suspension upgrade means a smoother, safer ride. She'll thank you in the long run.</p>
+                <div class="upgrade-price">
+                    <span class="price-from">From</span>
+                    <span class="price-value">€299</span>
+                </div>
+                <a href="/booking?service=suspension" class="btn btn-accent">Get a Quote</a>
+            </div>
+
+            <!-- Dash Cam -->
+            <div class="upgrade-card fade-in">
+                <span class="upgrade-emoji">🎥</span>
+                <h3>Dash Cam</h3>
+                <p class="upgrade-tagline">"Peace of mind on every journey"</p>
+                <p>Record everything. If something happens, you have proof. Insurance claims made simple. Protect yourself and your family.</p>
+                <div class="upgrade-price">
+                    <span class="price-from">From</span>
+                    <span class="price-value">€99</span>
+                </div>
+                <a href="/booking?service=dashcam" class="btn btn-accent">Order & Install</a>
+            </div>
+
+            <!-- LED Headlights -->
+            <div class="upgrade-card fade-in">
+                <span class="upgrade-emoji">💡</span>
+                <h3>LED Headlight Upgrade</h3>
+                <p class="upgrade-tagline">"See the road, be seen"</p>
+                <p>Dark country roads need bright lights. LED headlights last longer, shine brighter, and keep you safer on those winter evenings.</p>
+                <div class="upgrade-price">
+                    <span class="price-from">From</span>
+                    <span class="price-value">€79</span>
+                </div>
+                <a href="/booking?service=led-lights" class="btn btn-accent">Upgrade Now</a>
+            </div>
+
+            <!-- Battery Monitor -->
+            <div class="upgrade-card fade-in">
+                <span class="upgrade-emoji">🔋</span>
+                <h3>Smart Battery Monitor</h3>
+                <p class="upgrade-tagline">"Never get stranded again"</p>
+                <p>Know your battery health before it fails. Get alerts on your phone. Perfect for cars that sit for a while between drives.</p>
+                <div class="upgrade-price">
+                    <span class="price-from">From</span>
+                    <span class="price-value">€49</span>
+                </div>
+                <a href="/booking?service=battery-monitor" class="btn btn-accent">Install Today</a>
+            </div>
+
+            <!-- Tyre Pressure Monitor -->
+            <div class="upgrade-card fade-in">
+                <span class="upgrade-emoji">🚗</span>
+                <h3>Tyre Pressure Sensors</h3>
+                <p class="upgrade-tagline">"Safe tyres, safe travels"</p>
+                <p>Real-time tyre pressure on your dashboard. Catch slow punctures early. Better fuel economy. Longer tyre life.</p>
+                <div class="upgrade-price">
+                    <span class="price-from">From</span>
+                    <span class="price-value">€89</span>
+                </div>
+                <a href="/booking?service=tyre-sensors" class="btn btn-accent">Get Fitted</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Everything your car needs, under one roof</p>
+        </div>
+
+        <div class="service-list">
+            <div class="service-item fade-in">
+                <span class="service-item-icon">🔍</span>
+                <div class="service-item-content">
+                    <h4>Car Diagnostics</h4>
+                    <p>Find out exactly what's wrong</p>
+                </div>
+                <span class="service-item-price">From €40</span>
+            </div>
+            <div class="service-item fade-in">
+                <span class="service-item-icon">📋</span>
+                <div class="service-item-content">
+                    <h4>NCT Preparation</h4>
+                    <p>95% pass rate - we get you ready</p>
+                </div>
+                <span class="service-item-price">From €80</span>
+            </div>
+            <div class="service-item fade-in">
+                <span class="service-item-icon">🛢️</span>
+                <div class="service-item-content">
+                    <h4>Oil Change</h4>
+                    <p>Quick and quality service</p>
+                </div>
+                <span class="service-item-price">From €60</span>
+            </div>
+            <div class="service-item fade-in">
+                <span class="service-item-icon">🛞</span>
+                <div class="service-item-content">
+                    <h4>Brakes & Tyres</h4>
+                    <p>Safety first, always</p>
+                </div>
+                <span class="service-item-price">Call for quote</span>
+            </div>
+        </div>
+
+        <div class="section-cta">
+            <a href="/services" class="btn btn-primary btn-lg">View All Services</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Ready to Book?</h2>
+        <p>We're here to help - call us or book online</p>
+        
+        <div class="contact-buttons">
+            <a href="/booking" class="btn btn-accent btn-lg">
+                <span class="btn-icon">📅</span>
+                Book Online
+            </a>
+            <a href="tel:0851026371" class="btn btn-primary btn-lg">
+                <span class="btn-icon">📞</span>
+                085-102-6371
+            </a>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-info-item">
+                <strong>📍 Location</strong>
+                <span>Achill Sound, Achill Island</span>
+            </div>
+            <div class="contact-info-item">
+                <strong>🕐 Hours</strong>
+                <span>Mon-Fri 6pm-9pm, Sat 9am-2pm</span>
+            </div>
+                    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 McGinty's Garage Repair. Serving Achill Island with pride.</p>
+        <p><a href="/loyalty">Loyalty Program</a> · <a href="/partners">Partners</a> · <a href="/payments">Payment Options</a></p>
+    </footer>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="/" class="mobile-nav-item active">
+            <span>🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="/booking" class="mobile-nav-item">
+            <span>📅</span>
+            <span>Book</span>
+        </a>
+        <a href="tel:0851026371" class="mobile-nav-item">
+            <span>📞</span>
+            <span>Call</span>
+        </a>
+        <a href="/services" class="mobile-nav-item">
+            <span>🔧</span>
+            <span>Services</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="shared/js/voice-assistant.js"></script>
+    <script>
+        // Fade in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
