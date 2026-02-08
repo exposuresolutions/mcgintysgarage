@@ -1105,6 +1105,107 @@
             margin-bottom: 20px;
         }
 
+        /* ==================== SHOP SECTION ==================== */
+        .shop-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--mayo-green) 0%, var(--dark) 100%);
+        }
+
+        .shop-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .shop-section .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .shop-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .shop-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .shop-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .shop-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .shop-card.featured {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+            border-color: var(--gold);
+        }
+
+        .shop-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .shop-card h3 {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .shop-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .shop-price {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .shop-price strong {
+            color: var(--mayo-green);
+            font-size: 1.2rem;
+        }
+
+        .shop-card .btn {
+            width: 100%;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+        }
+
+        .shop-note {
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--radius);
+            color: var(--white);
+        }
+
         .upgrade-price {
             display: flex;
             align-items: baseline;
@@ -1530,7 +1631,7 @@
             <span class="mayo-header-badge">🏆 MAYO FOR SAM 2026</span>
             <nav class="header-nav">
                 <a href="#ai-assistant" class="nav-link">🛠️ McGinty AI</a>
-                <a href="/services" class="nav-link">Services</a>
+                <a href="#shop" class="nav-link">🛒 Shop</a>
                 <a href="#upgrades" class="nav-link">Upgrades</a>
                 <a href="#parts" class="nav-link">Parts</a>
             </nav>
@@ -1882,6 +1983,110 @@
                 </div>
                 <a href="/booking?service=tyre-sensors" class="btn btn-accent">Get Fitted</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Shop Section - Accessories -->
+    <section class="shop-section" id="shop">
+        <div class="section-title">
+            <h2>🛒 McGinty's Shop</h2>
+            <p>Order accessories for your model - we'll fit them for you</p>
+        </div>
+
+        <div class="shop-grid">
+            <!-- Roof Racks -->
+            <div class="shop-card">
+                <span class="shop-icon">🚙</span>
+                <h3>Roof Racks</h3>
+                <p>Custom fit for your model. Bikes, kayaks, luggage - carry it all safely.</p>
+                <div class="shop-price">From <strong>€89</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20need%20roof%20racks%20for%20my%20car" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- Reversing Camera Kit -->
+            <div class="shop-card">
+                <span class="shop-icon">📹</span>
+                <h3>Reversing Camera Kit</h3>
+                <p>Full kit with screen. See everything behind you. Easy install.</p>
+                <div class="shop-price">From <strong>€149</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20want%20a%20reversing%20camera%20kit" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- Tow Hitch -->
+            <div class="shop-card">
+                <span class="shop-icon">🔗</span>
+                <h3>Tow Hitch / Towbar</h3>
+                <p>Fixed or detachable. Trailers, caravans, bike racks. Fitted properly.</p>
+                <div class="shop-price">From <strong>€299</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20need%20a%20towbar%20fitted" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- Anti-Glare Strips -->
+            <div class="shop-card">
+                <span class="shop-icon">😎</span>
+                <h3>Anti-Glare Strips</h3>
+                <p>Reduce sun glare on your windscreen. Safer driving, less eye strain.</p>
+                <div class="shop-price">From <strong>€25</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20want%20anti-glare%20strips" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- Window Rain Protectors -->
+            <div class="shop-card">
+                <span class="shop-icon">🌧️</span>
+                <h3>Window Rain Deflectors</h3>
+                <p>Keep windows cracked in rain. Fresh air without getting wet.</p>
+                <div class="shop-price">From <strong>€35</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20need%20window%20rain%20deflectors" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- Seat Covers -->
+            <div class="shop-card">
+                <span class="shop-icon">💺</span>
+                <h3>Seat Covers</h3>
+                <p>Protect your seats. Waterproof, leather look, or custom fit options.</p>
+                <div class="shop-price">From <strong>€49</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20want%20seat%20covers" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- Phone Holders -->
+            <div class="shop-card">
+                <span class="shop-icon">📱</span>
+                <h3>Phone Holders</h3>
+                <p>Magnetic, vent mount, or dashboard. Wireless charging options.</p>
+                <div class="shop-price">From <strong>€15</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20need%20a%20phone%20holder" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- Car Kit Installation -->
+            <div class="shop-card">
+                <span class="shop-icon">🔊</span>
+                <h3>Car Kit Installation</h3>
+                <p>Hands-free calling. Professional install with hidden wiring.</p>
+                <div class="shop-price">From <strong>€79</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20want%20a%20car%20kit%20installed" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- FM Bluetooth Transmitter -->
+            <div class="shop-card">
+                <span class="shop-icon">📻</span>
+                <h3>FM Bluetooth + Mic</h3>
+                <p>Stream music & calls through your radio. Includes wired mic for clarity.</p>
+                <div class="shop-price">From <strong>€29</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20want%20an%20FM%20Bluetooth%20transmitter" class="btn btn-accent">Order Now</a>
+            </div>
+
+            <!-- Inverter Kit -->
+            <div class="shop-card featured">
+                <span class="shop-icon">⚡</span>
+                <h3>Power Inverter Kit</h3>
+                <p>Emergency power from your car! Charge laptops, phones, even small appliances during outages.</p>
+                <div class="shop-price">From <strong>€69</strong></div>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20need%20a%20power%20inverter%20kit" class="btn btn-accent">Order Now</a>
+            </div>
+        </div>
+
+        <div class="shop-note">
+            <p>💡 <strong>Not sure what fits your car?</strong> Tell McGinty your make, model & year - he'll find the right parts!</p>
         </div>
     </section>
 
