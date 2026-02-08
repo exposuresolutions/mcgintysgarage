@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,17 +40,25 @@
         }
 
         :root {
-            --primary: #005A9C;
-            --primary-dark: #003d6b;
-            --accent: #FDB813;
-            --accent-hover: #e5a611;
+            /* Mayo GAA Colors */
+            --mayo-green: #006847;
+            --mayo-red: #CE1126;
+            --mayo-green-dark: #004d35;
+            --mayo-red-dark: #a00d1e;
+            
+            /* Site Colors */
+            --primary: var(--mayo-green);
+            --primary-dark: var(--mayo-green-dark);
+            --accent: var(--mayo-red);
+            --accent-hover: var(--mayo-red-dark);
+            --gold: #FFD700;
             --success: #25D366;
             --danger: #D40000;
-            --dark: #1a1a1a;
-            --light: #f8f9fa;
+            --dark: #0a1a0f;
+            --light: #f0f5f2;
             --white: #ffffff;
-            --text: #333333;
-            --text-light: #666666;
+            --text: #1a2e1f;
+            --text-light: #4a5d4f;
             
             --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
             --radius: 16px;
@@ -225,7 +233,7 @@
             font-size: 1.3em;
         }
 
-        /* ==================== HERO - LOGO CENTERED DESIGN ==================== */
+        /* ==================== HERO - EPIC ACHILL MAYO DESIGN ==================== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -235,54 +243,171 @@
             text-align: center;
             padding: 100px 20px 60px;
             background: 
-                linear-gradient(180deg, rgba(0, 90, 156, 0.92) 0%, rgba(26, 26, 26, 0.95) 100%),
-                url('https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/693c2f463165d92aa438ebc1.png') center/cover fixed;
+                linear-gradient(135deg, 
+                    rgba(0, 104, 71, 0.85) 0%, 
+                    rgba(10, 26, 15, 0.9) 50%,
+                    rgba(206, 17, 38, 0.7) 100%),
+                url('https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=1920&q=80') center/cover fixed;
             position: relative;
+            overflow: hidden;
         }
 
+        /* Animated gradient overlay */
         .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(0, 104, 71, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(206, 17, 38, 0.3) 0%, transparent 50%);
+            animation: heroGradient 15s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes heroGradient {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(5%, 5%) rotate(5deg); }
+            50% { transform: translate(0, 10%) rotate(0deg); }
+            75% { transform: translate(-5%, 5%) rotate(-5deg); }
+        }
+
+        /* Particle effects */
+        .hero::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, rgba(255, 215, 0, 0.8) 0%, transparent 100%),
+                radial-gradient(2px 2px at 40% 70%, rgba(255, 215, 0, 0.6) 0%, transparent 100%),
+                radial-gradient(3px 3px at 60% 20%, rgba(255, 215, 0, 0.7) 0%, transparent 100%),
+                radial-gradient(2px 2px at 80% 50%, rgba(255, 215, 0, 0.5) 0%, transparent 100%),
+                radial-gradient(3px 3px at 10% 80%, rgba(255, 215, 0, 0.6) 0%, transparent 100%),
+                radial-gradient(2px 2px at 90% 90%, rgba(255, 215, 0, 0.4) 0%, transparent 100%);
+            animation: sparkle 4s ease-in-out infinite;
             pointer-events: none;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* Logo container with epic effects */
+        .logo-container {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 32px;
+        }
+
+        /* Rotating ring around logo */
+        .logo-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            margin: -150px 0 0 -150px;
+            border: 3px solid transparent;
+            border-top-color: var(--mayo-green);
+            border-right-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 8s linear infinite;
+        }
+
+        .logo-ring::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid transparent;
+            border-bottom-color: var(--mayo-red);
+            border-left-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 6s linear infinite reverse;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .hero-logo {
             width: 220px;
             height: 220px;
-            margin-bottom: 32px;
             border-radius: 50%;
-            background: rgba(0, 90, 156, 0.85);
-            padding: 15px;
+            background: transparent;
+            padding: 0;
             box-shadow: 
-                0 0 60px rgba(253, 184, 19, 0.4),
-                0 0 120px rgba(253, 184, 19, 0.2),
-                inset 0 0 30px rgba(0, 0, 0, 0.2);
-            animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+                0 0 60px rgba(255, 215, 0, 0.5),
+                0 0 120px rgba(0, 104, 71, 0.4),
+                0 0 180px rgba(206, 17, 38, 0.3);
+            animation: float 4s ease-in-out infinite, pulse 2s ease-in-out infinite alternate;
             position: relative;
-            z-index: 1;
-            border: 4px solid rgba(253, 184, 19, 0.6);
+            z-index: 2;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
         }
 
-        @keyframes glow {
-            from { box-shadow: 0 0 60px rgba(253, 184, 19, 0.4), 0 0 120px rgba(253, 184, 19, 0.2); }
-            to { box-shadow: 0 0 80px rgba(253, 184, 19, 0.6), 0 0 150px rgba(253, 184, 19, 0.3); }
+        @keyframes pulse {
+            from { 
+                filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6)) brightness(1);
+                transform: scale(1);
+            }
+            to { 
+                filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.9)) brightness(1.1);
+                transform: scale(1.02);
+            }
         }
 
         @media (min-width: 768px) {
             .hero-logo {
-                width: 280px;
-                height: 280px;
+                width: 320px;
+                height: 320px;
+            }
+            .logo-ring {
+                width: 400px;
+                height: 400px;
+                margin: -200px 0 0 -200px;
             }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(2deg); }
+            50% { transform: translateY(-8px) rotate(0deg); }
+            75% { transform: translateY(-20px) rotate(-2deg); }
+        }
+
+        /* Mayo for Sam badge */
+        .mayo-badge {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--mayo-green) 0%, var(--mayo-red) 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: badgePulse 2s ease-in-out infinite;
+            white-space: nowrap;
+            z-index: 20;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
         }
 
         .hero h1 {
@@ -478,10 +603,207 @@
             transform: translateY(-2px);
         }
 
-        /* ==================== QUICK ACTIONS - BIG BUTTONS ==================== */
-        .quick-actions {
+        /* ==================== SOCIAL CONNECT ==================== */
+        .social-connect {
             padding: 60px 20px;
             background: var(--white);
+            text-align: center;
+        }
+
+        .social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            color: var(--white);
+        }
+
+        .social-btn.tiktok { background: #000; }
+        .social-btn.snapchat { background: #fffc00; color: #000; }
+        .social-btn.youtube { background: #FF0000; }
+        .social-btn.whatsapp { background: #25D366; }
+        .social-btn.email { background: var(--primary); }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon {
+            font-size: 1.3rem;
+        }
+
+        .social-note {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== BOOKING SECTION ==================== */
+        .booking-section {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+
+        .booking-grid {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 500px) {
+            .booking-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .booking-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .booking-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .booking-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .booking-icon {
+            font-size: 2.5rem;
+        }
+
+        .booking-card h3 {
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .booking-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .booking-price {
+            font-weight: 700;
+            color: var(--success);
+            font-size: 1rem;
+            margin-top: auto;
+        }
+
+        .booking-cta {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .booking-cta p {
+            margin-bottom: 20px;
+        }
+
+        .booking-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        @media (min-width: 500px) {
+            .booking-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        /* ==================== PARTS ORDER SECTION ==================== */
+        .parts-order {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: var(--white);
+        }
+
+        .parts-order .section-title h2 {
+            color: var(--white);
+        }
+
+        .parts-order .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .parts-options {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 600px) {
+            .parts-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .parts-option {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .parts-option-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .parts-option h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .parts-option p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .parts-help {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .section-title {
@@ -496,53 +818,6 @@
 
         .section-title p {
             color: var(--text-light);
-        }
-
-        .action-grid {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media (min-width: 600px) {
-            .action-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .action-card {
-            background: var(--light);
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-        }
-
-        .action-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .action-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .action-card h3 {
-            margin-bottom: 8px;
-            color: var(--dark);
-        }
-
-        .action-card p {
-            color: var(--text-light);
-            font-size: 1rem;
         }
 
         /* ==================== UPGRADES SECTION - EMOTIONAL SELLING ==================== */
@@ -804,6 +1079,102 @@
             margin-top: 40px;
         }
 
+        /* ==================== ANSEO BUS SECTION ==================== */
+        .anseo-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2d5016 0%, #1a3009 100%);
+            color: var(--white);
+        }
+
+        .anseo-section .section-title h2 {
+            color: var(--white);
+        }
+
+        .anseo-section .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .anseo-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .anseo-content {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .anseo-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .anseo-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+
+        .anseo-content > p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .anseo-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .anseo-detail {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 16px;
+            border-radius: var(--radius);
+        }
+
+        .detail-icon {
+            font-size: 1.5rem;
+        }
+
+        .anseo-detail strong {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .anseo-detail span {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .anseo-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 500px) {
+            .anseo-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .anseo-help {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+
         /* ==================== CONTACT SECTION ==================== */
         .contact {
             padding: 80px 20px;
@@ -944,14 +1315,14 @@
                 <span class="logo-text">McGinty's</span>
             </a>
             <nav class="header-nav">
-                <a href="#ai-assistant" class="nav-link">ðŸ¤– AI Assistant</a>
+                <a href="#ai-assistant" class="nav-link">🤖 AI Assistant</a>
                 <a href="/services" class="nav-link">Services</a>
                 <a href="#upgrades" class="nav-link">Upgrades</a>
                 <a href="#parts" class="nav-link">Parts</a>
             </nav>
             <div class="header-cta">
                 <a href="tel:0851026371" class="btn btn-accent">
-                    <span class="btn-icon">ðŸ“ž</span>
+                    <span class="btn-icon">📞</span>
                     <span class="btn-text">Call</span>
                 </a>
             </div>
@@ -960,28 +1331,32 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Logo" class="hero-logo">
+        <div class="logo-container">
+            <div class="logo-ring"></div>
+            <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage Logo" class="hero-logo">
+            <div class="mayo-badge">Mayo for Sam 2026 🏆</div>
+        </div>
         <h1>Your <span>Local Mechanic</span><br>Serving Achill & West Mayo</h1>
         <p class="hero-subtitle">Third-generation expertise. Honest repairs. Talk to Ethan's AI clone 24/7.</p>
         
         <div class="hero-actions">
             <a href="/booking" class="btn btn-accent btn-xl">
-                <span class="btn-icon">ðŸ“…</span>
+                <span class="btn-icon">📅</span>
                 Book a Service
             </a>
             <a href="tel:0851026371" class="btn btn-primary btn-xl">
-                <span class="btn-icon">ðŸ“ž</span>
+                <span class="btn-icon">📞</span>
                 Call Now
             </a>
         </div>
 
         <div class="hero-trust">
             <div class="trust-item">
-                <span class="trust-icon">âœ…</span>
+                <span class="trust-icon">✅</span>
                 <span>50+ Years Experience</span>
             </div>
             <div class="trust-item">
-                <span class="trust-icon">â­</span>
+                <span class="trust-icon">⭐</span>
                 <span>95% NCT Pass Rate</span>
             </div>
                     </div>
@@ -990,13 +1365,13 @@
     <!-- AI Assistant Section -->
     <section class="ai-section" id="ai-assistant">
         <div class="section-title">
-            <h2>ðŸ¤– Meet Ethan's AI Clone</h2>
+            <h2>🤖 Meet Ethan's AI Clone</h2>
             <p>Ethan is busy working on cars, so he built his own AI to help you 24/7</p>
         </div>
         
         <div class="ai-container">
             <div class="ai-avatar">
-                <span class="ai-avatar-icon">ðŸ¤–</span>
+                <span class="ai-avatar-icon">🤖</span>
                 <div class="ai-pulse"></div>
             </div>
             <div class="ai-content">
@@ -1010,11 +1385,11 @@
                 </ul>
                 <div class="ai-actions">
                     <a href="tel:0851026371" class="btn btn-accent btn-lg">
-                        <span class="btn-icon">ðŸ“ž</span>
+                        <span class="btn-icon">📞</span>
                         Call & Talk to AI
                     </a>
                     <a href="https://wa.me/353851026371" class="btn btn-success btn-lg" target="_blank" rel="noopener">
-                        <span class="btn-icon">ðŸ’¬</span>
+                        <span class="btn-icon">💬</span>
                         WhatsApp AI
                     </a>
                 </div>
@@ -1022,119 +1397,209 @@
         </div>
     </section>
 
-    <!-- Quick Actions -->
-    <section class="quick-actions" id="actions">
+    <!-- Social Connect Section -->
+    <section class="social-connect" id="connect">
         <div class="section-title">
-            <h2>How Can We Help?</h2>
-            <p>Tap what you need - it's that simple</p>
+            <h2>📱 Connect With Us</h2>
+            <p>Follow us on social media - message us anytime for quick help</p>
         </div>
         
-        <div class="action-grid">
-            <a href="/booking" class="action-card">
-                <span class="action-icon">ðŸ“…</span>
-                <h3>Book a Service</h3>
-                <p>Schedule your appointment online</p>
+        <div class="social-grid">
+            <a href="https://www.tiktok.com/@mcgintysgarage" class="social-btn tiktok" target="_blank" rel="noopener">
+                <span class="social-icon">🎵</span>
+                <span>TikTok</span>
             </a>
-            <a href="#ai-assistant" class="action-card">
-                <span class="action-icon">ðŸ¤–</span>
-                <h3>Talk to AI</h3>
-                <p>Get instant answers 24/7</p>
+            <a href="https://www.snapchat.com/add/mcgintysgarage" class="social-btn snapchat" target="_blank" rel="noopener">
+                <span class="social-icon">�</span>
+                <span>Snapchat</span>
             </a>
-            <a href="/services" class="action-card">
-                <span class="action-icon">ðŸ”§</span>
-                <h3>Our Services</h3>
-                <p>See what we can do for you</p>
+            <a href="https://www.youtube.com/@mcgintysgarage" class="social-btn youtube" target="_blank" rel="noopener">
+                <span class="social-icon">📺</span>
+                <span>YouTube</span>
             </a>
-            <a href="#parts" class="action-card">
-                <span class="action-icon">ï¿½</span>
-                <h3>Order Parts</h3>
-                <p>Find the best deals with AI</p>
+            <a href="https://wa.me/353851026371" class="social-btn whatsapp" target="_blank" rel="noopener">
+                <span class="social-icon">�</span>
+                <span>WhatsApp</span>
             </a>
+            <a href="mailto:mcgintysgarage@gmail.com" class="social-btn email" target="_blank" rel="noopener">
+                <span class="social-icon">�</span>
+                <span>Email</span>
+            </a>
+        </div>
+        
+        <p class="social-note">Message us on any platform - we'll get back to you fast!</p>
+    </section>
+
+    <!-- Book a Service Section -->
+    <section class="booking-section" id="book">
+        <div class="section-title">
+            <h2>📅 Book Your Service</h2>
+            <p>Choose what you need - we'll take care of the rest</p>
+        </div>
+        
+        <div class="booking-grid">
+            <a href="/booking?service=pre-nct" class="booking-card">
+                <span class="booking-icon">�</span>
+                <h3>Pre-NCT Check</h3>
+                <p>Get ready to pass first time</p>
+                <span class="booking-price">From €80</span>
+            </a>
+            <a href="/booking?service=post-nct" class="booking-card">
+                <span class="booking-icon">🔧</span>
+                <h3>Post-NCT Repairs</h3>
+                <p>Fix what failed, fast</p>
+                <span class="booking-price">Quote on inspection</span>
+            </a>
+            <a href="/booking?service=full-service" class="booking-card">
+                <span class="booking-icon">⚙️</span>
+                <h3>Full Service</h3>
+                <p>Complete car health check</p>
+                <span class="booking-price">From €180</span>
+            </a>
+            <a href="/booking?service=mini-service" class="booking-card">
+                <span class="booking-icon">🛢️</span>
+                <h3>Mini Service</h3>
+                <p>Oil, filter & quick check</p>
+                <span class="booking-price">From €80</span>
+            </a>
+            <a href="/booking?service=long-travel" class="booking-card">
+                <span class="booking-icon">🛣️</span>
+                <h3>Long Travel Check</h3>
+                <p>Peace of mind for big trips</p>
+                <span class="booking-price">From €50</span>
+            </a>
+            <a href="/booking?service=valet" class="booking-card">
+                <span class="booking-icon">✨</span>
+                <h3>Pre-Booked Valet</h3>
+                <p>Car cleaned while we work</p>
+                <span class="booking-price">From €40</span>
+            </a>
+        </div>
+
+        <div class="booking-cta">
+            <p>Not sure what you need? <strong>Ask our AI</strong> or <strong>call us</strong> - we'll help you choose.</p>
+            <div class="booking-actions">
+                <a href="https://wa.me/353851026371?text=Hi%2C%20I%20need%20help%20choosing%20a%20service" class="btn btn-success btn-lg" target="_blank" rel="noopener">
+                    <span class="btn-icon">💬</span>
+                    Ask on WhatsApp
+                </a>
+                <a href="tel:0851026371" class="btn btn-primary btn-lg">
+                    <span class="btn-icon">📞</span>
+                    Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parts Ordering - Enhanced -->
+    <section class="parts-order" id="parts">
+        <div class="section-title">
+            <h2>🔩 Order Parts</h2>
+            <p>New or second-hand - our AI helps you find the best deals</p>
+        </div>
+
+        <div class="parts-options">
+            <div class="parts-option">
+                <span class="parts-option-icon">🆕</span>
+                <h3>New Parts</h3>
+                <p>Brand new, warranty included. We search multiple suppliers for the best price.</p>
+                <a href="https://wa.me/353851026371?text=Hi%2C%20I%20need%20a%20new%20part%20for%20my%20car" class="btn btn-accent" target="_blank" rel="noopener">Find New Parts</a>
+            </div>
+            <div class="parts-option">
+                <span class="parts-option-icon">♻️</span>
+                <h3>Second-Hand Parts</h3>
+                <p>Quality used parts at great prices. Tested and guaranteed to work.</p>
+                <a href="https://wa.me/353851026371?text=Hi%2C%20I%27m%20looking%20for%20a%20second-hand%20part" class="btn btn-accent" target="_blank" rel="noopener">Find Used Parts</a>
+            </div>
+        </div>
+
+        <div class="parts-help">
+            <p><strong>Don't know what part you need?</strong> Just describe the problem - our AI will figure it out and find the right part for your car.</p>
         </div>
     </section>
 
     <!-- Upgrades Section - Emotional Selling -->
     <section class="upgrades" id="upgrades">
         <div class="section-title">
-            <h2>ðŸ›¡ï¸ Upgrades & Prevention</h2>
+            <h2>🛡️ Upgrades & Prevention</h2>
             <p>Because prevention is better than cure - and your loved ones deserve the best</p>
         </div>
 
         <div class="upgrade-grid">
             <!-- Reversing Camera -->
             <div class="upgrade-card fade-in">
-                <span class="upgrade-emoji">ðŸ“¹</span>
+                <span class="upgrade-emoji">📹</span>
                 <h3>Reversing Camera</h3>
                 <p class="upgrade-tagline">"A gift they'll never forget"</p>
                 <p>Perfect for a parent or grandparent. No more guessing when reversing - see everything clearly. Save bumpers, save stress, save lives.</p>
                 <div class="upgrade-price">
                     <span class="price-from">From</span>
-                    <span class="price-value">â‚¬149</span>
+                    <span class="price-value">€149</span>
                 </div>
                 <a href="/booking?service=reversing-camera" class="btn btn-accent">Order & Install</a>
             </div>
 
             <!-- Suspension Upgrade -->
             <div class="upgrade-card fade-in">
-                <span class="upgrade-emoji">ðŸ›ž</span>
+                <span class="upgrade-emoji">🛞</span>
                 <h3>Suspension Upgrade</h3>
                 <p class="upgrade-tagline">"If you love her, upgrade the suspension"</p>
                 <p>Achill roads are tough on cars - and passengers. A suspension upgrade means a smoother, safer ride. She'll thank you in the long run.</p>
                 <div class="upgrade-price">
                     <span class="price-from">From</span>
-                    <span class="price-value">â‚¬299</span>
+                    <span class="price-value">€299</span>
                 </div>
                 <a href="/booking?service=suspension" class="btn btn-accent">Get a Quote</a>
             </div>
 
             <!-- Dash Cam -->
             <div class="upgrade-card fade-in">
-                <span class="upgrade-emoji">ðŸŽ¥</span>
+                <span class="upgrade-emoji">🎥</span>
                 <h3>Dash Cam</h3>
                 <p class="upgrade-tagline">"Peace of mind on every journey"</p>
                 <p>Record everything. If something happens, you have proof. Insurance claims made simple. Protect yourself and your family.</p>
                 <div class="upgrade-price">
                     <span class="price-from">From</span>
-                    <span class="price-value">â‚¬99</span>
+                    <span class="price-value">€99</span>
                 </div>
                 <a href="/booking?service=dashcam" class="btn btn-accent">Order & Install</a>
             </div>
 
             <!-- LED Headlights -->
             <div class="upgrade-card fade-in">
-                <span class="upgrade-emoji">ðŸ’¡</span>
+                <span class="upgrade-emoji">💡</span>
                 <h3>LED Headlight Upgrade</h3>
                 <p class="upgrade-tagline">"See the road, be seen"</p>
                 <p>Dark country roads need bright lights. LED headlights last longer, shine brighter, and keep you safer on those winter evenings.</p>
                 <div class="upgrade-price">
                     <span class="price-from">From</span>
-                    <span class="price-value">â‚¬79</span>
+                    <span class="price-value">€79</span>
                 </div>
                 <a href="/booking?service=led-lights" class="btn btn-accent">Upgrade Now</a>
             </div>
 
             <!-- Battery Monitor -->
             <div class="upgrade-card fade-in">
-                <span class="upgrade-emoji">ðŸ”‹</span>
+                <span class="upgrade-emoji">🔋</span>
                 <h3>Smart Battery Monitor</h3>
                 <p class="upgrade-tagline">"Never get stranded again"</p>
                 <p>Know your battery health before it fails. Get alerts on your phone. Perfect for cars that sit for a while between drives.</p>
                 <div class="upgrade-price">
                     <span class="price-from">From</span>
-                    <span class="price-value">â‚¬49</span>
+                    <span class="price-value">€49</span>
                 </div>
                 <a href="/booking?service=battery-monitor" class="btn btn-accent">Install Today</a>
             </div>
 
             <!-- Tyre Pressure Monitor -->
             <div class="upgrade-card fade-in">
-                <span class="upgrade-emoji">ðŸš—</span>
+                <span class="upgrade-emoji">🚗</span>
                 <h3>Tyre Pressure Sensors</h3>
                 <p class="upgrade-tagline">"Safe tyres, safe travels"</p>
                 <p>Real-time tyre pressure on your dashboard. Catch slow punctures early. Better fuel economy. Longer tyre life.</p>
                 <div class="upgrade-price">
                     <span class="price-from">From</span>
-                    <span class="price-value">â‚¬89</span>
+                    <span class="price-value">€89</span>
                 </div>
                 <a href="/booking?service=tyre-sensors" class="btn btn-accent">Get Fitted</a>
             </div>
@@ -1144,7 +1609,7 @@
     <!-- Parts Ordering Section -->
     <section class="parts-section" id="parts">
         <div class="section-title">
-            <h2>ðŸ”© Order Parts with AI Help</h2>
+            <h2>🔩 Order Parts with AI Help</h2>
             <p>Find the best deals together - we'll make sure everything arrives in time for your service</p>
         </div>
 
@@ -1176,28 +1641,28 @@
                 </div>
                 <div class="parts-cta">
                     <a href="https://wa.me/353851026371?text=Hi%2C%20I%20need%20help%20finding%20parts%20for%20my%20car" class="btn btn-success btn-lg" target="_blank" rel="noopener">
-                        <span class="btn-icon">ðŸ’¬</span>
+                        <span class="btn-icon">💬</span>
                         Chat About Parts
                     </a>
                     <a href="/parts" class="btn btn-outline btn-lg">
-                        <span class="btn-icon">ðŸ”</span>
+                        <span class="btn-icon">🔍</span>
                         Search Parts
                     </a>
                 </div>
             </div>
             <div class="parts-benefits">
                 <div class="benefit-card">
-                    <span class="benefit-icon">ðŸ’°</span>
+                    <span class="benefit-icon">💰</span>
                     <strong>Save Money</strong>
                     <p>We compare prices so you don't have to</p>
                 </div>
                 <div class="benefit-card">
-                    <span class="benefit-icon">âœ…</span>
+                    <span class="benefit-icon">✅</span>
                     <strong>Right Parts</strong>
                     <p>Guaranteed to fit your vehicle</p>
                 </div>
                 <div class="benefit-card">
-                    <span class="benefit-icon">â°</span>
+                    <span class="benefit-icon">⏰</span>
                     <strong>On Time</strong>
                     <p>Coordinated with your booking</p>
                 </div>
@@ -1214,31 +1679,31 @@
 
         <div class="service-list">
             <div class="service-item fade-in">
-                <span class="service-item-icon">ðŸ”</span>
+                <span class="service-item-icon">🔍</span>
                 <div class="service-item-content">
                     <h4>Car Diagnostics</h4>
                     <p>Find out exactly what's wrong</p>
                 </div>
-                <span class="service-item-price">From â‚¬40</span>
+                <span class="service-item-price">From €40</span>
             </div>
             <div class="service-item fade-in">
-                <span class="service-item-icon">ðŸ“‹</span>
+                <span class="service-item-icon">📋</span>
                 <div class="service-item-content">
                     <h4>NCT Preparation</h4>
                     <p>95% pass rate - we get you ready</p>
                 </div>
-                <span class="service-item-price">From â‚¬80</span>
+                <span class="service-item-price">From €80</span>
             </div>
             <div class="service-item fade-in">
-                <span class="service-item-icon">ðŸ›¢ï¸</span>
+                <span class="service-item-icon">🛢️</span>
                 <div class="service-item-content">
                     <h4>Oil Change</h4>
                     <p>Quick and quality service</p>
                 </div>
-                <span class="service-item-price">From â‚¬60</span>
+                <span class="service-item-price">From €60</span>
             </div>
             <div class="service-item fade-in">
-                <span class="service-item-icon">ðŸ›ž</span>
+                <span class="service-item-icon">🛞</span>
                 <div class="service-item-content">
                     <h4>Brakes & Tyres</h4>
                     <p>Safety first, always</p>
@@ -1252,6 +1717,59 @@
         </div>
     </section>
 
+    <!-- Anseo Bus Section -->
+    <section class="anseo-section" id="anseo">
+        <div class="section-title">
+            <h2>🚌 Need a Lift Home?</h2>
+            <p>Book the TFI Anseo bus - door-to-door service across Achill & Curraun</p>
+        </div>
+
+        <div class="anseo-container">
+            <div class="anseo-content">
+                <div class="anseo-icon">🚌</div>
+                <h3>Dropping Your Car Off?</h3>
+                <p>Don't worry about getting home! The <strong>TFI Anseo</strong> local bus service picks you up from the garage and drops you right to your door.</p>
+                
+                <div class="anseo-details">
+                    <div class="anseo-detail">
+                        <span class="detail-icon">💶</span>
+                        <div>
+                            <strong>Just €3</strong>
+                            <span>Free with Travel Pass</span>
+                        </div>
+                    </div>
+                    <div class="anseo-detail">
+                        <span class="detail-icon">🕐</span>
+                        <div>
+                            <strong>7am - 8pm Daily</strong>
+                            <span>Book 2 hours ahead</span>
+                        </div>
+                    </div>
+                    <div class="anseo-detail">
+                        <span class="detail-icon">📱</span>
+                        <div>
+                            <strong>Easy Booking</strong>
+                            <span>App or we'll call for you</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="anseo-actions">
+                    <a href="https://www.transportforireland.ie/tfi-local-link/tfi-local-link-overview/demand-responsive-transport/tfi-anseo/" class="btn btn-accent btn-lg" target="_blank" rel="noopener">
+                        <span class="btn-icon">📱</span>
+                        Book Anseo Online
+                    </a>
+                    <a href="tel:0949005150" class="btn btn-outline btn-lg">
+                        <span class="btn-icon">📞</span>
+                        Call TFI: 094 900 5150
+                    </a>
+                </div>
+
+                <p class="anseo-help"><strong>Can't book yourself?</strong> No problem - tell us when you're dropping off and we'll book the bus for you!</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact">
         <h2>Ready to Book?</h2>
@@ -1259,23 +1777,27 @@
         
         <div class="contact-buttons">
             <a href="/booking" class="btn btn-accent btn-lg">
-                <span class="btn-icon">ðŸ“…</span>
+                <span class="btn-icon">📅</span>
                 Book Online
             </a>
             <a href="tel:0851026371" class="btn btn-primary btn-lg">
-                <span class="btn-icon">ðŸ“ž</span>
+                <span class="btn-icon">📞</span>
                 085-102-6371
             </a>
         </div>
 
         <div class="contact-info">
             <div class="contact-info-item">
-                <strong>ðŸ“ Location</strong>
-                <span>Achill Sound, Achill Island</span>
+                <strong>📍 Location</strong>
+                <span>Serving Achill Island & West Mayo</span>
             </div>
             <div class="contact-info-item">
-                <strong>ðŸ• Hours</strong>
+                <strong>🕐 Hours</strong>
                 <span>Mon-Fri 6pm-9pm, Sat 9am-2pm</span>
+            </div>
+            <div class="contact-info-item">
+                <strong>📧 Email</strong>
+                <span>mcgintysgarage@gmail.com</span>
             </div>
                     </div>
     </section>
@@ -1283,25 +1805,25 @@
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2026 McGinty's Garage Repair. Serving Achill Island with pride.</p>
-        <p><a href="/loyalty">Loyalty Program</a> Â· <a href="/partners">Partners</a> Â· <a href="/payments">Payment Options</a></p>
+        <p><a href="/loyalty">Loyalty Program</a> · <a href="/partners">Partners</a> · <a href="/payments">Payment Options</a></p>
     </footer>
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
         <a href="/" class="mobile-nav-item active">
-            <span>ðŸ </span>
+            <span>🏠</span>
             <span>Home</span>
         </a>
         <a href="/booking" class="mobile-nav-item">
-            <span>ðŸ“…</span>
+            <span>📅</span>
             <span>Book</span>
         </a>
         <a href="tel:0851026371" class="mobile-nav-item">
-            <span>ðŸ“ž</span>
+            <span>📞</span>
             <span>Call</span>
         </a>
         <a href="/services" class="mobile-nav-item">
-            <span>ðŸ”§</span>
+            <span>🔧</span>
             <span>Services</span>
         </a>
     </nav>
