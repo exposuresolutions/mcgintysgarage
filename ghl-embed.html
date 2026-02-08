@@ -97,10 +97,18 @@
             top: 0;
             left: 0;
             right: 0;
-            background: var(--white);
-            box-shadow: var(--shadow);
+            background: linear-gradient(135deg, var(--mayo-green) 0%, var(--dark) 50%, var(--mayo-red) 100%);
+            background-size: 200% 200%;
+            animation: headerGradient 8s ease infinite;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             padding: 10px 20px;
+        }
+
+        @keyframes headerGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .header-inner {
@@ -110,6 +118,25 @@
             justify-content: space-between;
             align-items: center;
             gap: 16px;
+        }
+
+        .mayo-header-badge {
+            display: none;
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            white-space: nowrap;
+        }
+
+        @media (min-width: 768px) {
+            .mayo-header-badge {
+                display: block;
+            }
         }
 
         .header-nav {
@@ -126,7 +153,7 @@
         .nav-link {
             padding: 10px 16px;
             text-decoration: none;
-            color: var(--text);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
             font-size: 0.95rem;
             border-radius: var(--radius);
@@ -134,8 +161,8 @@
         }
 
         .nav-link:hover {
-            background: var(--light);
-            color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--gold);
         }
 
         .logo {
@@ -143,21 +170,31 @@
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: var(--dark);
+            color: var(--white);
         }
 
         .logo-img {
             height: 50px;
-            width: auto;
+            width: 50px;
             border-radius: 50%;
-            background: transparent;
-            padding: 0;
+            background: linear-gradient(135deg, var(--mayo-green) 0%, var(--mayo-red) 100%);
+            background-size: 200% 200%;
+            animation: logoPulse 3s ease infinite;
+            padding: 3px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { background-position: 0% 50%; box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
+            50% { background-position: 100% 50%; box-shadow: 0 0 25px rgba(255, 215, 0, 0.7); }
         }
 
         .logo-text {
             font-weight: 700;
             font-size: 1.3rem;
             display: none;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         @media (min-width: 600px) {
@@ -1490,8 +1527,9 @@
                 <img src="https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png" alt="McGinty's Garage" class="logo-img">
                 <span class="logo-text">McGinty's</span>
             </a>
+            <span class="mayo-header-badge">🏆 MAYO FOR SAM 2026</span>
             <nav class="header-nav">
-                <a href="#ai-assistant" class="nav-link">🤖 AI Assistant</a>
+                <a href="#ai-assistant" class="nav-link">🛠️ McGinty AI</a>
                 <a href="/services" class="nav-link">Services</a>
                 <a href="#upgrades" class="nav-link">Upgrades</a>
                 <a href="#parts" class="nav-link">Parts</a>
