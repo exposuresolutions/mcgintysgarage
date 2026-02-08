@@ -654,6 +654,35 @@
             margin-bottom: 10px !important;
         }
 
+        .ai-services {
+            background: rgba(0, 104, 71, 0.3);
+            border-radius: var(--radius);
+            padding: 16px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .ai-services h4 {
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .service-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
         .ai-suggestions {
             list-style: none;
             display: flex;
@@ -844,8 +873,58 @@
         /* ==================== PARTS ORDER SECTION ==================== */
         .parts-order {
             padding: 80px 20px;
-            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f0f1a 100%);
             color: var(--white);
+        }
+
+        .parts-search {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .parts-search-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .parts-search-box h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .parts-search-box p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .parts-suppliers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .supplier-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--mayo-green) 0%, var(--mayo-green-dark) 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .supplier-btn:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 25px rgba(0, 104, 71, 0.4);
         }
 
         .parts-order .section-title h2 {
@@ -1450,10 +1529,11 @@
         <!-- Anseo Transport Link -->
         <div class="anseo-hero-link">
             <a href="https://www.transportforireland.ie/tfi-local-link/tfi-local-link-overview/demand-responsive-transport/tfi-anseo/" class="anseo-link" target="_blank" rel="noopener">
-                <span class="anseo-icon">🚌</span>
+                <span class="anseo-icon">�</span>
                 <span class="anseo-text">
-                    <strong>Need a lift?</strong> Book Anseo bus - door to door!
-                    <small>Book 2 hours ahead • 7am-8pm daily • Just €3</small>
+                    <strong>Need a lift to/from the garage?</strong>
+                    <span>Book TFI Anseo - door to door minibus service</span>
+                    <small>📱 Download app or call 094 900 5150 • Book 2hrs ahead • 7am-8pm • €3</small>
                 </span>
             </a>
         </div>
@@ -1470,56 +1550,67 @@
                     </div>
     </section>
 
-    <!-- AI Assistant Section -->
+    <!-- McGinty AI Assistant Section -->
     <section class="ai-section" id="ai-assistant">
         <div class="section-title">
-            <h2>🤖 Meet Ethan's AI Clone</h2>
-            <p>Ethan is busy working on cars, so he built his own AI to help you 24/7</p>
+            <h2>🔧 Meet McGinty - Your AI Mechanic</h2>
+            <p>Ethan's busy fixing cars for you - don't worry, McGinty's here to handle your queries 24/7</p>
         </div>
         
         <div class="ai-container">
             <div class="ai-avatar">
-                <span class="ai-avatar-icon">🤖</span>
+                <span class="ai-avatar-icon">🛠️</span>
                 <div class="ai-pulse"></div>
             </div>
             <div class="ai-content">
-                <h3>Car Won't Start? I Can Help!</h3>
-                <p>Tell me your car make & model and I'll help you troubleshoot. I can find your hidden emergency key lock, check if you need a tow, or guide you through getting started.</p>
+                <h3>Car Trouble? McGinty's Got You Covered</h3>
+                <p>Tell me your car make & model and I'll help troubleshoot. I'll find your hidden emergency key lock, check if you need a tow, or guide you through getting started. Plus I'll keep you updated on your repairs!</p>
                 
                 <div class="ai-categories">
                     <div class="ai-category">
-                        <span class="category-icon">🔑</span>
-                        <strong>Key & Lock Issues</strong>
-                        <small>Find emergency key slots, dead key fob fixes</small>
+                        <span class="category-icon">🔐</span>
+                        <strong>Key & Lock Help</strong>
+                        <small>Emergency key slots, dead fob fixes</small>
                     </div>
                     <div class="ai-category">
-                        <span class="category-icon">🔋</span>
-                        <strong>Battery & Starting</strong>
-                        <small>Jump start tips, battery checks</small>
+                        <span class="category-icon">⚡</span>
+                        <strong>Starting Issues</strong>
+                        <small>Jump starts, battery diagnostics</small>
                     </div>
                     <div class="ai-category">
-                        <span class="category-icon">🚗</span>
-                        <strong>Tow or Fix?</strong>
-                        <small>I'll help decide if you need a tow</small>
+                        <span class="category-icon">🚨</span>
+                        <strong>Tow or Roadside?</strong>
+                        <small>I'll assess if you can fix it yourself</small>
                     </div>
                 </div>
 
-                <p class="ai-example"><strong>Try asking:</strong></p>
+                <div class="ai-services">
+                    <h4>McGinty Will Also:</h4>
+                    <div class="service-tags">
+                        <span class="service-tag">📋 Send invoices & worksheets</span>
+                        <span class="service-tag">🔔 Update you on repairs</span>
+                        <span class="service-tag">🛞 Recommend tyres & parts</span>
+                        <span class="service-tag">📍 Track your service history</span>
+                        <span class="service-tag">🚌 Help book your Anseo bus</span>
+                    </div>
+                </div>
+
+                <p class="ai-example"><strong>Ask McGinty:</strong></p>
                 <ul class="ai-suggestions">
-                    <li>"My 2019 Ford Focus won't start - key fob dead"</li>
-                    <li>"Where's the emergency key hole on a VW Golf?"</li>
-                    <li>"Car clicking but won't turn over"</li>
-                    <li>"Do I need a tow or can I fix this myself?"</li>
-                    <li>"When's the next free slot?"</li>
+                    <li>"My 2019 Focus won't start - dead key fob"</li>
+                    <li>"Where's the emergency key hole on a Golf?"</li>
+                    <li>"Engine clicking but won't turn over"</li>
+                    <li>"What's the status of my car?"</li>
+                    <li>"Book me an Anseo bus for pickup"</li>
                 </ul>
                 <div class="ai-actions">
-                    <a href="https://wa.me/353851026371?text=Hi%2C%20my%20car%20won%27t%20start.%20Can%20you%20help%20me%20troubleshoot%3F" class="btn btn-success btn-lg" target="_blank" rel="noopener">
-                        <span class="btn-icon">�</span>
-                        WhatsApp for Help
+                    <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20need%20help%20with%20my%20car" class="btn btn-success btn-lg" target="_blank" rel="noopener">
+                        <span class="btn-icon">💬</span>
+                        Chat with McGinty
                     </a>
                     <a href="tel:0851026371" class="btn btn-accent btn-lg">
-                        <span class="btn-icon">�</span>
-                        Call Now
+                        <span class="btn-icon">📞</span>
+                        Call the Garage
                     </a>
                 </div>
             </div>
@@ -1562,25 +1653,25 @@
     <!-- Book a Service Section -->
     <section class="booking-section" id="book">
         <div class="section-title">
-            <h2>📅 Book Your Service</h2>
-            <p>Choose what you need - we'll take care of the rest</p>
+            <h2>🏁 Book Your Service</h2>
+            <p>Choose what you need - McGinty will confirm and keep you updated</p>
         </div>
         
         <div class="booking-grid">
             <a href="/booking?service=pre-nct" class="booking-card">
-                <span class="booking-icon">�</span>
+                <span class="booking-icon">🔍</span>
                 <h3>Pre-NCT Check</h3>
                 <p>Get ready to pass first time</p>
                 <span class="booking-price">From €80</span>
             </a>
             <a href="/booking?service=post-nct" class="booking-card">
-                <span class="booking-icon">🔧</span>
+                <span class="booking-icon">�</span>
                 <h3>Post-NCT Repairs</h3>
                 <p>Fix what failed, fast</p>
                 <span class="booking-price">Quote on inspection</span>
             </a>
             <a href="/booking?service=full-service" class="booking-card">
-                <span class="booking-icon">⚙️</span>
+                <span class="booking-icon">🏎️</span>
                 <h3>Full Service</h3>
                 <p>Complete car health check</p>
                 <span class="booking-price">From €180</span>
@@ -1592,13 +1683,13 @@
                 <span class="booking-price">From €80</span>
             </a>
             <a href="/booking?service=long-travel" class="booking-card">
-                <span class="booking-icon">🛣️</span>
+                <span class="booking-icon">�️</span>
                 <h3>Long Travel Check</h3>
                 <p>Peace of mind for big trips</p>
                 <span class="booking-price">From €50</span>
             </a>
             <a href="/booking?service=valet" class="booking-card">
-                <span class="booking-icon">✨</span>
+                <span class="booking-icon">🧽</span>
                 <h3>Pre-Booked Valet</h3>
                 <p>Car cleaned while we work</p>
                 <span class="booking-price">From €40</span>
@@ -1606,44 +1697,65 @@
         </div>
 
         <div class="booking-cta">
-            <p>Not sure what you need? <strong>Ask our AI</strong> or <strong>call us</strong> - we'll help you choose.</p>
+            <p>Not sure what you need? <strong>Ask McGinty</strong> or <strong>call us</strong> - we'll help you choose.</p>
             <div class="booking-actions">
-                <a href="https://wa.me/353851026371?text=Hi%2C%20I%20need%20help%20choosing%20a%20service" class="btn btn-success btn-lg" target="_blank" rel="noopener">
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20need%20help%20choosing%20a%20service" class="btn btn-success btn-lg" target="_blank" rel="noopener">
                     <span class="btn-icon">💬</span>
-                    Ask on WhatsApp
+                    Ask McGinty
                 </a>
                 <a href="tel:0851026371" class="btn btn-primary btn-lg">
                     <span class="btn-icon">📞</span>
-                    Call Us
+                    Call Ethan
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Parts Ordering - Enhanced -->
+    <!-- Parts Ordering - Enhanced with Live Search -->
     <section class="parts-order" id="parts">
         <div class="section-title">
-            <h2>🔩 Order Parts</h2>
-            <p>New or second-hand - our AI helps you find the best deals</p>
+            <h2>⚙️ Find Parts</h2>
+            <p>Search live or let McGinty find the best deals for you</p>
+        </div>
+
+        <div class="parts-search">
+            <div class="parts-search-box">
+                <h3>🔎 Search Parts Live</h3>
+                <p>Search Ireland's top parts suppliers directly:</p>
+                <div class="parts-suppliers">
+                    <a href="https://www.micksgarage.com/" class="supplier-btn" target="_blank" rel="noopener">
+                        <span>🛒</span> Micks Garage
+                    </a>
+                    <a href="https://www.eurocarparts.ie/" class="supplier-btn" target="_blank" rel="noopener">
+                        <span>🛒</span> Euro Car Parts
+                    </a>
+                    <a href="https://www.carparts.ie/" class="supplier-btn" target="_blank" rel="noopener">
+                        <span>🛒</span> CarParts.ie
+                    </a>
+                    <a href="https://www.partsplus.ie/" class="supplier-btn" target="_blank" rel="noopener">
+                        <span>🛒</span> Parts Plus
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="parts-options">
             <div class="parts-option">
                 <span class="parts-option-icon">🆕</span>
                 <h3>New Parts</h3>
-                <p>Brand new, warranty included. We search multiple suppliers for the best price.</p>
-                <a href="https://wa.me/353851026371?text=Hi%2C%20I%20need%20a%20new%20part%20for%20my%20car" class="btn btn-accent" target="_blank" rel="noopener">Find New Parts</a>
+                <p>Brand new with warranty. We'll price match and fit it for you.</p>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%20need%20a%20new%20part%20for%20my%20car" class="btn btn-accent" target="_blank" rel="noopener">Ask McGinty</a>
             </div>
             <div class="parts-option">
-                <span class="parts-option-icon">♻️</span>
+                <span class="parts-option-icon">🔄</span>
                 <h3>Second-Hand Parts</h3>
-                <p>Quality used parts at great prices. Tested and guaranteed to work.</p>
-                <a href="https://wa.me/353851026371?text=Hi%2C%20I%27m%20looking%20for%20a%20second-hand%20part" class="btn btn-accent" target="_blank" rel="noopener">Find Used Parts</a>
+                <p>Quality breakers parts. Tested and guaranteed to work.</p>
+                <a href="https://wa.me/353851026371?text=Hi%20McGinty%2C%20I%27m%20looking%20for%20a%20second-hand%20part" class="btn btn-accent" target="_blank" rel="noopener">Ask McGinty</a>
             </div>
         </div>
 
         <div class="parts-help">
-            <p><strong>Don't know what part you need?</strong> Just describe the problem - our AI will figure it out and find the right part for your car.</p>
+            <p>🤔 <strong>Don't know what part you need?</strong> Just describe the problem to McGinty - he'll identify the part and find the best price.</p>
         </div>
     </section>
 
