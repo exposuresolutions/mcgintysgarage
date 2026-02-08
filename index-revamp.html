@@ -478,10 +478,207 @@
             transform: translateY(-2px);
         }
 
-        /* ==================== QUICK ACTIONS - BIG BUTTONS ==================== */
-        .quick-actions {
+        /* ==================== SOCIAL CONNECT ==================== */
+        .social-connect {
             padding: 60px 20px;
             background: var(--white);
+            text-align: center;
+        }
+
+        .social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            color: var(--white);
+        }
+
+        .social-btn.facebook { background: #1877f2; }
+        .social-btn.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .social-btn.tiktok { background: #000; }
+        .social-btn.snapchat { background: #fffc00; color: #000; }
+        .social-btn.whatsapp { background: #25D366; }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon {
+            font-size: 1.3rem;
+        }
+
+        .social-note {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== BOOKING SECTION ==================== */
+        .booking-section {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+
+        .booking-grid {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 500px) {
+            .booking-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .booking-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .booking-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .booking-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .booking-icon {
+            font-size: 2.5rem;
+        }
+
+        .booking-card h3 {
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .booking-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .booking-price {
+            font-weight: 700;
+            color: var(--success);
+            font-size: 1rem;
+            margin-top: auto;
+        }
+
+        .booking-cta {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .booking-cta p {
+            margin-bottom: 20px;
+        }
+
+        .booking-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        @media (min-width: 500px) {
+            .booking-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        /* ==================== PARTS ORDER SECTION ==================== */
+        .parts-order {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: var(--white);
+        }
+
+        .parts-order .section-title h2 {
+            color: var(--white);
+        }
+
+        .parts-order .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .parts-options {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 600px) {
+            .parts-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .parts-option {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .parts-option-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .parts-option h3 {
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .parts-option p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .parts-help {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .section-title {
@@ -496,53 +693,6 @@
 
         .section-title p {
             color: var(--text-light);
-        }
-
-        .action-grid {
-            max-width: 800px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media (min-width: 600px) {
-            .action-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .action-card {
-            background: var(--light);
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-        }
-
-        .action-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .action-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .action-card h3 {
-            margin-bottom: 8px;
-            color: var(--dark);
-        }
-
-        .action-card p {
-            color: var(--text-light);
-            font-size: 1rem;
         }
 
         /* ==================== UPGRADES SECTION - EMOTIONAL SELLING ==================== */
@@ -1118,34 +1268,124 @@
         </div>
     </section>
 
-    <!-- Quick Actions -->
-    <section class="quick-actions" id="actions">
+    <!-- Social Connect Section -->
+    <section class="social-connect" id="connect">
         <div class="section-title">
-            <h2>How Can We Help?</h2>
-            <p>Tap what you need - it's that simple</p>
+            <h2>📱 Connect With Us</h2>
+            <p>Follow us on social media - message us anytime for quick help</p>
         </div>
         
-        <div class="action-grid">
-            <a href="/booking" class="action-card">
-                <span class="action-icon">📅</span>
-                <h3>Book a Service</h3>
-                <p>Schedule your appointment online</p>
+        <div class="social-grid">
+            <a href="https://www.facebook.com/mcgintysgarage" class="social-btn facebook" target="_blank" rel="noopener">
+                <span class="social-icon">📘</span>
+                <span>Facebook</span>
             </a>
-            <a href="#ai-assistant" class="action-card">
-                <span class="action-icon">🤖</span>
-                <h3>Talk to AI</h3>
-                <p>Get instant answers 24/7</p>
+            <a href="https://www.instagram.com/mcgintysgarage" class="social-btn instagram" target="_blank" rel="noopener">
+                <span class="social-icon">📸</span>
+                <span>Instagram</span>
             </a>
-            <a href="/services" class="action-card">
-                <span class="action-icon">🔧</span>
-                <h3>Our Services</h3>
-                <p>See what we can do for you</p>
+            <a href="https://www.tiktok.com/@mcgintysgarage" class="social-btn tiktok" target="_blank" rel="noopener">
+                <span class="social-icon">🎵</span>
+                <span>TikTok</span>
             </a>
-            <a href="#parts" class="action-card">
-                <span class="action-icon">�</span>
-                <h3>Order Parts</h3>
-                <p>Find the best deals with AI</p>
+            <a href="https://www.snapchat.com/add/mcgintysgarage" class="social-btn snapchat" target="_blank" rel="noopener">
+                <span class="social-icon">👻</span>
+                <span>Snapchat</span>
             </a>
+            <a href="https://wa.me/353851026371" class="social-btn whatsapp" target="_blank" rel="noopener">
+                <span class="social-icon">💬</span>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+        
+        <p class="social-note">Message us on any platform - we'll get back to you fast!</p>
+    </section>
+
+    <!-- Book a Service Section -->
+    <section class="booking-section" id="book">
+        <div class="section-title">
+            <h2>📅 Book Your Service</h2>
+            <p>Choose what you need - we'll take care of the rest</p>
+        </div>
+        
+        <div class="booking-grid">
+            <a href="/booking?service=pre-nct" class="booking-card">
+                <span class="booking-icon">�</span>
+                <h3>Pre-NCT Check</h3>
+                <p>Get ready to pass first time</p>
+                <span class="booking-price">From €80</span>
+            </a>
+            <a href="/booking?service=post-nct" class="booking-card">
+                <span class="booking-icon">🔧</span>
+                <h3>Post-NCT Repairs</h3>
+                <p>Fix what failed, fast</p>
+                <span class="booking-price">Quote on inspection</span>
+            </a>
+            <a href="/booking?service=full-service" class="booking-card">
+                <span class="booking-icon">⚙️</span>
+                <h3>Full Service</h3>
+                <p>Complete car health check</p>
+                <span class="booking-price">From €180</span>
+            </a>
+            <a href="/booking?service=mini-service" class="booking-card">
+                <span class="booking-icon">🛢️</span>
+                <h3>Mini Service</h3>
+                <p>Oil, filter & quick check</p>
+                <span class="booking-price">From €80</span>
+            </a>
+            <a href="/booking?service=long-travel" class="booking-card">
+                <span class="booking-icon">🛣️</span>
+                <h3>Long Travel Check</h3>
+                <p>Peace of mind for big trips</p>
+                <span class="booking-price">From €50</span>
+            </a>
+            <a href="/booking?service=valet" class="booking-card">
+                <span class="booking-icon">✨</span>
+                <h3>Pre-Booked Valet</h3>
+                <p>Car cleaned while we work</p>
+                <span class="booking-price">From €40</span>
+            </a>
+        </div>
+
+        <div class="booking-cta">
+            <p>Not sure what you need? <strong>Ask our AI</strong> or <strong>call us</strong> - we'll help you choose.</p>
+            <div class="booking-actions">
+                <a href="https://wa.me/353851026371?text=Hi%2C%20I%20need%20help%20choosing%20a%20service" class="btn btn-success btn-lg" target="_blank" rel="noopener">
+                    <span class="btn-icon">💬</span>
+                    Ask on WhatsApp
+                </a>
+                <a href="tel:0851026371" class="btn btn-primary btn-lg">
+                    <span class="btn-icon">📞</span>
+                    Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parts Ordering - Enhanced -->
+    <section class="parts-order" id="parts">
+        <div class="section-title">
+            <h2>🔩 Order Parts</h2>
+            <p>New or second-hand - our AI helps you find the best deals</p>
+        </div>
+
+        <div class="parts-options">
+            <div class="parts-option">
+                <span class="parts-option-icon">🆕</span>
+                <h3>New Parts</h3>
+                <p>Brand new, warranty included. We search multiple suppliers for the best price.</p>
+                <a href="https://wa.me/353851026371?text=Hi%2C%20I%20need%20a%20new%20part%20for%20my%20car" class="btn btn-accent" target="_blank" rel="noopener">Find New Parts</a>
+            </div>
+            <div class="parts-option">
+                <span class="parts-option-icon">♻️</span>
+                <h3>Second-Hand Parts</h3>
+                <p>Quality used parts at great prices. Tested and guaranteed to work.</p>
+                <a href="https://wa.me/353851026371?text=Hi%2C%20I%27m%20looking%20for%20a%20second-hand%20part" class="btn btn-accent" target="_blank" rel="noopener">Find Used Parts</a>
+            </div>
+        </div>
+
+        <div class="parts-help">
+            <p><strong>Don't know what part you need?</strong> Just describe the problem - our AI will figure it out and find the right part for your car.</p>
         </div>
     </section>
 
