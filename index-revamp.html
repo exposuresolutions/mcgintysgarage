@@ -486,6 +486,53 @@
             font-size: 1.5rem;
         }
 
+        /* ==================== ANSEO HERO LINK ==================== */
+        .anseo-hero-link {
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .anseo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.9) 0%, rgba(26, 48, 9, 0.9) 100%);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--white);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .anseo-link:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 30px rgba(45, 80, 22, 0.4);
+        }
+
+        .anseo-icon {
+            font-size: 2rem;
+        }
+
+        .anseo-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .anseo-text strong {
+            font-size: 1rem;
+        }
+
+        .anseo-text small {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
         /* ==================== AI SECTION ==================== */
         .ai-section {
             padding: 80px 20px;
@@ -555,6 +602,56 @@
         .ai-content p {
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 20px;
+        }
+
+        .ai-categories {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 600px) {
+            .ai-categories {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .ai-category {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            padding: 16px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .ai-category:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .ai-category strong {
+            display: block;
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .ai-category small {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .ai-example {
+            margin-bottom: 10px !important;
         }
 
         .ai-suggestions {
@@ -1350,6 +1447,17 @@
             </a>
         </div>
 
+        <!-- Anseo Transport Link -->
+        <div class="anseo-hero-link">
+            <a href="https://www.transportforireland.ie/tfi-local-link/tfi-local-link-overview/demand-responsive-transport/tfi-anseo/" class="anseo-link" target="_blank" rel="noopener">
+                <span class="anseo-icon">🚌</span>
+                <span class="anseo-text">
+                    <strong>Need a lift?</strong> Book Anseo bus - door to door!
+                    <small>Book 2 hours ahead • 7am-8pm daily • Just €3</small>
+                </span>
+            </a>
+        </div>
+
         <div class="hero-trust">
             <div class="trust-item">
                 <span class="trust-icon">✅</span>
@@ -1375,22 +1483,43 @@
                 <div class="ai-pulse"></div>
             </div>
             <div class="ai-content">
-                <h3>Ask Me Anything</h3>
-                <p>I can answer your questions, check availability, give updates on your car, and help you book. Try asking:</p>
+                <h3>Car Won't Start? I Can Help!</h3>
+                <p>Tell me your car make & model and I'll help you troubleshoot. I can find your hidden emergency key lock, check if you need a tow, or guide you through getting started.</p>
+                
+                <div class="ai-categories">
+                    <div class="ai-category">
+                        <span class="category-icon">🔑</span>
+                        <strong>Key & Lock Issues</strong>
+                        <small>Find emergency key slots, dead key fob fixes</small>
+                    </div>
+                    <div class="ai-category">
+                        <span class="category-icon">🔋</span>
+                        <strong>Battery & Starting</strong>
+                        <small>Jump start tips, battery checks</small>
+                    </div>
+                    <div class="ai-category">
+                        <span class="category-icon">🚗</span>
+                        <strong>Tow or Fix?</strong>
+                        <small>I'll help decide if you need a tow</small>
+                    </div>
+                </div>
+
+                <p class="ai-example"><strong>Try asking:</strong></p>
                 <ul class="ai-suggestions">
+                    <li>"My 2019 Ford Focus won't start - key fob dead"</li>
+                    <li>"Where's the emergency key hole on a VW Golf?"</li>
+                    <li>"Car clicking but won't turn over"</li>
+                    <li>"Do I need a tow or can I fix this myself?"</li>
                     <li>"When's the next free slot?"</li>
-                    <li>"What do I need for an NCT?"</li>
-                    <li>"How much for brake pads?"</li>
-                    <li>"Is my car ready yet?"</li>
                 </ul>
                 <div class="ai-actions">
-                    <a href="tel:0851026371" class="btn btn-accent btn-lg">
-                        <span class="btn-icon">📞</span>
-                        Call & Talk to AI
+                    <a href="https://wa.me/353851026371?text=Hi%2C%20my%20car%20won%27t%20start.%20Can%20you%20help%20me%20troubleshoot%3F" class="btn btn-success btn-lg" target="_blank" rel="noopener">
+                        <span class="btn-icon">�</span>
+                        WhatsApp for Help
                     </a>
-                    <a href="https://wa.me/353851026371" class="btn btn-success btn-lg" target="_blank" rel="noopener">
-                        <span class="btn-icon">💬</span>
-                        WhatsApp AI
+                    <a href="tel:0851026371" class="btn btn-accent btn-lg">
+                        <span class="btn-icon">�</span>
+                        Call Now
                     </a>
                 </div>
             </div>
