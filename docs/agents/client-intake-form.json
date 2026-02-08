@@ -1,0 +1,233 @@
+{
+  "form_name": "Social Media Setup - Client Intake",
+  "version": "1.0",
+  "description": "Collect all information needed to set up social media accounts for a new client",
+  
+  "fields": {
+    "business_info": {
+      "business_name": {
+        "type": "text",
+        "required": true,
+        "label": "Business Name",
+        "placeholder": "McGinty's Garage"
+      },
+      "business_type": {
+        "type": "select",
+        "required": true,
+        "label": "Business Type",
+        "options": [
+          "Auto Repair / Mechanic",
+          "Restaurant / Cafe",
+          "Retail Shop",
+          "Professional Services",
+          "Health & Beauty",
+          "Construction / Trades",
+          "Other"
+        ]
+      },
+      "location": {
+        "type": "text",
+        "required": true,
+        "label": "Business Location",
+        "placeholder": "Achill Island, County Mayo, Ireland"
+      },
+      "phone": {
+        "type": "tel",
+        "required": true,
+        "label": "Business Phone",
+        "placeholder": "+353 85 102 6371"
+      },
+      "email": {
+        "type": "email",
+        "required": true,
+        "label": "Business Email",
+        "placeholder": "info@business.com"
+      },
+      "website": {
+        "type": "url",
+        "required": false,
+        "label": "Website URL",
+        "placeholder": "https://yourbusiness.com"
+      }
+    },
+    
+    "social_preferences": {
+      "preferred_username": {
+        "type": "text",
+        "required": true,
+        "label": "Preferred Username",
+        "placeholder": "mcgintysgarage",
+        "help": "We'll check availability across all platforms"
+      },
+      "backup_usernames": {
+        "type": "text_array",
+        "required": false,
+        "label": "Backup Usernames (if preferred is taken)",
+        "placeholder": "mcgintysgarageie, mcgintysauto"
+      },
+      "platforms_wanted": {
+        "type": "checkbox_group",
+        "required": true,
+        "label": "Which platforms do you want?",
+        "options": [
+          {"value": "facebook", "label": "Facebook", "default": true},
+          {"value": "instagram", "label": "Instagram", "default": true},
+          {"value": "tiktok", "label": "TikTok", "default": false},
+          {"value": "snapchat", "label": "Snapchat", "default": false},
+          {"value": "twitter", "label": "Twitter/X", "default": false},
+          {"value": "linkedin", "label": "LinkedIn", "default": false},
+          {"value": "whatsapp", "label": "WhatsApp Business", "default": true}
+        ]
+      }
+    },
+    
+    "branding": {
+      "logo_url": {
+        "type": "url",
+        "required": false,
+        "label": "Logo URL (or upload)",
+        "placeholder": "https://..."
+      },
+      "logo_file": {
+        "type": "file",
+        "required": false,
+        "label": "Upload Logo",
+        "accept": "image/*"
+      },
+      "primary_color": {
+        "type": "color",
+        "required": false,
+        "label": "Primary Brand Color",
+        "default": "#005A9C"
+      },
+      "accent_color": {
+        "type": "color",
+        "required": false,
+        "label": "Accent Color",
+        "default": "#FDB813"
+      },
+      "tagline": {
+        "type": "text",
+        "required": true,
+        "label": "Business Tagline (short)",
+        "placeholder": "Your trusted local mechanic",
+        "maxlength": 100
+      },
+      "description": {
+        "type": "textarea",
+        "required": true,
+        "label": "Business Description (longer)",
+        "placeholder": "Tell us about your business...",
+        "maxlength": 500
+      }
+    },
+    
+    "owner_info": {
+      "owner_name": {
+        "type": "text",
+        "required": true,
+        "label": "Owner/Contact Name"
+      },
+      "owner_email": {
+        "type": "email",
+        "required": true,
+        "label": "Owner Email (for account recovery)"
+      },
+      "owner_phone": {
+        "type": "tel",
+        "required": true,
+        "label": "Owner Phone"
+      }
+    },
+    
+    "content_preferences": {
+      "posting_frequency": {
+        "type": "select",
+        "required": true,
+        "label": "How often should we post?",
+        "options": [
+          "Daily",
+          "3-4 times per week",
+          "2-3 times per week",
+          "Weekly",
+          "I'll manage my own posting"
+        ]
+      },
+      "content_types": {
+        "type": "checkbox_group",
+        "required": false,
+        "label": "What content do you want to share?",
+        "options": [
+          {"value": "tips", "label": "Tips & Advice", "default": true},
+          {"value": "behind_scenes", "label": "Behind the Scenes", "default": true},
+          {"value": "promotions", "label": "Promotions & Offers", "default": true},
+          {"value": "testimonials", "label": "Customer Testimonials", "default": true},
+          {"value": "team", "label": "Team/Staff Features", "default": false},
+          {"value": "industry_news", "label": "Industry News", "default": false}
+        ]
+      },
+      "tone": {
+        "type": "select",
+        "required": true,
+        "label": "What tone should we use?",
+        "options": [
+          "Professional & Formal",
+          "Friendly & Approachable",
+          "Fun & Casual",
+          "Expert & Authoritative"
+        ]
+      }
+    },
+    
+    "existing_accounts": {
+      "has_existing": {
+        "type": "boolean",
+        "required": true,
+        "label": "Do you have any existing social media accounts?"
+      },
+      "existing_urls": {
+        "type": "textarea",
+        "required": false,
+        "label": "List any existing account URLs",
+        "placeholder": "facebook.com/...\ninstagram.com/...",
+        "condition": "has_existing === true"
+      }
+    }
+  },
+  
+  "output": {
+    "generates": [
+      "Platform-specific bios",
+      "Cover photo specifications",
+      "First 10 posts content",
+      "WhatsApp quick replies",
+      "Hashtag list",
+      "Content calendar template",
+      "Setup checklist"
+    ]
+  },
+  
+  "example_completed": {
+    "business_name": "McGinty's Garage",
+    "business_type": "Auto Repair / Mechanic",
+    "location": "Achill Island, County Mayo, Ireland",
+    "phone": "+353 85 102 6371",
+    "email": "mcgintysgarage@gmail.com",
+    "website": "https://mcgintysgarage.store",
+    "preferred_username": "mcgintysgarage",
+    "backup_usernames": ["mcgintysgarageachill", "mcgintysauto"],
+    "platforms_wanted": ["facebook", "instagram", "tiktok", "snapchat", "whatsapp"],
+    "logo_url": "https://storage.googleapis.com/msgsndr/KbiucErIMNPbO1mY4qXL/media/6953c71188fd1a81b6091ec4.png",
+    "primary_color": "#005A9C",
+    "accent_color": "#FDB813",
+    "tagline": "Your trusted local mechanic serving Achill Island & West Mayo",
+    "description": "Third-generation mechanic offering honest repairs, NCT prep, and quality service. AI-powered booking available 24/7.",
+    "owner_name": "Ethan McGinty",
+    "owner_email": "mcgintysgarage@gmail.com",
+    "owner_phone": "+353 85 102 6371",
+    "posting_frequency": "3-4 times per week",
+    "content_types": ["tips", "behind_scenes", "promotions", "testimonials"],
+    "tone": "Friendly & Approachable",
+    "has_existing": false
+  }
+}
